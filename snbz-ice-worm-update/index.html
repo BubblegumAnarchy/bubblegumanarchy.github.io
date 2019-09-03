@@ -2514,16 +2514,6 @@
         const NAVLOGO = new NavLogo('nav-wrapper', 'logo');
     </script>
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-931975-7"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-
-        gtag('config', 'UA-931975-7');
-    </script>
-
     <script>   6
         /* Arctic Living Update Site - Buybar Script */
 
@@ -2558,30 +2548,42 @@
     </script>
 
     <script>
-    /**
-    * 
-    * UWE Subnautica Expansion - Textbox Script
-    * Author - hugh@unknownworlds.com
-    * 
-    */
+        /**
+        * 
+        * UWE Subnautica Expansion - Textbox Script
+        * Author - hugh@unknownworlds.com
+        * 
+        */
 
-    function prepareTextboxes() {
-        const textboxElements = document.getElementsByClassName(
-            ANIMATING_TEXTBOX_CLASS
-    );
-    let textboxes = Array();
-    for (let i = 0; i < textboxElements.length; i++) {
-        let box = new AnimatingTextbox(textboxElements[i]);
-        textboxes.push(box);
-    }
-    return textboxes
-    }
+        function prepareTextboxes() {
+            const textboxElements = document.getElementsByClassName(
+                ANIMATING_TEXTBOX_CLASS
+        );
+        let textboxes = Array();
+        for (let i = 0; i < textboxElements.length; i++) {
+            let box = new AnimatingTextbox(textboxElements[i]);
+            textboxes.push(box);
+        }
+        return textboxes
+        }
 
-    const ANIMATING_TEXTBOXES = prepareTextboxes();
+        const ANIMATING_TEXTBOXES = prepareTextboxes();
 
     </script>
 
+    <!-- Analytics excluded (debug / development mode) -->
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-931975-7"></script>
     <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-931975-7');
+    </script> -->
+
+    <!-- <script>
         'use strict';
         
         const STORE_GA_CLASS = 'store';
@@ -2679,7 +2681,5 @@
                 });
             }
         }
-    </script>
-
-  <!-- Analytics excluded (debug / development mode) -->
+    </script> -->
 </html>
