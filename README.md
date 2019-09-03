@@ -1,4 +1,4 @@
-# DamJess Github Page
+# damjess.github.io
 
 This repository is for testing various web-based projects.
 
