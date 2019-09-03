@@ -1,0 +1,2685 @@
+<!DOCTYPE html>
+  <head>
+    <title>Subnautica: Below Zero Arctic Living Update</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="robots" content="index, follow">
+    <meta name="description" content="Improve customization of your base with a Control Room, jam out to Jukebox tunes, explore a new Alterra mining site, and more with the Arctic Living update for Subnautica: Below Zero!">
+    <meta name="keywords" content="subnautica,below zero,arctic,biome,unknown worlds,steam,early access,pc,Arctic Living,update,mining site,alterra,prawn suit,base,large room, control room">
+    <meta property="og:title" content="Subnautica: Below Zero Arctic Living Update">
+    <meta property="og:site_name" content="Subnautica: Below Zero Arctic Living Update">
+    <meta property="og:url" content="">
+    <meta property="og:description" content="Improve customization of your base with a Control Room, jam out to Jukebox tunes, explore a new Alterra mining site, and more with the Arctic Living update for Subnautica: Below Zero!">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://dkli3tbfz4zj3.cloudfront.net/all/201907_ArcticLiving/images/twitter_card_og.jpg">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@subnautica">
+    <meta name="twitter:title" content="Subnautica: Below Zero Arctic Living Update">
+    <meta name="twitter:description" content="Improve customization of your base with a Control Room, jam out to Jukebox tunes, explore a new Alterra mining site, and more with the Arctic Living update for Subnautica: Below Zero!">
+    <meta name="twitter:image" content="https://dkli3tbfz4zj3.cloudfront.net/all/201907_ArcticLiving/images/twitter_card_og.jpg">
+    <link rel="shortcut icon" href="https://dkli3tbfz4zj3.cloudfront.net/all/201907_ArcticLiving/favicon.ico" type="image/vnd.microsoft.icon">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+    <style>
+        /** 
+        * Base site styles such as h1, i, background color, etc 
+        **/
+
+        * {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        *:before,
+        *:after {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        html {
+        font-family: sans-serif;
+        font-size: 10px;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        -webkit-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 14px;
+            line-height: 1.42857143;
+            color: #f2f3f7;
+            background-color: #161923;
+        }
+
+        /**
+        * Loading screen style
+        */
+
+        .loading-screen {
+            position: fixed;
+            width: 100vw;
+            height: 100vh;
+            top: 0px;
+            left: 0px;
+            background-color: white;
+            z-index: 50;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            opacity: 1;
+            transition: all 0.9s ease-out;
+        }
+        #loading-screen p {
+            color: slategrey;
+            font-size: 18px;
+            margin: 12px;
+            text-shadow: none;
+        }
+        #loading-screen-graph {
+            width: 100%;
+            height: 100%;
+        }
+        #loading-screen-graph-container {
+            display: block;
+            position: absolute;
+            width: 340px;
+            height: 340px;
+            z-index: -1
+        }
+        .loading-screen-fadeout {
+            opacity: 0;
+        }
+
+        /**
+        * Hero Styles
+        */
+
+        .hero-container {
+            width: 100%;
+            height: auto;
+            position: relative;
+            padding: 0px;
+            margin: 0px 0px -15px 0px;
+        }
+
+        .hero-container img {
+            position: absolute;
+            width: 50%;
+            max-width: 400px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 4;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            height: calc(100% - 5px);
+            background-color: rgba(0, 0, 0, 0.4);
+            z-index: 2;
+            padding: 0px;
+            margin: 0px;
+        }
+
+        .hero-container video {
+            width: 100%;
+            height: auto;
+            min-height: 100%;
+            overflow: hidden;
+            padding: 0px;
+            margin: 0px;
+            background-color: black;
+        }
+
+        #logo {
+            position: absolute;
+            top: 30%;
+            width: 40%;
+            max-width: 600px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 4;
+        }
+
+        @media only screen and (max-width : 480px) {
+            #logo {
+                top: 25%;
+            }
+        }
+    </style>
+
+    <script>
+    /**
+     * 
+     * UWE Subnautica Expansion - Nav Logo Class
+     * Author - jess@unknownworlds.com, hugh@unknownworlds.com
+     * 
+     */
+
+    class NavLogo {
+        constructor(elementId, primaryLogoId) {
+            this._element = document.getElementById(elementId);
+            this._primaryLogoElement = document.getElementById(primaryLogoId);
+            if (!this._element) { throw Error('nav logo element not found');}
+            const self = this;
+            this._lastCall = 0;
+            window.addEventListener('scroll', this.animate.bind(self));
+            this.draw();
+        }
+
+        animate(callTime) {
+            const self = this;
+            const innerBind = this.animate.bind(self);
+            if (callTime <= this._lastCall) {
+                requestAnimationFrame(innerBind);
+                return;
+            }
+            this.draw();
+            return;
+        }
+
+        draw() {
+            /* Is the primary logo out of view? */
+            const primaryRect = this._primaryLogoElement.getBoundingClientRect();
+            const primaryBottom = primaryRect.bottom;
+            const overlap = (this._primaryLogoElement.clientHeight / 3);
+            const threshold = primaryBottom - overlap;
+            if (threshold > 0) {
+                this._element.style.opacity = 0;
+                return;
+            }
+            const animationDistance = this._element.clientHeight * 2;
+            if (-threshold >= animationDistance) {
+                this._element.style.opacity = 1;
+                return;
+            }
+            const proportion = -threshold / animationDistance;
+            if (proportion > 1) { throw Error('Nav logo proportion > 1') }
+            if (proportion < 0) { throw Error('Nav logo proportion < 0') }
+            this._element.style.opacity = proportion;
+            return;
+
+        }
+    }
+    </script>
+
+    <script>
+    /**
+     * 
+     * UWE Subnautica Expansion - Loading Screen Class
+     * Author - hugh@unknownworlds.com
+     * 
+     */
+
+    const LOADING_FADEOUT = 'loading-screen-fadeout';
+    const LOAD_TIME = 2000;
+
+    class LoadingScreen {
+        constructor(elementId, timerId, graphId) {
+            const element = document.getElementById(elementId);
+            if (!element) { throw Error("No load screen element found!") }
+            const timer = document.getElementById(timerId);
+            if (!timer) { throw Error("No timer found!") }
+            this._timer = timer;
+            this._element = element;
+            this._graph = new ArcGraph(graphId);
+            this._start = (new Date()).getTime();
+            this._end = this._start + LOAD_TIME;
+            this._lastCall = 0;
+            const self = this;
+            const innerBind = this.animate.bind(self)
+            requestAnimationFrame(innerBind);
+            return;
+        }
+
+        animate(callTime) {
+            const self = this;
+            const innerBind = this.animate.bind(self)
+            if (callTime <= this._lastCall) {
+                requestAnimationFrame(innerBind);
+                return 
+            };
+            this._lastCall = callTime;
+            const now = (new Date()).getTime();
+            const remaining = (this._end - now).toFixed(0);
+            if (remaining < 5) { this._close(); return }
+            this.drawTimer(remaining);
+            const proportionRemaining = remaining / LOAD_TIME;
+            const completed = 1 - proportionRemaining;
+            this.drawGraph(completed);
+            requestAnimationFrame(innerBind);
+            return;
+        }
+
+        drawGraph(proportion) {
+            this._graph.draw(proportion);
+            return;
+        }
+
+        drawTimer(remaining) {
+            const timerString =  ((1 - (remaining / 2000)) * 100).toFixed(0);
+            this._timer.innerHTML = timerString + '%';
+            return;
+        }
+
+        _close() {
+            this._graph.draw(1);
+            this._timer.innerHTML = '100%';
+            const forceScroll = setInterval(() => {
+                scroll(0, 0);
+                return;
+            }, 30);
+            this._element.classList.add(LOADING_FADEOUT);
+            setTimeout(() => {
+                clearInterval(forceScroll);
+                this._element.parentElement.removeChild(this._element);
+                return;
+            }, 900)
+            return;
+        }
+    }
+    </script>
+
+    <script>
+    /*
+        Subnautica Expansion
+        Arc Graph
+        author: hugh@unknownworlds.com
+    */
+
+    const ARC_START = Math.PI * 0.50;
+    const ARC_END = Math.PI * 0.50;
+    const ARCGRAPH_FULL_TURN = Math.PI * 2 - ARC_START + ARC_END;
+    const ARC_WIDTH_RATIO = 0.02;
+    const INNER_RADIUS_RATIO = 0.460;
+
+    class ArcGraph {
+        /*
+            A graph showing percentage completion as a coloured arc of a circle..
+        */
+        constructor(
+            canvas_id,
+            fill_colour='lightgrey',
+            bg_colour='white',
+            canvas_colour='white',
+            arc_width_ratio=ARC_WIDTH_RATIO,
+            inner_radius_ratio=INNER_RADIUS_RATIO,
+        ) {
+            if (bg_colour === null) {
+                bg_colour = 'lightgrey';
+            }
+            this._bg_colour = bg_colour;
+            this._canvas_colour = canvas_colour;
+            this._canvas_id = canvas_id;
+            this._canvas = document.getElementById(canvas_id);
+            this._inner_radius_ratio = inner_radius_ratio;
+            this._arc_width_ratio = arc_width_ratio;
+            this._fill_colour = fill_colour;
+            this._parent = this._canvas.parentElement;
+            this._shouldEndDrawing = false;
+            this.draw(0);
+            return;
+        }
+
+        draw(percentage) {
+            /*
+                Returns null. Draw the graph on the target canvas to the percentage
+                specified.
+            */
+        if (percentage > 1 || percentage < 0) {
+                throw 'Cannot display > 100% / < 0%: ' + percentage;
+            }
+            var brush = this._canvas.getContext('2d');
+            this._prepare_canvas_dimensions(brush);
+            this._draw_background(brush);
+            this._draw_100pc_arc(brush, this._outer_radius, this._inner_radius);
+            var completion_radians = ARC_START + (
+                ARCGRAPH_FULL_TURN * percentage
+            );
+            this._draw_completed_arc(
+                brush,
+                this._canvas_colour,
+                completion_radians
+            );
+            this._draw_completed_arc(brush, this._fill_colour, completion_radians);
+            return;
+        }
+
+        _draw_background(brush) {
+            /*
+                Returns null. Draws a white background the full width and height of
+                the canvas.
+            */
+            brush.fillStyle = this._canvas_colour;
+            const height = this._canvas.height * this._scale();
+            const width = this._canvas.width * this._scale();
+            brush.fillRect(0, 0, width, height);
+            return;
+        }
+
+        _draw_100pc_arc(brush, outer_radius, inner_radius) {
+            /*
+                Returns null. Draws a full completion background arc using the
+                background colour supplied at instantiation.
+
+                brush
+                Supply a canvas 2d context. For example, obtained using
+                canvas.getContext('2d')
+            */
+            brush.beginPath();
+            brush.fillStyle = this._bg_colour;
+            this._draw_arc(brush, outer_radius);
+            this._draw_arc(brush, inner_radius, ARC_END, ARC_START, true);
+            brush.closePath();
+            brush.fill();
+            return;
+        }
+
+        _draw_completed_arc(brush, colour, completion_radians){
+            /*
+                Returns null. Draws a completion arc using the supplied
+                colour.
+            */
+            brush.beginPath();
+            brush.fillStyle = colour;
+            this._draw_arc(
+                brush,
+                this._outer_radius,
+                ARC_START,
+                completion_radians
+            );
+            this._draw_arc(
+                brush,
+                this._inner_radius,
+                completion_radians,
+                ARC_START,
+                true
+            );
+            brush.closePath();
+            brush.fill();
+            return;
+        }
+
+        _draw_arc(
+            brush,
+            radius,
+            start_radians=ARC_START,
+            end_radians=ARC_END,
+            reverse=false
+        ) {
+            /*
+                Returns null. Draws an arc using the supplied brush and
+                parameters.
+            */
+            brush.arc(
+                this._origin_x,
+                this._origin_y,
+                radius, 
+                start_radians, 
+                end_radians, 
+                reverse);
+            return;
+        }
+
+        _prepare_canvas_dimensions(context_brush){
+            /*
+                Returns null. Coerces canvas dimensions to match element dimensions,
+                and updates the graph origin.
+            */
+            const scale = this._scale();
+            const start_width = this._parent.clientWidth;
+            const start_height = this._parent.clientHeight;
+            this._arc_width = this._arc_width_ratio * start_width;
+            this._inner_radius = this._inner_radius_ratio * start_width;
+            this._outer_radius = this._inner_radius + this._arc_width;
+            this._canvas.width = start_width * scale;
+            this._canvas.height = start_height * scale;
+            this._canvas.style.width = start_width + "px";
+            this._canvas.style.height = start_height + "px";
+            this._origin_x = this._compute_origin_x(scale);
+            this._origin_y = this._compute_origin_y(scale);
+            context_brush.scale(scale, scale);
+            return;
+        }
+
+        _scale() {
+            /*
+                Returns a number scale value for canvas drawing
+            */
+        let scale = 1;
+        if (window.devicePixelRatio) {
+            scale = window.devicePixelRatio;
+        }
+        return scale;
+        }
+
+        _compute_origin_x(scale){
+            /*
+                Returns an integer representing the x-coordinate of the arc graph
+                origin
+            */
+            return this._canvas.width / 2 / scale;
+        }
+
+        _compute_origin_y(scale){
+            /*
+                Returns an integer representing the y-coordinate of the arc graph
+                origin
+            */
+            return this._canvas.height / 2 / scale;
+        }
+    }
+    </script>
+
+    <script>
+        'use strict';
+        
+        /* Arctic Living Update Site - Buy Modal Class */
+
+        const BUYMODAL_HIDDEN_CLASS = 'buymodal-hidden';
+
+        class BuyModal {
+
+            constructor(element) {
+                if (!element) { throw Error('Missing buy modal element') }
+                this._element = element;
+                return;
+            }
+
+            static loadFromElementId(elementId) {
+                const element = document.getElementById(elementId);
+                return new BuyModal(element);
+            }
+
+            show() {
+                const self = this;
+                const _ = new Catcher(this.hide.bind(self));
+                this._element.classList.remove(BUYMODAL_HIDDEN_CLASS);
+                return;
+            }
+
+            hide() {
+                this._element.classList.add(BUYMODAL_HIDDEN_CLASS);
+                return;
+            }
+        }
+                    
+        /* Arctic Living Update Class - Buybar Class */
+
+        const BUYBAR_START_THRESHOLD = 0.3;
+        const BUYBAR_END_THRESHOLD = 0.6;
+
+        class BuyBar {
+
+            constructor(element, buyModal) {
+                if (!element) { throw Error('Missing buybar element') }
+                this._element = element;
+                const self = this;
+                const scrollCall = this._considerOpacity.bind(self);
+                const animationCall = window.requestAnimationFrame.bind(
+                    null,
+                    scrollCall
+                );
+                document.addEventListener('scroll', animationCall);
+                this._lastUpdated = 0;
+                this._buyModal = buyModal;
+                this._button = this._element.getElementsByTagName('button')[0];
+                this._button.addEventListener(
+                    'click', this._buyModal.show.bind(buyModal)
+                );
+                this._element.style.opacity = this._calculateOpacity();
+                return;
+            }
+
+            _considerOpacity(time) {
+                const now = performance.now();
+                if (this._lastUpdated >= now) { return; }
+                this._lastUpdated = now;
+                this._element.style.opacity = this._calculateOpacity();
+                return;
+            }
+
+            _calculateOpacity() {
+                const height = window.innerHeight;
+                const offset = height * BUYBAR_START_THRESHOLD;
+                const startThreshold = height * BUYBAR_START_THRESHOLD - offset;
+                const endThreshold = height * BUYBAR_END_THRESHOLD - offset;
+                const currentScroll = window.scrollY - offset;
+                if (currentScroll <= startThreshold) { return 0 }
+                if (currentScroll >= endThreshold) { return 1 }
+                const scrollDistance = endThreshold - startThreshold;
+                const scrollProportion = currentScroll / scrollDistance;
+                if (scrollProportion > 1 || scrollProportion < 0) {
+                    throw Error('Scroll proportion exceeds bounds ' + scrollProportion);
+                }
+                return scrollProportion;
+            }
+
+            static loadFromElementId(elementId, buyModal) {
+                const element = document.getElementById(elementId);
+                return new BuyBar(element, buyModal);
+            }
+
+        }
+
+        /* Arctic Living Update Site - Catcher Class */
+
+        const CATCHER_Z_INDEX = 20;
+        const CATCHER_TRANSITION_TIME = 0.15;
+
+        class Catcher {
+
+            constructor(onClickCallback) {
+                this._onClickCallback = onClickCallback;
+                const element = document.createElement('div');
+                element.style.width = '100vw';
+                element.style.height = '100vh';
+                element.style.backgroundColor = 'rgba(0, 0, 0, 0.7)';
+                element.style.opacity = 1;
+                element.style.position = 'fixed';
+                element.style.top = '0px';
+                element.style.left = '0px';
+                element.style.zIndex = '12';
+                const transition = 'all ' + CATCHER_TRANSITION_TIME + 's ease-out';
+                element.style.trasition = transition;
+                const self = this;
+                element.addEventListener(
+                    'click',
+                    this._respondToClick.bind(self)
+                );
+                const body = document.getElementsByTagName('body')[0];
+                this._element = element;
+                body.appendChild(element);
+                return;
+            }
+
+            _respondToClick() {
+                this._element.style.opacity = 0;
+                const self = this;
+                setTimeout(this._destroy.bind(self, CATCHER_TRANSITION_TIME));
+                this._onClickCallback();
+                return;
+            }
+
+            _destroy() {
+                this._element.parentElement.removeChild(this._element);
+                return;
+            }
+
+        }
+    </script>
+
+  </head>
+
+  <body>
+    <div id="loading-screen" class="loading-screen">
+      <div id="loading-screen-graph-container">
+          <canvas id='loading-screen-graph'></canvas>
+      </div>
+      <p>Booting PDA in emergency mode</p>
+      <p id="loading-timer">0%</p>
+    </div>
+    <script>
+        const _ = new LoadingScreen(
+          'loading-screen',
+          'loading-timer',
+          'loading-screen-graph'
+        );
+    </script>
+
+    <div class="buymodal buymodal-hidden" id="buymodal">
+        <div class="store-box-container">
+            <img
+            class="store-box"
+            src="https://dkli3tbfz4zj3.cloudfront.net/all/201901XX_BZ_Countdown/20190123_SN_BZ_CountdownBox.png"
+            >
+            <div class="store-info-container">
+                <h2>Buy in Early Access</h2>
+                <div id="store-selection" class="stores">
+                    <a href="https://store.steampowered.com/app/848450/Subnautica_Below_Zero/"
+                        class="store"
+                        target="_blank"
+                        data-store-name='Steam'
+                    >
+                        <img src="https://dkli3tbfz4zj3.cloudfront.net/all/201901XX_BZ_Countdown/20190123_SN_BZ_SteamLogo_2.png">
+                    </a>
+                    <a href="https://www.epicgames.com/store/en-US/product/subnautica-below-zero/home"
+                        class="store"
+                        target="_blank"
+                        data-store-name='Epic'
+                    >
+                        <img src="https://dkli3tbfz4zj3.cloudfront.net/all/201901XX_BZ_Countdown/20190123_SN_BZ_Epic_3.png">
+                    </a>
+                    <a href="https://discordapp.com/store/skus/535869836748783616/subnautica-below-zero"
+                        class="store"
+                        target="_blank"
+                        data-store-name='Discord'
+                    >
+                        <img src="https://dkli3tbfz4zj3.cloudfront.net/all/201901XX_BZ_Countdown/20190123_SN_BZ_Discord.png">
+                    </a>
+                </div>
+                <!--<div class="store-price-info">
+                    <p>$19.99</p>
+                    <p>€16.79</p>
+                    <p>£15.49</p>
+                    <p class="store-price-optional">A$28.95</p>
+                    <p class="store-price-optional">C$22.79</p>
+                </div>-->
+            </div>
+        </div>
+    </div>
+
+    <nav class="nav-wrapper" id="nav-wrapper">
+      <a href="https://unknownworlds.com/subnautica">
+        <img src="https://dkli3tbfz4zj3.cloudfront.net/all/201907_ArcticLiving/images/20180828_SNZ_LogoHorizontal_400.png"
+          alt="Subnautica Logo"
+          class="nav-logo"
+          id="nav-logo"
+        >
+      </a>
+
+      <button class="btn btn-light" id="buybar-button">Buy</button>
+
+      <div class="nav-filler"></div>
+
+      <!-- Animation: This should fade in once the user scrolls past 50% of hero section -->
+      <div class="nav">
+        <ul>
+            <a href="#youtube"><i class="tooltip tooltip-left" data-tip="Arctic Living Video"><li></li></i></a>
+            <a href="#base-parts"><i class="tooltip tooltip-left" data-tip="Upgrade Your Base"><li></li></i></a>
+            <a href="#large-room"><i class="tooltip tooltip-left" data-tip="Large Room"><li></li></i></a>
+            <a href="#jukebox"><i class="tooltip tooltip-left" data-tip="Jukebox"><li></li></i></a>
+            <a href="#control-room"><i class="tooltip tooltip-left" data-tip="Control Room"><li></li></i></a>
+            <a href="#tools"><i class="tooltip tooltip-left" data-tip="Tools"><li></li></i></a>
+            <a href="#mining-site"><i class="tooltip tooltip-left" data-tip="Mining Site"><li></li></i></a>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="main">
+        <div class="hero-container">
+            <video loop="" autoplay="" muted="" poster="https://dkli3tbfz4zj3.cloudfront.net/all/201907_ArcticLiving/images/hero.jpg">
+                <source src="https://dkli3tbfz4zj3.cloudfront.net/all/201907_ArcticLiving/images/hero.mp4" type="video/mp4">
+            </video>
+            <div class="hero-overlay"></div>
+            <img src="https://dkli3tbfz4zj3.cloudfront.net/all/201907_ArcticLiving/images/logo.png" id="logo">
+        </div>
+    
+        <div class="narrow-container" id="youtube">
+            <h1>ARCTIC LIVING UPDATE</h1>
+            <iframe 
+                id="video-trailer" 
+                src="https://www.youtube.com/embed/yhd7_lc2ZHY" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen="">
+            </iframe>
+        </div>
+    
+        <div class="wide-container" id="base-parts">
+            <video loop="" autoplay="" muted="" poster="https://dkli3tbfz4zj3.cloudfront.net/all/201907_ArcticLiving/images/base.jpg">
+                <source src="https://dkli3tbfz4zj3.cloudfront.net/all/201907_ArcticLiving/images/base.mp4" type="video/mp4">
+            </video>
+        </div>
+    
+        <div class="narrow-container">
+            <div id="large-room">
+                <div class="flex base-parts" id="large-room-description">
+                    <div class="one-half">
+                        <img src="https://dkli3tbfz4zj3.cloudfront.net/all/201907_ArcticLiving/images/large_room_sillhouette.png" class="image-responsive">
+                    </div>
+                    <div class="one-half base-parts-details">
+                        <h3>Expand Your Horizons</h3>
+                        <p>
+                            Expand your horizons with the new Large Room, the perfect 
+                            multi-purpose solution. The only limit to what this room can 
+                            do is your own imagination. Build Partition Walls and Partition 
+                            Doors to subdivide this expansive space into smaller sections. 
+                            Available in Space Blue, exterior customization coming soon. 
+                        </p>
+                        <img src="https://dkli3tbfz4zj3.cloudfront.net/all/201907_ArcticLiving/images/pasteel_2.png" class="image-responsive resource">
+                    </div> 
+                </div>
+
+                <div class="flex">
+                    <div class="base-parts-images background-image" id="large-room-wide-shot">
+                
+                    </div>
+                    <div class="base-parts-images">
+                        <div class="background-image" id="top-lr-image">
+
+                        </div>
+                        <div class="background-image" id="bottom-lr-image">
+
+                        </div>
+                    </div> 
+                </div> 
+            </div>
+            
+            <div id="jukebox">
+                <div class="flex base-parts" id="jukebox-description">
+                    <div class="one-half base-parts-details">
+                        <h3>Dance Party</h3>
+                        <p>
+                            Who says you can’t mix work and play? Transform your base from 
+                            zero to party with a new Jukebox and Speakers (sold seperately). 
+                            <a href="https://subnautica-belowzero.fandom.com/wiki/Jukebox">
+                            Load your own tunes</a>, play some familiar songs, or listen to five 
+                            new tracks, four of which come from our community! Plus, who knows what other 
+                            musical goodies you might find sprinkled around the world! The 
+                            Seatruck Sleeper module includes a Jukebox for all your audio needs 
+                            on the seas. 
+                        </p>
+                        <img src="https://dkli3tbfz4zj3.cloudfront.net/all/201907_ArcticLiving/images/glass.png" class="image-responsive resource">
+                        <img src="https://dkli3tbfz4zj3.cloudfront.net/all/201907_ArcticLiving/images/wiring.png" class="image-responsive resource">
+                        <img src="https://dkli3tbfz4zj3.cloudfront.net/all/201907_ArcticLiving/images/titanium.png" class="image-responsive resource">
+                    </div> 
+                    <div class="one-half">
+                        <img src="https://dkli3tbfz4zj3.cloudfront.net/all/201907_ArcticLiving/images/jukebox_sillhouette.png" class="image-responsive">
+                    </div> 
+                </div>
+
+                <div class="flex">
+                    <div class="base-parts-images">
+                        <div class="background-image" id="top-jb-image">
+
+                        </div>
+                        <div class="background-image" id="bottom-jb-image">
+
+                        </div>
+                    </div> 
+                    <div class="background-image base-parts-images" id="jukebox-wide-shot">
+                
+                    </div>
+                </div> 
+            </div>
+
+            <div id="control-room">
+                <div class="flex base-parts" id="control-room-description">
+                    <div class="one-half">
+                        <img src="https://dkli3tbfz4zj3.cloudfront.net/all/201907_ArcticLiving/images/control_room_sillhouette.png" class="image-responsive">
+                    </div>
+                    <div class="one-half base-parts-details">
+                        <h3>Control Your Base</h3>
+                        <p>
+                            Take control of your base with the all-new Control Room from Alterra 
+                            Corporation. A holographic display provides top-level information for 
+                            all rooms of your base, including energy consumption and hull strength. 
+                            Use the Control Room to examine weak points and base layout. Including, 
+                            exterior color customization using your Control Room, coming soon.
+                        </p>
+                        <img src="https://dkli3tbfz4zj3.cloudfront.net/all/201907_ArcticLiving/images/quartz.png" class="image-responsive resource">
+                        <img src="https://dkli3tbfz4zj3.cloudfront.net/all/201907_ArcticLiving/images/titanium_2.png" class="image-responsive resource">
+                    </div> 
+                </div>
+
+                <div class="flex">
+                    <div class="base-parts-images background-image" id="control-room-wide-shot">
+                
+                    </div>
+                    <div class="base-parts-images">
+                        <div class="background-image" id="top-cr-image">
+
+                        </div>
+                        <div class="background-image" id="bottom-cr-image">
+
+                        </div>
+                    </div> 
+                </div>  
+            </div>
+        </div>    
+        
+        
+        <div class="wide-container" id="tools">
+            <div class="background-image" id="flashlight-helmet">
+                <div class="textbox textbox-animating tools-description">
+                    <p>
+                        Go hands-free with the new Flashlight Helmet. 
+                    </p>
+                </div>
+            </div>
+            <div class="background-image" id="booster-tank">
+                <div class="textbox textbox-animating tools-description">
+                    <p>
+                        Give yourself a boost while exploring with the new Booster Tank.
+                    </p>
+                </div>
+            </div>
+            <div class="background-image" id="mineral-scanner">
+                <div class="textbox textbox-animating tools-description">
+                    <p>
+                        Readily detect minerals and mineral veins using a Mineral Detector.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="wide-container" id="mining-site">
+            <div class="textbox right textbox-animating">
+                <p>
+                    After many executive meetings Alterra Corporation has decided to bring the PRAWN 
+                    suit back to the planet of 4546B. Explore the Active Mining Site near Thermal Spires 
+                    to pick up the blueprint for these babies.
+                </p>
+            </div>
+        </div>
+    
+        <div class="textbox-mobile">
+            <p>
+                After many executive meetings Alterra Corporation has decided to bring the PRAWN 
+                suit back to the planet of 4546B. Explore the Active Mining Site near Thermal Spires 
+                to pick up the blueprint for these babies.
+            </p>
+        </div>
+    
+        <div class="narrow-container" id="twitter">
+            <div class="twitter-grid">
+                <h2>Follow the dev team on Twitter</h2>
+                <div class="twitter-image-container">
+                    <a href="https://twitter.com/acwjones" alt="acwjones" target="_blank"><img src="https://dkli3tbfz4zj3.cloudfront.net/all/201906_SpyPengling/images/uwedev/acwjones.jpg"></a>
+                    <div class="overlay">
+                    <div class="text">@acwjones</div>
+                    </div>
+                </div>
+                <div class="twitter-image-container">
+                    <a href="https://twitter.com/BenPrunty" alt="BenPrunty" target="_blank"><img src="https://dkli3tbfz4zj3.cloudfront.net/all/201906_SpyPengling/images/uwedev/BenPrunty.jpg"></a>
+                    <div class="overlay">
+                    <div class="text">@BenPrunty</div>
+                    </div>
+                </div>
+                <div class="twitter-image-container">
+                    <a href="https://twitter.com/BJCummings" alt="BJCummings" target="_blank"><img src="https://dkli3tbfz4zj3.cloudfront.net/all/201906_SpyPengling/images/uwedev/BJCummings.jpg"></a>
+                    <div class="overlay">
+                    <div class="text">@BJCummings</div>
+                    </div>
+                </div>
+                <div class="twitter-image-container">
+                    <a href="https://twitter.com/CodeLumpN" alt="CodeLumpN" target="_blank"><img src="https://dkli3tbfz4zj3.cloudfront.net/all/201906_SpyPengling/images/uwedev/CodeLumpN.jpg"></a>
+                    <div class="overlay">
+                    <div class="text">@CodeLumpN</div>
+                    </div>
+                </div>
+                <div class="twitter-image-container">
+                    <a href="https://twitter.com/ColinKnueppel" alt="ColinKnueppel" target="_blank"><img src="https://dkli3tbfz4zj3.cloudfront.net/all/201906_SpyPengling/images/uwedev/ColinKnueppel.jpg"></a>
+                    <div class="overlay">
+                    <div class="text">@ColinKnueppel</div>
+                    </div>
+                </div>
+                <div class="twitter-image-container">
+                    <a href="https://twitter.com/corystrader" alt="corystrader" target="_blank"><img src="https://dkli3tbfz4zj3.cloudfront.net/all/201906_SpyPengling/images/uwedev/corystrader.jpg"></a>
+                    <div class="overlay">
+                    <div class="text">@corystrader</div>
+                    </div>
+                </div>
+                <div class="twitter-image-container">
+                    <a href="https://twitter.com/damjess" alt="damjess" target="_blank"><img src="https://dkli3tbfz4zj3.cloudfront.net/all/201906_SpyPengling/images/uwedev/damjess.jpg"></a>
+                    <div class="overlay">
+                    <div class="text">@damjess</div>
+                    </div>
+                </div>
+                <div class="twitter-image-container">
+                    <a href="https://twitter.com/davekalina" alt="davekalina" target="_blank"><img src="https://dkli3tbfz4zj3.cloudfront.net/all/201906_SpyPengling/images/uwedev/davekalina.jpg"></a>
+                    <div class="overlay">
+                    <div class="text">@davekalina</div>
+                    </div>
+                </div>
+                <div class="twitter-image-container">
+                    <a href="https://twitter.com/duxworth" alt="duxworth" target="_blank"><img src="https://dkli3tbfz4zj3.cloudfront.net/all/201906_SpyPengling/images/uwedev/duxworth.jpg"></a>
+                    <div class="overlay">
+                    <div class="text">@duxworth</div>
+                    </div>
+                </div>
+                <div class="twitter-image-container">
+                    <a href="https://twitter.com/Flayra" alt="Flayra" target="_blank"><img src="https://dkli3tbfz4zj3.cloudfront.net/all/201906_SpyPengling/images/uwedev/Flayra.jpg"></a>
+                    <div class="overlay">
+                    <div class="text">@Flayra</div>
+                    </div>
+                </div>
+                <div class="twitter-image-container">
+                    <a href="https://twitter.com/kielmcdonald" alt="kielmcdonald" target="_blank"><img src="https://dkli3tbfz4zj3.cloudfront.net/all/201906_SpyPengling/images/uwedev/kielmcdonald.jpg"></a>
+                    <div class="overlay">
+                    <div class="text">@kielmcdonald</div>
+                    </div>
+                </div>
+                <div class="twitter-image-container">
+                    <a href="https://twitter.com/LiamTart" alt="LiamTart" target="_blank"><img src="https://dkli3tbfz4zj3.cloudfront.net/all/201906_SpyPengling/images/uwedev/LiamTart.jpg"></a>
+                    <div class="overlay">
+                    <div class="text">@LiamTart</div>
+                    </div>
+                </div>
+                <div class="twitter-image-container">
+                    <a href="https://twitter.com/lnowaczek" alt="lnowaczek" target="_blank"><img src="https://dkli3tbfz4zj3.cloudfront.net/all/201906_SpyPengling/images/uwedev/lnowaczeck.jpg"></a>
+                    <div class="overlay">
+                    <div class="text">@lnowaczek</div>
+                    </div>
+                </div>
+                <div class="twitter-image-container">
+                    <a href="https://twitter.com/madsauce" alt="madsauce" target="_blank"><img src="https://dkli3tbfz4zj3.cloudfront.net/all/201906_SpyPengling/images/uwedev/madsauce.jpg"></a>
+                    <div class="overlay">
+                    <div class="text">@madsauce</div>
+                    </div>
+                </div>
+                <div class="twitter-image-container">
+                    <a href="https://twitter.com/obraxis" alt="obraxis" target="_blank"><img src="https://dkli3tbfz4zj3.cloudfront.net/all/201906_SpyPengling/images/uwedev/obraxis.jpg"></a>
+                    <div class="overlay">
+                    <div class="text">@obraxis</div>
+                    </div>
+                </div>
+                <div class="twitter-image-container">
+                    <a href="https://twitter.com/rantologyART" alt="rantologyART"target="_blank"><img src="https://dkli3tbfz4zj3.cloudfront.net/all/201906_SpyPengling/images/uwedev/rantologyART.jpg"></a>
+                    <div class="overlay">
+                    <div class="text">@rantologyART</div>
+                    </div>
+                </div>
+                <div class="twitter-image-container">
+                    <a href="https://twitter.com/sewlek" alt="sewlek" target="_blank"><img src="https://dkli3tbfz4zj3.cloudfront.net/all/201906_SpyPengling/images/uwedev/sewlek.jpg"></a>
+                    <div class="overlay">
+                    <div class="text">@sewlek</div>
+                    </div>
+                </div>
+                <div class="twitter-image-container">
+                    <a href="https://twitter.com/slice3d" alt="slice3d" target="_blank"><img src="https://dkli3tbfz4zj3.cloudfront.net/all/201906_SpyPengling/images/uwedev/slice3d.jpg"></a>
+                    <div class="overlay">
+                    <div class="text">@slice3d</div>
+                    </div>
+                </div>
+                <div class="twitter-image-container">
+                    <a href="https://twitter.com/SylvainHel" alt="SylvainHel" target="_blank"><img src="https://dkli3tbfz4zj3.cloudfront.net/all/201906_SpyPengling/images/uwedev/SylvainHel.jpg"></a>
+                    <div class="overlay">
+                    <div class="text">@SylvainHel</div>
+                    </div>
+                </div>
+                <div class="twitter-image-container">
+                    <a href="https://twitter.com/tedgill" alt="tedgill" target="_blank"><img src="https://dkli3tbfz4zj3.cloudfront.net/all/201906_SpyPengling/images/uwedev/tedgill.jpg"></a>
+                    <div class="overlay">
+                    <div class="text">@tedgill</div>
+                    </div>
+                </div>
+                <div class="twitter-image-container">
+                    <a href="https://twitter.com/TomJubert" alt="TomJubert" target="_blank"><img src="https://dkli3tbfz4zj3.cloudfront.net/all/201906_SpyPengling/images/uwedev/TomJubert.jpg"></a>
+                    <div class="overlay">
+                    <div class="text">@TomJubert</div>
+                    </div>
+                </div>
+                <div class="twitter-image-container">
+                    <a href="https://twitter.com/UWE_Klegran" alt="UWE_Klegran" target="_blank"><img src="https://dkli3tbfz4zj3.cloudfront.net/all/201906_SpyPengling/images/uwedev/UWE_Klegran.jpg"></a>
+                    <div class="overlay">
+                    <div class="text">@UWE_Klegran</div>
+                    </div>
+                </div>
+                <!-- <div class="twitter-image-container">
+                    <a href="https://twitter.com/virtual_don" alt="virtual_don" target="_blank"><img src="https://dkli3tbfz4zj3.cloudfront.net/all/201907_ArcticLiving/images/uwedev/virtual_don.jpg"></a>
+                    <div class="overlay">
+                    <div class="text">@virtual_don</div>
+                    </div>
+                </div> -->
+                <p style="text-align:center;">
+                    You can follow the entire dev team at once by subscribing to the
+                    <a class="twitter-all" href='https://twitter.com/Subnautica/lists/subnautica-dev-team/members'>
+                    Subnautica Dev Team List</a>
+                </p>
+                <a href='https://twitter.com/Subnautica/lists/subnautica-dev-team/members'
+                    class='btn btn-light'>
+                    Follow All Devs
+                </a>
+
+                <h2>Participate in Development</h2>
+                <div class="follow-items">
+                    <a class="follow-item" target="_blank" href="https://youtube.com/subnautica">
+                        <img src="https://dkli3tbfz4zj3.cloudfront.net/all/201901XX_BZ_Countdown/20190123_SN_BZ_YouTube.png">
+                        <p>YouTube</p>
+                    </a>
+                    <a class="follow-item" target="_blank" href="https://discordapp.com/invite/subnautica">
+                        <img src="https://dkli3tbfz4zj3.cloudfront.net/all/201901XX_BZ_Countdown/20190123_SN_BZ_Discord.png">
+                        <p>Discord Chat</p>
+                    </a>
+                    <a class="follow-item" target="_blank" href="https://unknownworlds.com/subnautica/newsletter">
+                        <img src="https://dkli3tbfz4zj3.cloudfront.net/all/201901XX_BZ_Countdown/20190124_SN_BZ_Newsletter.png">
+                        <p>Newsletter</p>
+                    </a>
+                    <a class="follow-item" target="_blank" href="https://twitter.com/subnautica">
+                        <img src="https://dkli3tbfz4zj3.cloudfront.net/all/201901XX_BZ_Countdown/20190124_SN_BZ_Twitter.png">
+                        <p>Twitter</p>
+                    </a>
+                    <a class="follow-item" target="_blank" href="https://instagram.com/subnautica">
+                        <img src="https://dkli3tbfz4zj3.cloudfront.net/all/201901XX_BZ_Countdown/20190124_SN_BZ_Instagram.png">
+                        <p>Instagram</p>
+                    </a>
+                    <a class="follow-item" target="_blank" href="https://steamcommunity.com/games/848450">
+                        <img src="https://dkli3tbfz4zj3.cloudfront.net/all/201901XX_BZ_Countdown/20190123_SN_BZ_SteamLogo_2.png">
+                        <p>Steam Community</p>
+                    </a>
+                    <a class="follow-item" target="_blank" href="https://unknownworlds.com/subnautica">
+                        <img src="https://dkli3tbfz4zj3.cloudfront.net/all/201901XX_BZ_Countdown/20190124_SN_BZ_Blog.png">
+                        <p>Blog</p>
+                    </a>
+                    <a class="follow-item" target="_blank" href="https://forums.unknownworlds.com/categories/subnautica">
+                        <img src="https://dkli3tbfz4zj3.cloudfront.net/all/201901XX_BZ_Countdown/20190124_SN_BZ_Forums.png">
+                        <p>Forums</p>
+                    </a>
+                    <a class="follow-item" target="_blank" href="https://favro.com/organization/35200a08dbbad85b26102638/0d9378db42299691bb14c708">
+                        <img src="https://dkli3tbfz4zj3.cloudfront.net/all/201901XX_BZ_Countdown/20190124_SN_BZ_Favro.png">
+                        <p>Favro Task Tracker</p>
+                    </a>
+                    <a class="follow-item" target="_blank" href="https://facebook.com/subnautica">
+                        <img src="https://dkli3tbfz4zj3.cloudfront.net/all/201901XX_BZ_Countdown/20190124_SN_BZ_Facebook.png">
+                        <p>Facebook</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    
+        <div class="mailchimp-textbox mailchimp-textbox-mobile" id="signup">
+            <h2>Get Development Updates</h2>
+            <p>Sign up to the Subnautica mailing list to hear about updates to Early Access first.</p>
+            <!-- Begin MailChimp Signup Form -->
+            <div id="mc_embed_signup">
+            <form action="https://unknownworlds.us6.list-manage.com/subscribe/post?u=bf02bb8619c14d31027c73d97&amp;id=8fa28cd2f4" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                <div id="mc_embed_signup_scroll">
+                <div class="mc-field-group">
+                <input type="email" value="" name="EMAIL" class="required email mailchimp-input" id="mce-EMAIL" placeholder = "subnaut@example.com">
+                </div>
+                <div id="mce-responses" class="clear">
+                <div class="response" id="mce-error-response" style="display:none"></div>
+                <div class="response" id="mce-success-response" style="display:none"></div>
+                </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_bf02bb8619c14d31027c73d97_8fa28cd2f4" tabindex="-1" value=""></div>
+                <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="btn btn-dark"></div>
+                </div>
+            </form>
+            </div>
+            <!--End mc_embed_signup-->
+        </div>
+    
+        <div class="final" id="sign_up">
+            <div class="mailchimp-textbox mailchimp-desktop">
+                <h2>Get Development Updates</h2>
+                <p>Sign up to the Subnautica mailing list to hear about updates to Early Access first.</p>
+                <!-- Begin MailChimp Signup Form -->
+                <div id="mc_embed_signup">
+                <form action="https://unknownworlds.us6.list-manage.com/subscribe/post?u=bf02bb8619c14d31027c73d97&amp;id=8fa28cd2f4" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                    <div id="mc_embed_signup_scroll">
+                    <div class="mc-field-group">
+                    <input type="email" value="" name="EMAIL" class="required email mailchimp-input" id="mce-EMAIL" placeholder = "subnaut@example.com">
+                    </div>
+                    <div id="mce-responses" class="clear">
+                    <div class="response" id="mce-error-response" style="display:none"></div>
+                    <div class="response" id="mce-success-response" style="display:none"></div>
+                    </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_bf02bb8619c14d31027c73d97_8fa28cd2f4" tabindex="-1" value=""></div>
+                    <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="btn btn-dark"></div>
+                    </div>
+                </form>
+                </div>
+                <!--End mc_embed_signup-->
+            </div>
+
+            <footer>
+                <div>
+                    <img src="https://dkli3tbfz4zj3.cloudfront.net/all/201907_ArcticLiving/images/uwe_full_vector.svg" alt="Unknown Worlds Entertainment" height="35">
+                </div>
+                <div>
+                    <p><a href="https://unknownworlds.com/subnautica/community/" target="_blank">community </a>//
+                        <a href="https://status.unknownworlds.com/" target="_blank"> system status </a>//
+                        <a href="https://unknownworlds.com/subnautica/community/" target="_blank"> copyright </a>//
+                        <a href="https://unknownworlds.com/subnautica/privacy-policy/" target="_blank"> privacy policy </a>//
+                        <a href="https://unknownworlds.com/video-policy/" target="_blank"> youtube & twitch monetisation </a>//
+                        <a href="https://unknownworlds.com/subnautica/terms-of-use/" target="_blank"> terms of use </a></p>
+                </div>
+                <div>
+                    <p>© 2019, <a href = "http://unknownworlds.com" target="_blank">Unknown Worlds Entertainment</a>. All rights reserved.</p>
+                </div>
+            </footer>
+        </div>
+    </div>
+  </body>
+
+  <style>
+    /** 
+    * Base site styles such as h1, i, background color, etc 
+    **/
+
+    .main {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 2048px;
+        background-color: #062d2a;
+        overflow: hidden;
+    }
+
+    input,
+    button,
+    select,
+    textarea {
+        font-family: inherit;
+        font-size: inherit;
+        line-height: inherit;
+    }
+
+    a {
+        color: #fff;
+        text-decoration: none;
+    }
+
+    a:hover,
+    a:focus {
+        color: #ade6fd;
+        text-decoration: underline;
+    }
+
+    a:focus {
+        outline: thin dotted;
+        outline: 5px auto -webkit-focus-ring-color;
+        outline-offset: -2px;
+    }
+
+    ul,
+    ol {
+        margin-top: 0;
+        margin-bottom: 10px;
+        width:100%;
+        font-size: 1.2em;
+    }
+    ul ul,
+    ol ul,
+    ul ol,
+    ol ol {
+        margin-bottom: 0;
+    }
+
+    li::after {
+        content: "•"; 
+        color: #cccde9;
+        font-size: 34px;
+    }
+
+    li {
+        list-style-type: none;
+        opacity: 0.6;
+    }
+
+    h1 {
+        font-family: 'Open Sans', sans-serif;
+        margin: 20px auto 40px auto;
+        color: #f2f3f7;
+        text-align: center;
+        letter-spacing: 4px;
+        font-weight: 400;
+        font-size: 36px;
+        text-transform: uppercase;
+        text-shadow: 2px 2px 10px rgba(110, 166, 197, 0.84);
+    }
+
+    h2 {
+        font-family: 'Open Sans', sans-serif;
+        margin: 20px auto 20px auto;
+        color: #f2f3f7;
+        text-align: center;
+        letter-spacing: 2px;
+        font-weight: 600;
+        font-size: 20px;
+        text-transform: uppercase;
+    }
+
+    p {
+        font-family: 'Open Sans', sans-serif;
+        color: #f2f3f7;
+        margin: 0 0 10px;
+        font-weight: 400;
+        font-size: 16px;
+    }
+
+    i {
+        font-style: italic;
+    }
+
+
+    /**
+    * Tooltip Styles
+    */
+
+    .tooltip {
+        display: block;
+        position: relative;
+        cursor: pointer;
+        box-sizing: border-box;
+        font-style: normal;
+        transition:all .25s ease-in-out;
+    }
+
+    .tooltip:before {
+        content: attr(data-tip);
+        font-size: 14px;
+        position: absolute;
+        background: rgba(204, 205, 233, 0.85);
+        color: #f2f3f7;
+        line-height: 1.2em;
+        padding: 0.5em;
+        font-style: normal;
+        box-shadow: 0 1px 3px rgba(0, 27, 45, 0.3);
+        min-width: 120px;
+        text-align: center;
+        opacity: 0;
+        visibility: hidden;
+        transition: all .3s ease-in-out;
+        text-shadow: 1px 1px 1px rgba(204, 205, 233, 0.5);
+        letter-spacing: 0;
+        font-weight: 600;
+    }
+
+    .tooltip:after {
+        width: 0;
+        height: 0;
+        border-style: solid;
+        content: '';
+        position: absolute;
+        opacity: 0;
+        visibility: hidden;
+        transition: all .3s ease-in-out;
+    }
+
+    .tooltip:hover:before,
+    .tooltip:hover:after {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    .tooltip-left:before {
+        left: 0;
+        top: 50%;
+        transform: translate(calc(-100% - 8px), -50%);
+        box-sizing: border-box;
+        border-radius: 3px;
+    }
+
+    .tooltip-left:after {
+        border-width: 8px 0 8px 8px;
+        border-color: transparent transparent transparent rgba(198, 219, 255, 0.85);
+        left: -8px;
+        top: 50%;
+        transform: translate(0, -50%);
+    }
+
+
+    /**
+    * Parallax Styles
+    */
+
+    .parallax-group {
+        display: block;
+        position: relative;
+        z-index: 1;
+        overflow: hidden;
+        padding: 0px;
+        margin: 0px;
+        box-sizing: border-box;
+    }
+
+    .parallax-background-image {
+        width: 100%;
+        z-index: 2;
+    }
+
+    .parallax-element {
+        display: block;
+        width: 100%;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        z-index: 3;
+        overflow: hidden;
+        will-change: transform;
+    }
+
+    .image-gradient-bottom {
+        position: absolute;
+        height: 20%;
+        width: 100%;
+        bottom: 0;
+        right: 0;
+        background: -webkit-linear-gradient(top, rgba(27,91,139,0), rgba(0, 27, 45,1)); /* For Safari 5.1 to 6.0 */
+        background: -o-linear-gradient(bottom, rgba(27,91,139,0), rgba(0, 27, 45,1)); /* For Opera 11.1 to 12.0 */
+        background: -moz-linear-gradient(bottom, rgba(27,91,139,0), rgba(0, 27, 45,1)); /* For Firefox 3.6 to 15 */
+        background: linear-gradient(to bottom, rgba(27,91,139,0), rgba(0, 27, 45,1)); /* Standard syntax (must be last) */
+        z-index: 10;
+    }
+
+    .image-gradient-top {
+        position: absolute;
+        height: 20%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        background: -webkit-linear-gradient(top, rgb(113, 111, 253), rgba(255,255,255,0)); /* For Safari 5.1 to 6.0 */
+        background: -o-linear-gradient(bottom, rgba(113, 111, 253,1), rgba(255,255,255,0)); /* For Opera 11.1 to 12.0 */
+        background: -moz-linear-gradient(bottom, rgba(113, 111, 253,1), rgba(255,255,255,0)); /* For Firefox 3.6 to 15 */
+        background: linear-gradient(to bottom, rgba(113, 111, 253,1), rgba(249, 250,255,0)); /* Standard syntax (must be last) */
+        z-index: 10;
+    }
+    .parallax-element-container {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        perspective: 100px;
+        -webkit-perspective: 100px;
+    }
+
+
+    /** 
+    * Animated Textbox Styles
+    **/
+
+    .textbox {
+        background: rgba(14, 21, 54, 0.5); 
+        width: 450px;
+        padding-top: 30px;
+        padding-left: 36px;
+        padding-right: 36px;
+        padding-bottom: 30px;
+        text-align: left;
+        position: absolute;
+        z-index: 11;
+        border-radius: 2px;
+        border-width: 0px;
+    }
+
+    .textbox p {
+        font-size: 18px;
+        text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.65);
+        color: #fff;
+    }
+
+    .textbox-mobile {
+        display: none;
+        background: rgba(255,255,255, 0.41); 
+        width: 100%;
+        padding-top: 18px;
+        padding-bottom: 18px;
+    }
+
+    .textbox-mobile p {
+        padding-left: 36px;
+        padding-right: 36px;
+    }
+
+    .textbox-animating {
+        opacity: 0;
+        transition: all 0.3s ease-out;
+        transform: translateY(30px);
+        will-change: opacity;
+    }
+
+    .textbox-animating p {
+        opacity: 0;
+    }
+
+    .textbox-animate-in {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+
+    .textbox-animate-in p {
+        opacity: 1;
+    }
+
+    .textbox-rollover {
+        opacity: 0;
+        transition: all 0.3s ease-out;
+        transform: translateY(30px);
+        will-change: opacity;
+    }
+
+    .textbox-rollover p {
+        opacity: 0;
+    }
+
+    .textbox-rollover-in {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+
+    .textbox-rollover-in p {
+        opacity: 1;
+    }
+
+    .left {
+        top: 50%;
+        left: 70%;
+        transform: translate(-50%, -70%);
+    }
+
+    .right {
+        top: 40%;
+        left: 20%;
+        transform: translate(-40%, -20%);
+    }
+
+    .textbox .btn {
+        margin-left: 0px;
+    }
+
+    .download-link {
+        position: absolute;
+        z-index: 25;
+        opacity: 0.25;
+        font-size: 35px;
+        bottom: 0;
+        right: 0;
+        padding-right: 20px;
+        padding-bottom: 45px;
+    }
+
+    /**
+        Button Styles
+    */
+
+    .btn {
+        font-family: inherit;
+        font-size: inherit;
+        color: inherit;
+        background: none;
+        cursor: pointer;
+        padding: 15px 40px;
+        display: inline-block;
+        margin: 15px 30px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-weight: 700;
+        outline: none;
+        position: relative;
+        -webkit-transition: all 0.3s;
+        -moz-transition: all 0.3s;
+        transition: all 0.3s;
+        border-radius: 7px;
+    }
+
+    .btn:after {
+        content: '';
+        position: absolute;
+        z-index: -1;
+        -webkit-transition: all 0.3s;
+        -moz-transition: all 0.3s;
+        transition: all 0.3s;
+    }
+
+    .btn-dark {
+        border: none;
+        background: #2b3043;
+        color: white;
+        box-shadow: 0 5px #000;
+        padding-top: 11px;
+    }
+
+    .btn-light {
+        border: none;
+        background: #ffdc72;
+        color: #e18e25;
+        box-shadow: 0 5px #fd9f29;
+    }
+
+    .btn-light:hover {
+        color: white;
+        text-decoration: none;
+    }
+
+
+    /** 
+    * Navbar Styles
+    **/
+
+    .nav-logo {
+        max-width: 200px;
+        padding: 10px;
+        will-change: opacity;
+    }
+
+    .nav-wrapper {
+        height: 40px;
+        position: fixed;
+        z-index: 30;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    .nav-filler {
+        flex-basis: 85%;
+    }
+
+    .nav {
+        margin-top: 20vh;
+        margin-right: 20px;
+        height: 40px;
+        width: 100%;
+        transform: translate(95%);
+    }
+
+    .nav a {
+        color: #ade6fd;
+        text-decoration: none;
+    }
+
+    .nav a:hover {
+        color: white;
+    }
+
+    /** 
+    * Narrow Container Styles
+    */
+
+    .narrow-container {
+        background-color: #161923;
+        color: #f2f3f7;
+        min-height: 400px;
+        padding: 50px 20px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.45);
+    }
+
+    .flex {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .shadow {
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.45);
+    }
+
+    .rborder {
+        border-right: 2px solid #2b3043
+    }
+
+    .tborder {
+        border-top: 2px solid #2b3043;
+    }
+
+    .box {
+        background-color: rgba(255, 255, 255, 0.46);
+    }
+
+    .mobile-visible {
+        display: none;
+    }
+
+    .mobile-hidden {
+        display: '';
+    }
+
+    .to-edges {
+        margin: -20px;
+    }
+
+
+    /**
+    * Wide Container Styles
+    */
+
+    .wide-container {
+        width: 100%;
+        min-height: 500px;
+        position: relative;
+    }
+
+
+    /**
+    * Width Instructions
+    */
+
+    .one-third {
+        flex-basis: 33.3%;
+        padding: 2rem;
+    }
+
+    .two-thirds {
+        flex-basis: 66.6%;
+        padding: 2rem;
+    }
+
+    .one-half {
+        flex-basis: 50%;
+        padding: 2rem;
+        margin: auto;
+        min-height: 200px;
+    }
+
+    .image-responsive {
+        width: 100%;
+        height: auto;
+    }
+
+    .background-image {
+        background-size: cover;
+        background-position: center;
+    }
+
+    video {
+        width: 100%;
+        height: auto;
+    }
+
+    .center {
+        text-align: center;
+    }
+
+    /** 
+    * Update Specific Styles
+    */
+
+    #youtube {
+        text-align:center;
+    }
+
+    #base-parts {
+        margin-bottom: -5px;
+    }
+
+    .base-parts {
+        padding: 30px;
+    }
+
+    .base-parts-details {
+        text-align: left;
+        /*height: 40vh;*/
+        align-items: center;
+        justify-content: center;
+        padding: 40px;
+    }
+
+    .base-parts-details a {
+        color: rgb(239, 194, 66);
+    }
+
+    .base-parts-images {
+        flex-basis: 50%;
+        min-height: 200px;
+    }
+
+    #large-room-description {
+        margin-bottom: 30px;
+    }
+
+    #large-room-wide-shot {
+        background-image: url('https://dkli3tbfz4zj3.cloudfront.net/all/201907_ArcticLiving/images/large_room.jpg');
+        height: 40vh;
+    }
+
+    #jukebox-wide-shot {
+        background-image: url('https://dkli3tbfz4zj3.cloudfront.net/all/201907_ArcticLiving/images/jukebox.jpg');
+        height: 40vh;
+    }
+
+    #control-room-wide-shot {
+        background-image: url('https://dkli3tbfz4zj3.cloudfront.net/all/201907_ArcticLiving/images/control_room.jpg');
+        height: 40vh;
+    }
+
+    #top-lr-image {
+        background-image: url('https://dkli3tbfz4zj3.cloudfront.net/all/201907_ArcticLiving/images/large_room_detail_1.jpg');
+        height: 20vh;
+    }
+
+    #bottom-lr-image {
+        background-image: url('https://dkli3tbfz4zj3.cloudfront.net/all/201907_ArcticLiving/images/large_room_detail_2.jpg');
+        height: 20vh;
+    }
+
+    #top-jb-image {
+        background-image: url('https://dkli3tbfz4zj3.cloudfront.net/all/201907_ArcticLiving/images/jukebox_detail_1.jpg');
+        height: 20vh;
+    }
+
+    #bottom-jb-image {
+        background-image: url('https://dkli3tbfz4zj3.cloudfront.net/all/201907_ArcticLiving/images/jukebox_detail_2.jpg');
+        height: 20vh;
+    }
+
+    #top-cr-image {
+        background-image: url('https://dkli3tbfz4zj3.cloudfront.net/all/201907_ArcticLiving/images/control_room_detail_1.jpg');
+        height: 20vh;
+    }
+
+    #bottom-cr-image {
+        background-image: url('https://dkli3tbfz4zj3.cloudfront.net/all/201907_ArcticLiving/images/control_room_detail_2.jpg');
+        height: 20vh;
+    }
+
+    .resource {
+        max-width: 40px;
+    }
+
+    .tooltip-style {
+        background-color: rgba(255, 255, 255, 0.50);
+        margin: 10px;
+        padding: 20px;
+    }
+
+    .tooltip-style:before {
+        left: 0;
+        top: 50%;
+        transform: translate(calc(-100% - 8px), -50%);
+        box-sizing: border-box;
+        border-radius: 3px;
+    }
+
+    .tooltip-style:after {
+        border-width: 8px 0 8px 8px;
+        border-color: transparent transparent transparent rgba(0, 27, 45, 0.85);
+        left: -8px;
+        top: 50%;
+        transform: translate(0, -50%);
+    }
+
+    #tools {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .tools-description {
+        width: 20%;
+        transform: translate(30%, 50%);
+    }
+
+    #flashlight-helmet {
+        background-image: url('https://dkli3tbfz4zj3.cloudfront.net/all/201907_ArcticLiving/images/flashlight_helmet.jpg');
+        height: 80vh;
+        width: 33.32%;
+    }
+
+    #mineral-scanner {
+        background-image: url('https://dkli3tbfz4zj3.cloudfront.net/all/201907_ArcticLiving/images/mineral_scanner.jpg');
+        height: 80vh;
+        width: 33.32%
+    }
+
+    #booster-tank {
+        background-image: url('https://dkli3tbfz4zj3.cloudfront.net/all/201907_ArcticLiving/images/booster_tank.jpg');
+        height: 80vh;
+        width: 33.32%
+    }
+
+    #mining-site {
+        background-image: url('https://dkli3tbfz4zj3.cloudfront.net/all/201907_ArcticLiving/images/mining_site.jpg');
+        background-size: cover;
+        background-position: center;
+        height: 80vh;
+    }
+
+    #twitter {
+        background-image: url('https://dkli3tbfz4zj3.cloudfront.net/all/201907_ArcticLiving/images/twitter.jpg');
+        background-size: cover;
+        background-position: center;
+    }
+
+
+    /**
+    * Twitter Grid Styles
+    */
+
+    .twitter-grid {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        padding: 3em 5em 3em 5em;
+        margin: 50px 0 0px 0;
+        max-width: 1000px;
+        background-color: rgba(13, 26, 38, 0.41);
+    }
+
+    .twitter-grid h2 {
+        flex-basis: 100%;
+        align-self: center;
+        margin-bottom: 36px;
+        color: white;
+    }
+
+    .twitter-grid p {
+        flex-basis: 100%;
+        align-self: center;
+        margin-top: 36px;
+        color: white;
+    }
+
+    .twitter-grid img {
+        align-self: center;
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+
+    .overlay {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 100%;
+        width: 100%;
+        opacity: 0;
+        transition: .5s ease;
+        background-color: #fafdff;
+        pointer-events: none;
+    }
+
+    .twitter-image-container {
+        position: relative;
+        cursor: pointer;
+    }
+
+    .twitter-image-container:hover .overlay {
+        opacity: 0.75;
+    }
+    
+    .text {
+        color: #2b3043;
+        font-size: 8px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+
+
+    /** 
+    * Mailchimp signup styles
+    **/
+
+    .final {
+        height: fit-content;
+        position: relative;
+        overflow: hidden; 
+        min-height: 100vh; 
+        background-image: url('https://dkli3tbfz4zj3.cloudfront.net/all/201907_ArcticLiving/images/footer.jpg');
+        background-size: cover;
+        margin-right: 0px;
+        margin-left: 0px;
+    }
+
+    .mailchimp-textbox {
+        max-width: 490px;
+        width: 100%;
+        text-align: center;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: rgba(226, 251, 255, 0.425); 
+        padding: 40px;
+        z-index: 11;
+        border-radius: 2px;
+    }
+
+    .mailchimp-textbox p {
+        margin-bottom: 36px;
+        color: white;
+    }
+
+    .mailchimp-textbox h2 {
+        color: white;
+    }
+
+    .mailchimp-input {
+        background: rgba(255, 255, 255,0.8); 
+        font-size: 18px;
+        font-weight: bold;
+        border-radius: 2px;
+        border-width: 0px;
+        outline: none;
+        width: 100%;
+        color: white;
+        text-align: center;
+        margin-bottom: 18px;
+    }
+
+    .mailchimp-textbox-mobile {
+        display: none;
+    }
+
+    .email {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .follow-items {
+        display: grid;
+        margin-left: 16px;
+        margin-right: 16px;
+        margin-top: 32px;
+        max-width: 800px;
+        grid-template-columns: repeat(5, 1fr);
+        grid-gap: 16px;
+    }
+
+    @media screen and (max-width: 704px) {
+        .follow-items {
+            grid-gap: 8px;
+        }
+    }
+    @media screen and (max-width: 586px) {
+        .follow-items {
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 16px;
+        }
+        .follow-item {
+            max-width: 120px;
+            padding-left: 16px;
+            padding-right: 16px;
+        }
+    }
+
+    .follow-item {
+        padding: 8px;
+        border-radius: 2px;
+        transition: all 0.16s ease-out;
+        background-color:  rgba(255,255,255, 0);
+        cursor: pointer;
+    }
+
+    .follow-item:hover {
+        background-color: rgba(255,255,255, 0.2);
+    }
+
+    a.follow-item {
+        text-decoration: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: auto;
+        height: 100%;
+    }
+
+    .follow-item img {
+        width: 100%;
+        max-width: 50px;
+        height: auto;
+    }
+
+    .follow-item p {
+        color: white;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-weight: bolder;
+        font-size: 14px;
+        letter-spacing: 1px;
+        text-align: center;
+        text-shadow: 0px 0px 3px rgba(0, 0, 0, 1);
+    }
+
+
+    /** 
+    * Footer styles
+    **/
+
+    footer {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 40px 10px 40px;
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+    }
+
+    footer p {
+        font-size: 10px;
+        color: #0bc4cb;
+    }
+
+    /** 
+    * Buy Modal 
+    **/
+
+    .buymodal {
+        position: fixed;
+        top: 25vh;
+        left: calc(50vw - 250px);
+        z-index: 15;
+        width: 100vw;
+        max-width: 500px;
+        transition: all 0.15s ease-out;
+        opacity: 1;
+    }
+    @media screen and (max-width: 500px) {
+        .buymodal {
+            left: 0px;
+        }
+    }
+    .buymodal-hidden {
+        opacity: 0;
+        pointer-events: none;
+    }
+
+
+    /**
+    * Store Container Styles
+    **/
+
+    .store-container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        margin-top: 80px;
+        margin-bottom: 80px;
+        position: relative;
+    }
+    @media screen and (max-width: 1280px) {
+        .store-container {
+            margin-top: 7vw;
+            margin-bottom: 3vw;
+        }
+    }
+    .store-price-info {
+        padding-left: 32px;
+        padding-right: 32px;
+        margin-top: 8px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        color: white;
+        font-weight: bolder;
+        width: calc(100% - 64px);
+    }
+    @media screen and (max-width: 410px) {
+        .store-price-optional {
+            display: none;
+        }
+    }
+    .store-box {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+    @media screen and (max-width: 485px) {
+        .store-box {
+            width: 480px;
+        }
+    }
+    .store-box-container {
+        width: 100vw;
+        max-width: 500px;
+        position: relative;
+    }
+    @media screen and (max-width: 485px) {
+        .store-box-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+    }
+    .store-info-container {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+    }
+    .store-info-container h2 {
+        text-align: center;
+        color: white;
+        margin-top: 24px;
+    }
+    .stores {
+        margin-top: 48px;
+        padding-left: 48px;
+        padding-right: 48px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .store {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        position: relative;
+        background-color: rgba(255,255,255,0);
+        border-radius: 2px;
+        border-width: 0px;
+        transition: all 0.15s ease-out;
+        padding-top: 8px;
+        padding-bottom: 8px;
+    }
+    .store:hover {
+        background-color: rgba(255,255,255,0.2);
+    }
+    .store img {
+        width: 50%;
+        height: auto;
+    }
+    .store-coming {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        box-sizing: border-box;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(255,255,255,0.8);
+        border-radius: 2px;
+        border-width: 0px;
+        color: darkslategray;
+        font-weight: bold;
+        opacity: 0;
+        transition: all 0.15s ease-out;
+        font-size: 20px;
+    }
+    .store-coming:hover {
+        opacity: 1;
+    }
+    .store-description {
+        max-width: 450px;
+        color: white;
+        font-size: 18px;
+        background-color: rgba(3, 27, 55, 0.6);
+        border-radius: 2px;
+        border-width: 0px;
+        margin-left: 16px;
+        margin-right: 16px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.45);
+        padding-bottom: 8px;
+    }
+    @media screen and (max-width: 900px) {
+        .store-description {
+            margin-top: 32px;
+        }
+    }
+    .store-description p, .store-description h2 {
+        padding-left: 32px;
+        padding-right: 32px;
+    }
+    .store-description img {
+        border-top-left-radius: 2px;
+        border-top-right-radius: 2px;
+        width: 100%;
+        height: auto;
+        padding: 0px;
+        margin-bottom: 12px;
+    }
+
+
+    /** 
+    * Media queries for mobile
+    **/
+
+    #video-trailer, .video-embed  {
+        width: 800px;
+        height: 450px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.45);
+        margin:auto;
+    }
+    @media screen and (max-width: 1279px) {
+        #video-trailer, .video-embed {
+            width: 720px;
+            height: 405px;
+        } 
+    }
+    @media screen and (max-width: 850px) {
+        #video-trailer, .video-embed {
+            width: 640px;
+            height: 360px;
+        } 
+    }
+    @media screen and (max-width: 760px) {
+        #video-trailer, .video-embed {
+            width: 416px;
+            height: 234px;
+        } 
+    }
+    @media screen and (max-width: 680px) {
+        #video-trailer, .video-embed {
+            width: 416px;
+            height: 234px;
+        } 
+    }
+    @media screen and (max-width: 430px) {
+        #video-trailer, .video-embed {
+            width: 320px;
+            height: 180px;
+        } 
+    }
+
+    @media only screen and (max-width : 480px) {
+        #flashlight-helmet {
+            width: 100%;
+            height: 50vh;
+        }
+
+        #mineral-scanner {
+            width: 100%;
+            height: 50vh;
+        }
+
+        #booster-tank {
+            width: 100%;
+            height: 50vh;
+        }
+
+        #tools {
+            max-height: unset;
+        }
+
+        #tools .tools-description {
+            display: unset;
+            transform: unset;
+            margin: unset;
+            position: absolute;
+        }
+
+        #tools .tools-description p {
+            display: unset;
+        }
+
+        h1 {
+            font-size: 16px;
+        }
+
+        h2 {
+            font-size: 14px;
+        }
+
+        .nav-logo {
+            width: 140px;
+        }
+
+        #buybar-button {
+            margin: 10px;
+            height: 40px;
+        }
+
+        .nav {
+            transform: unset;
+            padding-left: 80%;
+        }
+
+        #logo {
+            top: 35%;
+            width: 60%;
+        }
+
+        .quote-inner {
+            padding: 4em;
+        }
+
+        .quote > p {
+            margin-top: 20px;
+        }
+
+        .wide-container {
+            max-height: 400px;
+            min-height: unset;
+        }
+
+        .one-third {
+            flex-basis: 100%;
+            padding: 2rem;
+        }
+
+        .two-thirds {
+            flex-basis: 100%;
+            padding: 2rem;
+        }
+
+        .one-half {
+            flex-basis: 100%;
+            padding: 2rem;
+            margin: auto;
+        }
+
+        .rborder {
+            border-right: unset;
+            border-bottom: 2px solid #2b3043;
+        }
+
+        .download-link {
+            padding-bottom: 25px;
+        }
+
+        .textbox {
+            position: unset;
+            padding: 20px;
+            margin: 40px;
+            width: unset;
+        }
+
+        .textbox-animating {
+            display: none;
+        }
+
+        .textbox-mobile {
+            display: block;
+        }
+
+        .textbox-mobile p {
+            padding-left: 18px;
+            padding-right: 18px;
+        }
+
+        .twitter-grid {
+            padding: 1em 2em 1em 2em;
+        }
+
+        .mailchimp-textbox-mobile {
+            display: block;
+        }
+
+        .mailchimp-textbox {
+            position: unset;
+            top: unset;
+            left: unset;
+            transform: unset;
+        }
+
+        .mailchimp-desktop {
+            display: none;
+        }
+
+        footer {
+            display: none;
+        }
+
+        .hero-container video {
+            width: 135%;
+            height: auto;
+        }
+    }
+
+    @media (max-width: 580px) {
+        .textbox-mobile p {
+            padding-left: 24px;
+            padding-right: 24px;
+        }
+    }
+
+    @media (max-width: 776px) {
+        .textbox {
+            padding-top: 20px;
+            padding-left: 26px;
+            padding-right: 26px;
+            padding-bottom: 20px;
+            width: 400px;
+        }
+        .textbox p {
+            font-size: 16px;
+        }
+    }
+
+    @media (max-width: 750px) {
+        .textbox {
+            display: none;
+        }
+        .textbox p {
+            display: none;
+        }
+        .textbox-mobile {
+            display: inherit;
+        }
+        .mobile-visible {
+            display: unset;
+        }
+
+        .mobile-hidden {
+            display: none;
+        }
+    }
+
+    @media (max-width: 920px) {
+        .textbox {
+            padding-top: 25px;
+            padding-left: 31px;
+            padding-right: 31px;
+            padding-bottom: 25px;
+        }
+        .textbox p {
+            font-size: 17px;
+        }
+    }
+
+    @media (min-width: 920px) {
+        .narrow-container {
+            max-width: 1080px;
+            margin-left: 20vw;
+            margin-right: 20vw;
+        }
+    }
+  </style>
+
+    <script>
+        /**
+        * 
+        * UWE Subnautica Expansion - Animate Textbox Class
+        * Author - jess@unknownworlds.com, hugh@unknownworlds.com
+        * 
+        */
+        const ANIMATING_TEXTBOX_CLASS = 'textbox-animating';
+        const ANIMATING_TEXTBOX_IN = 'textbox-animate-in';
+
+        class AnimatingTextbox {
+            constructor(element) {
+                this._element = element;
+                if (!this._element) {
+                    throw Error("Textbox element can't be falsey", element);
+                }
+                this._hasFadedIn = false;
+                const self = this;
+                document.addEventListener('scroll', this.animate.bind(self));
+                window.addEventListener('resize', this.animate.bind(self));
+                return;
+            }
+
+            animate() {
+                if (this._hasFadedIn) { return; }
+                const elementRect = this._element.getBoundingClientRect();
+                const elementTop = elementRect.top;
+                const elementBottom = elementRect.bottom;
+                const isVisible = elementTop < window.innerHeight && elementBottom >= 0;
+                if (!isVisible) { return; }
+                const distanceFromBottom = elementBottom - window.innerHeight;
+                const margin = -(window.innerHeight - this._element.offsetHeight) / 5;
+                if (distanceFromBottom < margin) { this._animateIn(); return; }
+                const fallback = this._element.offsetHeight + 50;
+                if (window.innerHeight < fallback) { this._animateIn(); return; }
+                return;
+            }
+
+            _animateIn() {
+                this._element.classList.add(ANIMATING_TEXTBOX_IN);
+                this._hasFadedIn = true;
+                return;
+            }
+
+        }
+    </script>
+
+    <script>
+        const NAVLOGO = new NavLogo('nav-wrapper', 'logo');
+    </script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-931975-7"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-931975-7');
+    </script>
+
+    <script>   6
+        /* Arctic Living Update Site - Buybar Script */
+
+        const BUYMODAL_ID = 'buymodal';
+        const BUYMODAL = BuyModal.loadFromElementId(BUYMODAL_ID);
+        const BUYBAR_ID = 'nav-wrapper';
+        const BUYBAR = BuyBar.loadFromElementId(BUYBAR_ID, BUYMODAL);
+
+                
+        /* Subnautica Below Zero Buy Page - Randomise Stores Script */
+
+        const RANDOM_STORE_CLASS = 'store';
+        const RANDOM_STORE_PARENT_ID = 'store-selection';
+        const STORES = document.getElementsByClassName(RANDOM_STORE_CLASS);
+        const PARENT = document.getElementById(RANDOM_STORE_PARENT_ID);
+
+        function generateRandom(max, not1, not2) {
+            const number = Math.floor(Math.random() * Math.floor(max));
+            if (number === not1 || number === not2) {
+                return generateRandom(max, not1, not2);
+            }
+            return number;
+        }
+
+        const FIRST = generateRandom(3, 4, 5);
+        const SECOND = generateRandom(3, FIRST, 5);
+        const THIRD = generateRandom(3, FIRST, SECOND);
+
+        PARENT.appendChild(STORES[FIRST]);
+        PARENT.appendChild(STORES[SECOND]);
+        PARENT.appendChild(STORES[THIRD]);
+    </script>
+
+    <script>
+    /**
+    * 
+    * UWE Subnautica Expansion - Textbox Script
+    * Author - hugh@unknownworlds.com
+    * 
+    */
+
+    function prepareTextboxes() {
+        const textboxElements = document.getElementsByClassName(
+            ANIMATING_TEXTBOX_CLASS
+    );
+    let textboxes = Array();
+    for (let i = 0; i < textboxElements.length; i++) {
+        let box = new AnimatingTextbox(textboxElements[i]);
+        textboxes.push(box);
+    }
+    return textboxes
+    }
+
+    const ANIMATING_TEXTBOXES = prepareTextboxes();
+
+    </script>
+
+    <script>
+        'use strict';
+        
+        const STORE_GA_CLASS = 'store';
+        const FOLLOW_CLASS = 'follow-item';
+        const TWITTER_CLASS = 'twitter-image-contatiner';
+        const TWITTER_ALL_CLASS = 'twitter-all';
+        const SOURCES = {
+            1: "facebook",
+            2: "twitter",
+            3: "youtube",
+            4: "twitch",
+            5: "instagram",
+            6: "mail",
+            7: "blog",
+            8: "steam",
+            9: "discord",
+            10: "in_game"
+        }
+
+
+        function applyLabels() {
+            const storesGA = document.getElementsByClassName(STORE_GA_CLASS);
+            for (let i = 0; i < storesGA.length; i ++) {
+                storesGA[i].addEventListener('click', function() {
+                    const label = storesGA[i].dataset.storeName;
+                    gtag(
+                        'event',
+                        'click',
+                        {
+                            'event_category': 'Store',
+                            'event_label': label
+                        }
+                    );
+                });
+            }
+
+            const followGA = document.getElementsByClassName(FOLLOW_CLASS);
+            for (let i = 0; i < followGA.length; i ++) {
+                followGA[i].addEventListener('click', function() {
+                    const label = followGA[i].getElementsByTagName('p')[0].innerText;
+                    gtag(
+                        'event',
+                        'click',
+                        {
+                            'event_category': 'Media',
+                            'event_label': label
+                        }
+                    );
+                });
+            }
+            
+            const PAGE_URL = new URL(window.location);
+            const KEY = PAGE_URL.searchParams.get('k');
+            let eventsSourcesLabel = 'unknown';
+            const SOURCE = SOURCES[KEY];
+            if (SOURCE) {
+                eventsSourcesLabel = SOURCE;
+            }
+            gtag(
+                'event',
+                'visit',
+                {
+                    'event_category': 'Source',
+                    'event_label': eventsSourcesLabel
+                }
+            );
+            
+            const twitterGA = document.getElementsByClassName(TWITTER_CLASS);
+            for (let i = 0; i < twitterGA.length; i ++) {
+                twitterGA[i].addEventListener('click', function() {
+                    const anchor = twitterGA[i].getElementsByTagName('a')[0];
+                    const label = anchor.attributes.alt.value;
+                    gtag(
+                        'event',
+                        'click',
+                        {
+                            'event_category': 'Dev Twitter',
+                            'event_label': label
+                        }
+                    );
+                });
+            }
+            const twitterAll = document.getElementsByClassName(TWITTER_ALL_CLASS);
+            const twitterAllLabel = 'all';
+            for (let i = 0; i < twitterAll.length; i ++) {
+                twitterAll[i].addEventListener('click', function() {
+                    gtag(
+                        'event',
+                        'click',
+                        {
+                            'event_category': 'Dev Twitter',
+                            'event_label': twitterAllLabel
+                        }
+                    );
+                });
+            }
+        }
+    </script>
+
+  <!-- Analytics excluded (debug / development mode) -->
+</html>
