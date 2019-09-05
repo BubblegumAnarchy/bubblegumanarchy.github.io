@@ -2339,6 +2339,67 @@
 
     <script>
         /**
+         * 
+         * UWE Subnautica Updates - Logo Animation Class
+         * Author - jess@unknownworlds.com
+         * 
+         */
+    
+        class AnimateLogo {
+            static get _EffectId() { return 'sparkle' };
+
+            constructor() {
+                this._effect = document.getElementById(AnimateLogo._EffectId);
+                if (!this._effect) { 
+                    throw Error('Effect cannot be falsey'); 
+                }
+                const self = this;
+                this._lastCall = 0;
+                window.addEventListener('scroll', this.animate.bind(self));
+                this.draw();
+            }
+    
+            animate(callTime) {
+                const self = this;
+                const innerBind = this.animate.bind(self);
+                if (callTime <= this._lastCall) {
+                    requestAnimationFrame(innerBind);
+                    return;
+                }
+                this.draw();
+                return;
+            }
+    
+            draw() {
+                const effectRect = this._effect.getBoundingClientRect();
+                const effectBottom = effectRect.bottom;
+                const effectHeight = effectRect.height;
+                const distanceToTop = effectBottom / effectHeight;
+
+                if (distanceToTop > 1.1) {
+                    this._effect.style.opacity = 0;
+                    return;
+                }
+                if (distanceToTop < 0.80) {
+                    this._effect.style.opacity = 0;
+                    return;
+                }
+
+                const x = distanceToTop - 0.95;
+                const x2 = x * x;
+                const a = -44.44 * x2;
+                const y = a + 1;
+                this._effect.style.opacity = y;
+                return;
+    
+            }
+        }
+
+        const ANIMATELOGO = new AnimateLogo();
+    </script>
+
+    <script>
+        /**
         * 
         * UWE Subnautica Expansion - Animate Textbox Class
         * Author - jess@unknownworlds.com, hugh@unknownworlds.com
@@ -2387,51 +2448,58 @@
     <script>
         /**
         * 
-        * UWE Subnautica Ice Worm Update - Swap Images Class
+        * UWE Subnautica Updates - Swap Images Class
         * Author - jess@unknownworlds.com
         * 
         */
-        const SWAP_IMAGES_CLASS = 'images-swap';
 
-        class SwapImages {
-            constructor(element) {
+        class SwapImage {
+
+            static get _BigElementId() { return 'ice-worm-gallery-big' }
+            static get _ElementClass() { return 'images-swap' }
+
+            constructor(element, bigImageElement) {
                 this._element = element;
+                this._bigImageElement = bigImageElement;
                 if (!this._element) {
-                    throw Error("Image element can't be falsey", element);
+                    throw Error("Image element can't be falsey", this._element);
                 }
                 const self = this;
                 this._element.addEventListener(
-                    'click', this._element.show.bind(element)
+                    'click', this.swap.bind(self)
                 );
                 return;
             }
 
             swap() {
-                let elementSource = this._element.style.backgroundImage;
-                let bigImageSource = document.getElementById('ice-worm-gallery-big').style.backgroundImage;
-                console.log("bigImageSource: " . bigImageSource);
-                elementSource = bigImageSource;
-                bigImageSource = elementSource;
+                const elementStyle = getComputedStyle(this._element, '');
+                const bigStyle = getComputedStyle(this._bigImageElement, '');
+                const elementSource = elementStyle.getPropertyValue('background-image');
+                const bigImageSource = bigStyle.getPropertyValue('background-image');
+                console.log(elementSource);
+                console.log(bigImageSource);
+                this._bigImageElement.style.backgroundImage = elementSource;
+                this._element.style.backgroundImage = bigImageSource;
                 return;
             }
 
-        }
+            static prepareImages() {
+                const imageElements = document.getElementsByClassName(
+                    SwapImage._ElementClass
+                );
 
-        function prepareImages() {
-            const imageElements = document.getElementsByClassName(
-                SWAP_IMAGES_CLASS
-            );
+                const images = Array();
 
-            let images = Array();
+                for (let i = 0; i < imageElements.length; i++) {
+                    const image = new SwapImage(imageElements[i], document.getElementById(SwapImage._BigElementId));
+                    images.push(image);
+                }
 
-            for (let i = 0; i < imageElements.length; i++) {
-                let image = new SwapImages(imageElements[i]);
-                images.push(image);
+                return images;
             }
-            return images;
         }
 
-        const SWAP_IMAGES = prepareImages();
+        const SWAP_IMAGES = SwapImage.prepareImages();
 
     </script>
 
