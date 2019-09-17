@@ -1109,7 +1109,7 @@
         </div>
 
         <div class="wide-container">
-            <video id="arctic-spires-video" tabindex="0" muted playsinline autobuffer preload poster="./images/arctic_spires_poster.jpg">
+            <video muted playsinline id="arctic-spires-video" poster="./images/arctic_spires_poster.jpg">
                 <source src="./images/arctic_spires.mp4" type="video/mp4">
             </video>
             <div class="textbox left textbox-animating">
@@ -2478,14 +2478,17 @@
             }
 
             swap() {
-                // Needs to be disabled on mobile
-                const elementStyle = getComputedStyle(this._element, '');
-                const bigStyle = getComputedStyle(this._bigImageElement, '');
-                const elementSource = elementStyle.getPropertyValue('background-image');
-                const bigImageSource = bigStyle.getPropertyValue('background-image');
-                this._bigImageElement.style.backgroundImage = elementSource;
-                this._element.style.backgroundImage = bigImageSource;
-                return;
+                const viewportWidth = window.innerWidth || document.documentElement.clientWidth;
+
+                if (viewportWidth > 480) {
+                    const elementStyle = getComputedStyle(this._element, '');
+                    const bigStyle = getComputedStyle(this._bigImageElement, '');
+                    const elementSource = elementStyle.getPropertyValue('background-image');
+                    const bigImageSource = bigStyle.getPropertyValue('background-image');
+                    this._bigImageElement.style.backgroundImage = elementSource;
+                    this._element.style.backgroundImage = bigImageSource;
+                    return;
+                } else { return; }
             }
 
             static prepareImages() {
