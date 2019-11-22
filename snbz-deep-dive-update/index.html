@@ -1,22 +1,22 @@
 <!DOCTYPE html>
   <head>
-    <title>Subnautica: Below Zero Ice Worm Update</title>
+    <title>Subnautica: Below Zero Deep Dive Update</title>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="robots" content="index, follow">
-    <meta name="description" content="Encounter the fearsome Ice Worm, discover giant floating Lilypads, roam past towering Arctic Spires, and more.">
-    <meta name="keywords" content="subnautica,below zero,arctic,biome,unknown worlds,steam,early access,pc,ice worm,update,spires,lilypad,lily,pad,uwe,epic,discord,frozen,leviathan">
-    <meta property="og:title" content="Subnautica: Below Zero Ice Worm Update">
-    <meta property="og:site_name" content="Subnautica: Below Zero Ice Worm Update">
+    <meta name="description" content=" ">
+    <meta name="keywords" content="subnautica,below zero,arctic,biome,unknown worlds,steam,early access,pc,Deep Dive,update,uwe,epic,discord,crystal caverns,fabricator,al-an,alan, marguerit, marg, shadow leviathan,croc,jellyfish,filmic mode">
+    <meta property="og:title" content="Subnautica: Below Zero Deep Dive Update">
+    <meta property="og:site_name" content="Subnautica: Below Zero Deep Dive Update">
     <meta property="og:url" content="">
     <meta property="og:description" content=" ">
     <meta property="og:type" content="website">
     <meta property="og:image" content="./images/twitter_card_og.jpg">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@subnautica">
-    <meta name="twitter:title" content="Subnautica: Below Zero Ice Worm Update">
-    <meta name="twitter:description" content="Encounter the fearsome Ice Worm, discover giant floating Lilypads, roam past towering Arctic Spires, and more.">
+    <meta name="twitter:title" content="Subnautica: Below Zero Deep Dive Update">
+    <meta name="twitter:description" content="Encounter the fearsome Deep Dive, discover the giant floating Lilypad Islands, roam past towering Arctic Spires, and more.">
     <meta name="twitter:image" content="./images/twitter_card_og.jpg">
     <link rel="shortcut icon" href="./favicon.ico" type="image/vnd.microsoft.icon">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
@@ -205,6 +205,7 @@
             display: inline-block;
             margin: 15px 30px;
             text-transform: uppercase;
+            text-align: center;
             letter-spacing: 1px;
             font-weight: 700;
             outline: none;
@@ -229,7 +230,6 @@
             background: #2b3043;
             color: white;
             box-shadow: 0 5px #000;
-            padding-top: 11px;
         }
 
         .btn-light {
@@ -322,6 +322,7 @@
             #buybar-button {
                 margin: 10px;
                 height: 40px;
+                padding: 10px 40px;
             }
 
             .hero-container video {
@@ -815,7 +816,7 @@
     <script>
         'use strict';
         
-        /* Ice Worm Update Site - Buy Modal Class */
+        /* Deep Dive Update Site - Buy Modal Class */
 
         const BUYMODAL_HIDDEN_CLASS = 'buymodal-hidden';
 
@@ -845,7 +846,7 @@
             }
         }
                     
-        /* Ice Worm Update Class - Buybar Class */
+        /* Deep Dive Update Class - Buybar Class */
 
         const BUYBAR_START_THRESHOLD = 0.3;
         const BUYBAR_END_THRESHOLD = 0.6;
@@ -903,7 +904,7 @@
 
         }
 
-        /* Ice Worm Update Site - Catcher Class */
+        /* Deep Dive Update Site - Catcher Class */
 
         const CATCHER_Z_INDEX = 20;
         const CATCHER_TRANSITION_TIME = 0.15;
@@ -1027,7 +1028,7 @@
       <div class="nav">
         <ul>
             <a href="#youtube"><i class="tooltip tooltip-left" data-tip="Update Video"><li></li></i></a>
-            <a href="#ice-worm"><i class="tooltip tooltip-left" data-tip="Ice Worm"><li></li></i></a>
+            <a href="#ice-worm"><i class="tooltip tooltip-left" data-tip="Deep Dive"><li></li></i></a>
             <a href="#frozen-leviathan"><i class="tooltip tooltip-left" data-tip="Frozen Creature Site"><li></li></i></a>
             <a href="#arctic-spires"><i class="tooltip tooltip-left" data-tip="Arctic Spires"><li></li></i></a>
             <a href="#story-warning"><i class="tooltip tooltip-left" data-tip="Story Progress"><li></li></i></a>
@@ -1047,10 +1048,10 @@
         </div>
     
         <div class="narrow-container" id="youtube">
-            <h1>ICE WORM UPDATE</h1>
+            <h1>Deep Dive UPDATE</h1>
             <iframe 
                 id="video-trailer" 
-                src="https://www.youtube.com/embed/yhd7_lc2ZHY" 
+                src="https://www.youtube.com/embed/YVsh-9ZOkPA" 
                 frameborder="0" 
                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
                 allowfullscreen="">
@@ -1066,9 +1067,9 @@
         <div class="wide-container" id="ice-worm-gallery">
             <div class="background-image one-third images-swap" id="ice-worm-1">
             </div>
-            <div class="background-image one-third images-swap" id="ice-worm-2">
-            </div>
             <div class="background-image one-third images-swap" id="ice-worm-3">
+            </div>
+            <div class="background-image one-third images-swap" id="ice-worm-2">
             </div>
         </div>
 
@@ -1931,6 +1932,14 @@
         #ice-worm-gallery {
             max-height: unset;
         }
+
+        #story-warning-details h2 {
+            text-align: center;
+        }
+
+        #fl-details {
+            padding: unset;
+        }
     }
 
 
@@ -2600,7 +2609,7 @@
     </script>
 
     <script>
-        /* Ice Worm Update Site - Buybar Script */
+        /* Deep Dive Update Site - Buybar Script */
 
         const BUYMODAL_ID = 'buymodal';
         const BUYMODAL = BuyModal.loadFromElementId(BUYMODAL_ID);
@@ -2635,16 +2644,16 @@
     <!-- Analytics excluded (debug / development mode) -->
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-931975-7"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-931975-7"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
 
         gtag('config', 'UA-931975-7');
-    </script> -->
+    </script>
 
-    <!-- <script>
+    <script>
         'use strict';
         
         const STORE_GA_CLASS = 'store';
@@ -2742,5 +2751,5 @@
                 });
             }
         }
-    </script> -->
+    </script>
 </html>
