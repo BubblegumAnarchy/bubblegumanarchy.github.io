@@ -60,7 +60,7 @@
             margin-left: auto;
             margin-right: auto;
             max-width: 2048px;
-            background-color: #191919;
+            background-color: #03052f;
             overflow: hidden;
         }
 
@@ -1083,8 +1083,8 @@
     
         <div class="narrow-container">
             <div class="flex overflow-boxes" id="fabricator-base">
-                <div id="fb-image" class="one-half background-image"></div>
-                <div class="one-half narrow-text">
+                <div id="fb-image" class="one-half background-image border shadow"></div>
+                <div class="one-half narrow-text shadow">
                     <h2>FABRICATOR BASE</h2>
                     <p>
                         Alterra scientists have discovered curious Precursor structures of unknown purpose 
@@ -1118,8 +1118,8 @@
 
         <div class="narrow-container">
             <div class="flex overflow-boxes" id="new-creatures">
-                <div id="hidden-crocodile" class="two-thirds background-image"></div>
-                <div class="one-third narrow-text">
+                <div id="hidden-crocodile" class="two-thirds background-image border shadow"></div>
+                <div class="one-third narrow-text shadow">
                     <h2>Hidden Crocodile</h2>
                     <p>
                         Another surprisingly hostile inhabitant of the Crystal Caves, the Hidden Croc spends 
@@ -1127,14 +1127,14 @@
                         and sharp teeth pose a fair warning to its neighbors that should be heeded as soon as possible. 
                     </p>
                 </div> 
-                <div class="one-third narrow-text">
+                <div class="one-third narrow-text shadow">
                     <h2>Jellyfish</h2>
                     <p>
                         Found lazily floating around the Glacial Connection, this mysterious invertebrate is best 
                         appreciated from the above. The tentacles below pose a shocking threat to all passersby. 
                     </p>
                 </div> 
-                <div id="jellyfish" class="two-thirds background-image"></div>
+                <div id="jellyfish" class="two-thirds background-image border shadow"></div>
             </div> 
         </div>
 
@@ -1171,8 +1171,8 @@
 
         <div class="narrow-container">
             <div class="flex overflow-boxes" id="misc">
-                <div id="ui-improvements" class="one-third background-image"></div>
-                <div class="two-thirds narrow-text">
+                <div id="ui-improvements" class="one-third background-image border shadow"></div>
+                <div class="two-thirds narrow-text shadow">
                     <h2>UI Improvements</h2>
                     <p>
                         Another surprisingly hostile inhabitant of the Crystal Caves, the Hidden Croc spends 
@@ -1180,18 +1180,18 @@
                         and sharp teeth pose a fair warning to its neighbors that should be heeded as soon as possible. 
                     </p>
                 </div> 
-                <div class="two-thirds narrow-text">
+                <div class="two-thirds narrow-text shadow">
                     <h2>Control Room Updates</h2>
                     <p>
                         Found lazily floating around the Glacial Connection, this mysterious invertebrate is best 
                         appreciated from the above. The tentacles below pose a shocking threat to all passersby. 
                     </p>
                 </div> 
-                <div id="control-room" class="one-third background-image"></div>
+                <div id="control-room" class="one-third background-image border shadow"></div>
             </div> 
             <div id="filmic-mode">
-                <img src="https://dkli3tbfz4zj3.cloudfront.net/all/201909_IceWorm/images/frozen-leviathan.jpg" class="image-responsive">
-                <div id="fl-details">
+                <img src="https://dkli3tbfz4zj3.cloudfront.net/all/201909_IceWorm/images/frozen-leviathan.jpg" class="image-responsive border shadow">
+                <div id="fm-details" class="shadow">
                     <h2>FILMIC MODE</h2>
                     <p>
                         See the world through new eyes with Filmic Mode, a higher contrast, more cinematic experience.  
@@ -1765,7 +1765,7 @@
     */
 
     .narrow-container {
-        background-color: #262b47;
+        background-color: #041b3a;
         color: #f2f3f7;
         min-height: 400px;
         padding: 50px 20px;
@@ -1787,6 +1787,12 @@
 
     .tborder {
         border-top: 2px solid #2b3043;
+    }
+
+    .border {
+        border: #2a3796;
+        border-width: 1px;
+        border-style: solid;
     }
 
     .box {
@@ -1836,6 +1842,18 @@
         padding: 2rem;
         margin: auto;
         min-height: 200px;
+    }
+
+    .overflow-boxes {
+        margin-left: -10vw;
+        margin-right: -10vw;
+    }
+
+    .narrow-text {
+        background-color: #2a3796;
+        margin-top: 3%;
+        margin-bottom: 3%;
+        padding: 25px 50px;
     }
 
     .image-responsive {
@@ -1895,18 +1913,6 @@
         height: 50vh;
     }
 
-    .overflow-boxes {
-        margin-left: -10vw;
-        margin-right: -10vw;
-    }
-
-    .narrow-text {
-        background-color: red;
-        margin-top: 3%;
-        margin-bottom: 3%;
-        padding: 25px 50px;
-    }
-
     #hidden-crocodile {
         background-image: url('https://dkli3tbfz4zj3.cloudfront.net/all/201907_ArcticLiving/images/mining_site.jpg');
         height: 40vh;
@@ -1919,7 +1925,7 @@
 
     #misc .narrow-text{
         margin-top: 5%;
-        margin-bottom: 3%;
+        margin-bottom: 5%;
     }
 
     #ui-improvements {
@@ -1934,6 +1940,14 @@
 
     #filmic-mode {
         margin: 50px;
+    }
+
+    #fm-details {
+        background: #2a3796;
+        margin-top: -50px;
+        padding: 50px;
+        margin-left: 50px;
+        margin-right: 50px;
     }
 
     #filmic-mode h2 {
