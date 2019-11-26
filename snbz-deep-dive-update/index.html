@@ -1127,7 +1127,7 @@
                         and sharp teeth pose a fair warning to its neighbors that should be heeded as soon as possible. 
                     </p>
                 </div> 
-                <div class="one-third narrow-text shadow">
+                <div class="one-third narrow-text shadow mobile-hidden">
                     <h2>Jellyfish</h2>
                     <p>
                         Found lazily floating around the Glacial Connection, this mysterious invertebrate is best 
@@ -1135,6 +1135,13 @@
                     </p>
                 </div> 
                 <div id="jellyfish" class="two-thirds background-image border shadow"></div>
+                <div class="one-third narrow-text shadow mobile-visible">
+                    <h2>Jellyfish</h2>
+                    <p>
+                        Found lazily floating around the Glacial Connection, this mysterious invertebrate is best 
+                        appreciated from the above. The tentacles below pose a shocking threat to all passersby. 
+                    </p>
+                </div> 
             </div> 
         </div>
 
@@ -1180,7 +1187,7 @@
                         and sharp teeth pose a fair warning to its neighbors that should be heeded as soon as possible. 
                     </p>
                 </div> 
-                <div class="two-thirds narrow-text shadow">
+                <div class="two-thirds narrow-text shadow mobile-hidden">
                     <h2>Control Room Updates</h2>
                     <p>
                         Found lazily floating around the Glacial Connection, this mysterious invertebrate is best 
@@ -1188,16 +1195,34 @@
                     </p>
                 </div> 
                 <div id="control-room" class="one-third background-image border shadow"></div>
+                <div class="two-thirds narrow-text shadow mobile-visible">
+                    <h2>Control Room Updates</h2>
+                    <p>
+                        Found lazily floating around the Glacial Connection, this mysterious invertebrate is best 
+                        appreciated from the above. The tentacles below pose a shocking threat to all passersby. 
+                    </p>
+                </div> 
             </div> 
+
             <div id="filmic-mode">
-                <img src="https://dkli3tbfz4zj3.cloudfront.net/all/201909_IceWorm/images/frozen-leviathan.jpg" class="image-responsive border shadow">
+                <div class="border shadow wrapper">
+                    <div class="before">
+                        <img class="content-image" src="./images/frozen-leviathan.jpg" draggable="false"/>   
+                    </div>
+                    <div class="after">
+                        <img class="content-image" src="https://dkli3tbfz4zj3.cloudfront.net/all/201907_ArcticLiving/images/mining_site.jpg" draggable="false"/>
+                    </div>
+                    <div class="scroller">
+                        <svg class="scroller__thumb" xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><polygon points="0 50 37 68 37 32 0 50" style="fill:#fff"/><polygon points="100 50 64 32 64 68 100 50" style="fill:#fff"/></svg>
+                    </div>
+                </div>
                 <div id="fm-details" class="shadow">
                     <h2>FILMIC MODE</h2>
                     <p>
                         See the world through new eyes with Filmic Mode, a higher contrast, more cinematic experience.  
                     </p>
-                </div> 
-            </div>
+                </div>
+            </div> 
         </div>
     
         <div class="narrow-container background-image" id="twitter">
@@ -1761,6 +1786,101 @@
     }
 
     /** 
+    * Before/After Styles
+    */
+
+    .wrapper{
+        width: 100%;
+        height: 600px;
+        position: relative;
+        overflow: hidden;
+        margin: 40px 30px 10px 0;
+    }
+
+    .before,
+    .after {
+        width:100%;
+        height:100%;
+        background-repeat:no-repeat;
+        background-color: white;
+        background-size: cover;
+        background-position: center;
+        position: absolute;
+        top:0;
+        left:0;
+        pointer-events:none;
+        overflow: hidden;
+    }
+
+    .content-image{
+        height:100%;
+    }
+
+    .after{
+        width:125px;
+    }
+
+    .scroller{
+        width: 50px;
+        height:50px;
+        position: absolute;
+        left:100px;
+        top:50%;
+        transform:translateY(-50%);
+        border-radius:50%;
+        background-color: transparent;
+        opacity:0.9;
+        pointer-events:auto;
+        cursor: pointer;
+    }
+
+    .scroller:hover{
+        opacity:1;
+    }
+
+    .scrolling{
+        pointer-events:none;
+        opacity:1;
+        z-index: 1;
+    }
+
+    .scroller__thumb{
+        width:100%;
+        height:100%;
+        padding:5px;
+    }
+
+    .scroller:before,
+    .scroller:after{
+        content:" ";
+        display: block;
+        width: 7px;
+        height: 9999px;
+        position: absolute;
+        left: 50%;
+        margin-left: -3.5px;
+        z-index: 30;
+        transition:0.1s;
+    }
+
+    .scroller:before{
+        top:100%;
+    }
+
+    .scroller:after{
+        bottom:100%;
+    }
+
+    .scroller{
+        border: 5px solid #fff;
+    }
+
+    .scroller:before,
+    .scroller:after{
+        background: #fff;
+    }
+
+    /** 
     * Narrow Container Styles
     */
 
@@ -1918,6 +2038,7 @@
     #jellyfish {
         background-image: url('https://dkli3tbfz4zj3.cloudfront.net/all/201907_ArcticLiving/images/mining_site.jpg');
         height: 40vh;
+        z-index: 2;
     }
 
     #misc .narrow-text{
@@ -1934,10 +2055,7 @@
     #control-room {
         background-image: url('https://dkli3tbfz4zj3.cloudfront.net/all/201907_ArcticLiving/images/mining_site.jpg');
         height: 40vh;
-    }
-
-    #filmic-mode {
-        margin: 50px;
+        z-index: 2;
     }
 
     #fm-details {
@@ -1985,6 +2103,22 @@
     @media only screen and (max-width : 480px) {
         h2 {
             font-size: 14px;
+        }
+        
+        #fb-image {
+            height: 30vh;
+        }
+
+        .narrow-text{
+            margin-top: 0;
+        }
+
+        #misc .narrow-text {
+            margin-top: 0;
+        }
+
+        .wrapper {
+            height: 300px;
         }
     }
 
@@ -2272,7 +2406,7 @@
 
         .two-thirds {
             flex-basis: 100%;
-            padding: 2rem;
+            /*padding: 2rem;*/
         }
 
         .one-half {
@@ -2685,6 +2819,68 @@
         PARENT.appendChild(STORES[FIRST]);
         PARENT.appendChild(STORES[SECOND]);
         PARENT.appendChild(STORES[THIRD]);
+    </script>
+    
+    <script>
+        // I hope this over-commenting helps. Let's do this!
+        // Let's use the 'active' variable to let us know when we're using it
+        let active = false;
+
+        // First we'll have to set up our event listeners
+        // We want to watch for clicks on our scroller
+        document.querySelector('.scroller').addEventListener('mousedown',function(){
+            active = true;
+            // Add our scrolling class so the scroller has full opacity while active
+            document.querySelector('.scroller').classList.add('scrolling');
+        });
+        // We also want to watch the body for changes to the state,
+        // like moving around and releasing the click
+        // so let's set up our event listeners
+        document.body.addEventListener('mouseup',function(){
+            active = false;
+            document.querySelector('.scroller').classList.remove('scrolling');
+        });
+        document.body.addEventListener('mouseleave',function(){
+            active = false;
+            document.querySelector('.scroller').classList.remove('scrolling');
+        });
+
+        // Let's figure out where their mouse is at
+        document.body.addEventListener('mousemove',function(e){
+            if (!active) return;
+            // Their mouse is here...
+            let x = e.pageX;
+            // but we want it relative to our wrapper
+            x -= document.querySelector('.wrapper').getBoundingClientRect().left;
+            // Okay let's change our state
+            scrollIt(x);
+        });
+
+        // Let's use this function
+        function scrollIt(x){
+            let transform = Math.max(0,(Math.min(x,document.querySelector('.wrapper').offsetWidth)));
+            document.querySelector('.after').style.width = transform+"px";
+            document.querySelector('.scroller').style.left = transform-25+"px";
+        }
+
+        // Let's set our opening state based off the width, 
+        // we want to show a bit of both images so the user can see what's going on
+        scrollIt(150);
+
+        // And finally let's repeat the process for touch events
+        // first our middle scroller...
+        document.querySelector('.scroller').addEventListener('touchstart',function(){
+            active = true;
+            document.querySelector('.scroller').classList.add('scrolling');
+        });
+        document.body.addEventListener('touchend',function(){
+            active = false;
+            document.querySelector('.scroller').classList.remove('scrolling');
+        });
+        document.body.addEventListener('touchcancel',function(){
+            active = false;
+            document.querySelector('.scroller').classList.remove('scrolling');
+        });
     </script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
