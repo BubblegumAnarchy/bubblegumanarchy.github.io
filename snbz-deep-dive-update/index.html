@@ -1028,7 +1028,7 @@
       <div class="nav">
         <ul>
             <a href="#youtube"><i class="tooltip tooltip-left" data-tip="Deep Dive Video"><li></li></i></a>
-            <a href="#crystal-caves"><i class="tooltip tooltip-left" data-tip="Crystal Caves"><li></li></i></a>
+            <a href="#crystal-caverns"><i class="tooltip tooltip-left" data-tip="Crystal Caverns"><li></li></i></a>
             <a href="#fabricator-base"><i class="tooltip tooltip-left" data-tip="Fabricator Base"><li></li></i></a>
             <a href="#shadow-leviathan"><i class="tooltip tooltip-left" data-tip="Shadow Leviathan"><li></li></i></a>
             <a href="#new-creatures"><i class="tooltip tooltip-left" data-tip="New Creatures"><li></li></i></a>
@@ -1060,9 +1060,9 @@
             </iframe>
         </div>
     
-        <div id= "crystal-caves" class="wide-container">
-            <video muted playsinline preload id="arctic-spires-video" poster="./images/arctic_spires_poster.jpg">
-                <source src="./images/arctic_spires.mp4" type="video/mp4">
+        <div id= "crystal-caverns" class="wide-container">
+            <video muted playsinline preload id="crystal-caverns-video" poster="./images/crystal_caverns.jpg">
+                <source src="./images/crystal_caverns.mp4" type="video/mp4">
             </video>
             <div class="textbox left textbox-animating">
                 <p>
@@ -1096,8 +1096,8 @@
         </div>
 
         <div id="shadow-leviathan" class="wide-container">
-            <video autoplay loop muted playsinline poster="https://dkli3tbfz4zj3.cloudfront.net/all/201909_IceWorm/images/ice_worm.jpg">
-                <source src="https://dkli3tbfz4zj3.cloudfront.net/all/201909_IceWorm/images/ice_worm.mp4" type="video/mp4">
+            <video autoplay loop muted playsinline poster="./images/leviathan.jpg">
+                <source src="./images/leviathan.mp4" type="video/mp4">
             </video>
             <div class="textbox left textbox-animating">
                 <p>
@@ -1888,11 +1888,6 @@
         min-height: unset;
     }
 
-    #arctic-spires {
-        background-image: url('./images/arctic_spires.jpg');
-        height: 80vh;
-    }
-
     #fabricator-base {
         margin-bottom: -5px;
         padding: 20px;
@@ -2627,7 +2622,7 @@
             }
         }
 
-        const VIDEO1 = new AnimateVideo(document.getElementById('arctic-spires-video'));
+        const VIDEO1 = new AnimateVideo(document.getElementById('crystal-caverns-video'));
     </script>
 
     <script>
