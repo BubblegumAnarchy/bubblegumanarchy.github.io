@@ -1034,7 +1034,7 @@
             <a href="#new-creatures"><i class="tooltip tooltip-left" data-tip="New Creatures"><li></li></i></a>
             <a href="#snowfox-facility"><i class="tooltip tooltip-left" data-tip="Snowfox Facility"><li></li></i></a>
             <a href="#marg-base"><i class="tooltip tooltip-left" data-tip="Marguerit's Base"><li></li></i></a>
-            <a href="#misc"><i class="tooltip tooltip-left" data-tip="Misc. Improvements"><li></li></i></a>
+            <a href="#misc"><i class="tooltip tooltip-left" data-tip="Story Changes"><li></li></i></a>
             <a href="#filmic-mode"><i class="tooltip tooltip-left" data-tip="Filmic Mode"><li></li></i></a>
         </ul>
       </div>
@@ -1145,7 +1145,7 @@
             </div> 
         </div>
 
-        <div class="wide-container" id="snowfox-facility">
+        <div class="wide-container background-image" id="snowfox-facility">
             <div class="textbox right textbox-animating">
                 <p>
                     The home of Snowfox production efforts on 4546B have been temporarily suspended due to 
@@ -1160,8 +1160,8 @@
                 a recent cave-in at the Snowfox Base. Operations will be put on hold until further notice.
             </p>
         </div>
-        <div class="wide-container" id="marg-base">
-            <div class="textbox left textbox-animating">
+        <div class="wide-container background-image" id="marg-base">
+            <div class="textbox right textbox-animating">
                 <p>
                     A base of unknown origin has been discovered near Lilypad Islands. It appears recently 
                     inhabited by an unknown something or someone. 
@@ -1180,32 +1180,17 @@
             <div class="flex overflow-boxes" id="misc">
                 <div id="ui-improvements" class="one-third background-image border shadow"></div>
                 <div class="two-thirds narrow-text shadow">
-                    <h2>UI Improvements</h2>
+                    <h2>Story Changes</h2>
                     <p>
-                        Another surprisingly hostile inhabitant of the Crystal Caverns, the Hidden Croc spends 
-                        its days terrorizing surrounding schools of fish and scientists alike. Its bright scales 
-                        and sharp teeth pose a fair warning to its neighbors that should be heeded as soon as possible. 
+                        We're making big changes to our existing story! This will be the last update with the
+                        current verison of the story playable. Read more about these changes 
+                        <a href="https://unknownworlds.com/subnautica/the-future-of-below-zeros-story/">here</a>.
                     </p>
-                </div> 
-                <div class="two-thirds narrow-text shadow mobile-hidden">
-                    <h2>Control Room Updates</h2>
-                    <p>
-                        Found lazily floating around the Glacial Connection, this mysterious invertebrate is best 
-                        appreciated from the above. The tentacles below pose a shocking threat to all passersby. 
-                    </p>
-                </div> 
-                <div id="control-room" class="one-third background-image border shadow"></div>
-                <div class="two-thirds narrow-text shadow mobile-visible">
-                    <h2>Control Room Updates</h2>
-                    <p>
-                        Found lazily floating around the Glacial Connection, this mysterious invertebrate is best 
-                        appreciated from the above. The tentacles below pose a shocking threat to all passersby. 
-                    </p>
-                </div> 
+                </div>
             </div> 
 
             <div id="filmic-mode">
-                <div class="border shadow wrapper">
+                <div class="border shadow wrapper mobile-hidden">
                     <div class="before">
                         <img class="content-image" src="./images/filmic-before.jpg" draggable="false"/>   
                     </div>
@@ -1216,6 +1201,7 @@
                         <svg class="scroller__thumb" xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><polygon points="0 50 37 68 37 32 0 50" style="fill:#fff"/><polygon points="100 50 64 32 64 68 100 50" style="fill:#fff"/></svg>
                     </div>
                 </div>
+                <img src="./images/filmic.jpg" class="image-responsive border shadow mobile-visible">
                 <div id="fm-details" class="shadow">
                     <h2>FILMIC MODE</h2>
                     <p>
@@ -1274,6 +1260,12 @@
                     <a href="https://twitter.com/davekalina" alt="davekalina" target="_blank"><img src="https://dkli3tbfz4zj3.cloudfront.net/all/201906_SpyPengling/images/uwedev/davekalina.jpg"></a>
                     <div class="overlay">
                         <div class="text">@davekalina</div>
+                    </div>
+                </div>
+                <div class="twitter-image-container">
+                    <a href="https://twitter.com/disco_jill" alt="disco_jill" target="_blank"><img src="./images/uwedev/disco_jill.jpg"></a>
+                    <div class="overlay">
+                        <div class="text">@disco_jill</div>
                     </div>
                 </div>
                 <div class="twitter-image-container">
@@ -1349,7 +1341,7 @@
                     </div>
                 </div>
                 <div class="twitter-image-container">
-                    <a href="https://twitter.com/virtual_don" alt="virtual_don" target="_blank"><img src="./images/uwedev/virtual_don.jpg"></a>
+                    <a href="https://twitter.com/virtual_don" alt="virtual_don" target="_blank"><img src="https://dkli3tbfz4zj3.cloudfront.net/all/201909_IceWorm/images/uwedev/virtual_don.jpg"></a>
                     <div class="overlay">
                         <div class="text">@virtual_don</div>
                     </div>
@@ -2021,12 +2013,12 @@
 
     #snowfox-facility {
         background-image: url('./images/snowfox-base.jpg');
-        height: 50vh;
+        height: 60vh;
     }
 
     #marg-base {
         background-image: url('./images/marg-base.jpg');
-        height: 50vh;
+        height: 60vh;
     }
 
     #hidden-crocodile {
