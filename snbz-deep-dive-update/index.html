@@ -1042,7 +1042,7 @@
 
     <div class="main">
         <div class="hero-container">
-            <video autoplay loop muted playsinline poster="./images/hero.jpg">
+            <video muted playsinline preload id="hero" poster="./images/hero.jpg">
                 <source src="./images/hero.mp4" type="video/mp4">
             </video>
             <div class="hero-overlay"></div>
@@ -1050,10 +1050,10 @@
         </div>
     
         <div class="narrow-container" id="youtube">
-            <h1>Deep Dive UPDATE</h1>
+            <h1>DEEP DIVE UPDATE</h1>
             <iframe 
                 id="video-trailer" 
-                src="https://www.youtube.com/embed/YVsh-9ZOkPA" 
+                src="https://www.youtube.com/embed/BWOT-AMJuU8" 
                 frameborder="0" 
                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
                 allowfullscreen="">
@@ -2758,6 +2758,7 @@
         }
 
         const VIDEO1 = new AnimateVideo(document.getElementById('crystal-caverns-video'));
+        const VIDEO2 = new AnimateVideo(document.getElementById('hero'));
     </script>
 
     <script>
