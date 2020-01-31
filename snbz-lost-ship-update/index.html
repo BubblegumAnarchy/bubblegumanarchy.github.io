@@ -1032,7 +1032,7 @@
             <a href="#trivalve"><i class="tooltip tooltip-left" data-tip="Trivalve"><li></li></i></a>
             <a href="#deep-lilypads"><i class="tooltip tooltip-left" data-tip="Deep Lilypads"><li></li></i></a>
             <a href="#brinicles"><i class="tooltip tooltip-left" data-tip="Brinicles"><li></li></i></a>
-            <a href="#world-polish"><i class="tooltip tooltip-left" data-tip="World Polish"><li></li></i></a>
+            <a href="#world-polish"><i class="tooltip tooltip-left" data-tip="Enhancements & Improvements"><li></li></i></a>
             <a href="#aurora-borealis"><i class="tooltip tooltip-left" data-tip="Aurora Borealis"><li></li></i></a>
             <a href="#story"><i class="tooltip tooltip-left" data-tip="Story Changes"><li></li></i></a>
         </ul>
@@ -1061,7 +1061,7 @@
 
         <!-- LOST SHIP CAROUSEL -->
 
-        <div class="wide-container background-image" id="snowfox-facility">
+        <div class="wide-container background-image" id="lost-ship">
             <div class="textbox right textbox-animating">
                 <p>
                     We’ve received a number of reports regarding a crashed ship, discovered near Lilypad Islands. Alterra warns visitors to enter downed-craft, such as this one, with great care. Fallen structures and dangerous creatures pose a great threat.
@@ -1091,7 +1091,7 @@
 
         <!-- DEEP LILYPADS VIDEO -->
 
-        <div id= "crystal-caverns" class="wide-container">
+        <div id= "deep-lilypads" class="wide-container">
             <video muted playsinline preload id="crystal-caverns-video" poster="./images/crystal_caverns.jpg">
                 <source src="./images/crystal_caverns.mp4" type="video/mp4">
             </video>
@@ -1110,8 +1110,8 @@
 
         <!-- BRINICLES -->
 
-        <div class="narrow-container background-iamge" id="brinicles">
-            <div class="textbox">
+        <div class="narrow-container background-image" id="brinicles">
+            <div class="textbox bottom">
                 <h2>Brinicles</h2>
                 <p>
                     These spectacular and unusual ice formations may be found in the Sparse Arctic. While wildly enticing, make sure to steer clear as they promise to administer a nasty freeze.
@@ -1130,7 +1130,7 @@
                         Many areas of the planet have undergone restoration and rehabilitation in the past month. 
                         Areas such as Lilypad Island and Thermal Spires have responded gloriously to these efforts.
                         Whether returning to Planet 4546B or visiting for the first time, make sure to stop by and see how they've changed.
-                        We've also put forth great effort to enhance the Hoverbike experience, for those who prefer snow drifting.
+                        We've also put forth great effort to enhance the Snowfox experience, for those who prefer snow drifting.
                     </p>
                 </div>
                 <div id="lilypads" class="background-image border shadow"></div>
@@ -1139,7 +1139,7 @@
 
         <!-- AURORA BOREALIS VIEDO -->
         
-        <div id="shadow-leviathan" class="wide-container">
+        <div id="aurora-borealis" class="wide-container">
             <video autoplay loop muted playsinline poster="./images/leviathan.jpg">
                 <source src="./images/leviathan.mp4" type="video/mp4">
             </video>
@@ -1160,7 +1160,6 @@
 
         <div class="narrow-container">
             <div class="flex overflow-boxes" id="story">
-                <div id="story-changes" class="one-third background-image border shadow"></div>
                 <div class="two-thirds narrow-text shadow">
                     <h2>Story Changes</h2>
                     <p>
@@ -1169,6 +1168,7 @@
                         <a href="https://unknownworlds.com/subnautica/the-future-of-below-zeros-story/">here</a>.
                     </p>
                 </div>
+                <div id="story-changes" class="one-third background-image border shadow"></div>
             </div> 
         </div>
     
@@ -1724,6 +1724,11 @@
         transform: translate(-40%, -20%);
     }
 
+    .bottom {
+        left: 20%;
+        transform: translate(10%, 250%);
+    }
+
     .textbox .btn {
         margin-left: 0px;
     }
@@ -1957,7 +1962,7 @@
         text-align:center;
     }
 
-    #shadow-leviathan {
+    #aurora-borealis {
         margin-bottom: -6px;
         min-height: unset;
     }
@@ -1973,7 +1978,7 @@
         z-index: 2;
     }
 
-    #snowfox-facility {
+    #lost-ship {
         background-image: url('./images/snowfox-base.jpg');
         height: 60vh;
     }
@@ -1984,8 +1989,12 @@
     }
 
     #brinicles {
-        background-image: url('./images/twitter.jpg');
+        background-image: url('./images/story.jpg');
         height: 80vh;
+    }
+
+    #brinicles .textbox {
+        width: 50%;
     }
 
     #hoverbike{
@@ -2159,10 +2168,11 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        background: rgba(128, 128, 128, 0.5); 
+        background: rgba(236, 251, 255, 0.29); 
         padding: 40px;
         z-index: 11;
         border-radius: 2px;
+        mix-blend-mode: hard-light;
     }
 
     .mailchimp-textbox p {
