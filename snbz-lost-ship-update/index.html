@@ -53,14 +53,14 @@
             font-size: 14px;
             line-height: 1.42857143;
             color: #f2f3f7;
-            background-color: #262b47;
+            background-color: #021c29;
         }
 
         .main {
             margin-left: auto;
             margin-right: auto;
             max-width: 2048px;
-            background-color: #03052f;
+            background-color: #023021;
             overflow: hidden;
         }
 
@@ -1064,14 +1064,14 @@
         <div class="wide-container background-image" id="lost-ship">
             <div class="textbox right textbox-animating">
                 <p>
-                    We’ve received a number of reports regarding a crashed ship, discovered near Lilypad Islands. Alterra warns visitors to enter downed-craft, such as this one, with great care. Fallen structures and dangerous creatures pose a great threat.
+                    We’ve received a number of reports regarding two crashed ships, one discovered near Lilypad Islands and the other near Thermal Vents. Alterra warns visitors to enter downed-craft, such as this one, with great care. Fallen structures and dangerous creatures pose a great threat.
                 </p>
             </div>
         </div>
     
         <div class="textbox-mobile">
             <p>
-                We’ve received a number of reports regarding a crashed ship, discovered near Lilypad Islands. Alterra warns visitors to enter downed-craft, such as this one, with great care. Fallen structures and dangerous creatures pose a great threat.
+                We’ve received a number of reports regarding two crashed ships, one discovered near Lilypad Islands and the other near Thermal Vents. Alterra warns visitors to enter downed-craft, such as this one, with great care. Fallen structures and dangerous creatures pose a great threat.
             </p>
         </div>
         
@@ -1639,7 +1639,7 @@
     **/
 
     .textbox {
-        background: rgba(12, 19, 47, 0.5); 
+        background: rgba(12, 47, 36, 0.5); 
         width: 450px;
         padding-top: 30px;
         padding-left: 36px;
@@ -1844,7 +1844,7 @@
     */
 
     .narrow-container {
-        background-color: #041b3a;
+        background-color: #04283a;
         color: #f2f3f7;
         min-height: 400px;
         padding: 50px 20px;
@@ -1869,7 +1869,7 @@
     }
 
     .border {
-        border: #2a3796;
+        border: #079d87;
         border-width: 1px;
         border-style: solid;
     }
@@ -1929,7 +1929,7 @@
     }
 
     .narrow-text {
-        background-color: #2a3796;
+        background-color: #079d87;
         margin-top: 3%;
         margin-bottom: 3%;
         padding: 25px 50px;
@@ -1979,7 +1979,7 @@
     }
 
     #lost-ship {
-        background-image: url('./images/snowfox-base.jpg');
+        background-image: url('./images/cs-1.png');
         height: 60vh;
     }
 
@@ -1989,23 +1989,24 @@
     }
 
     #brinicles {
-        background-image: url('./images/story.jpg');
+        background-image: url('./images/brinicles.png');
         height: 80vh;
     }
 
     #brinicles .textbox {
         width: 50%;
+        max-width: 900px;
     }
 
     #hoverbike{
-        background-image: url('./images/story.jpg');
+        background-image: url('./images/lilypad-islands.png');
         height: 30vh;
         z-index: 2;
         width: 100%;
     }
 
     #lilypads{
-        background-image: url('./images/story.jpg');
+        background-image: url('./images/lilypad-islands.png');
         height: 30vh;
         z-index: 2;
         width: 100%;
@@ -2019,7 +2020,7 @@
     }
 
     #story-changes {
-        background-image: url('./images/story.jpg');
+        background-image: url('./images/story.png');
         height: 40vh;
         z-index: 2;
     }
@@ -2047,7 +2048,7 @@
     }
 
     #twitter {
-        background-image: url('./images/twitter.jpg');
+        background-image: url('./images/twitter.png');
     }
 
     @media only screen and (max-width : 480px) {
@@ -2069,6 +2070,12 @@
 
         .wrapper {
             height: 300px;
+        }
+    }
+
+    @media screen and (min-width: 2048px) {
+        .bottom {
+            transform: translate(35%, 250%);
         }
     }
 
@@ -2288,7 +2295,7 @@
 
     footer p {
         font-size: 10px;
-        color: #c066f8;
+        color: #58dfcc;
     }
 
 
