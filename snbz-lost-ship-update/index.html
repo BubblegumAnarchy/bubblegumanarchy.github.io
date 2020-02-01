@@ -1067,6 +1067,12 @@
                     We’ve received a number of reports regarding two crashed ships, one discovered near Lilypad Islands and the other near Thermal Vents. Alterra warns visitors to enter downed-craft, such as this one, with great care. Fallen structures and dangerous creatures pose a great threat.
                 </p>
             </div>
+            <div class="background-image images-swap" id="lost-ship-2">
+            </div>
+            <div class="background-image images-swap" id="lost-ship-3">
+            </div>
+            <div class="background-image images-swap" id="lost-ship-4">
+            </div>
         </div>
     
         <div class="textbox-mobile">
@@ -1983,6 +1989,23 @@
         height: 60vh;
     }
 
+    #lost-ship-2 {
+        background-image: url('./images/cs-2.png');
+    }
+
+    #lost-ship-3 {
+        background-image: url('./images/cs-3.png');
+    }
+
+    #lost-ship-4 {
+        background-image: url('./images/cs-4.png');
+    }
+
+    .images-swap {
+        display: none;
+        transition: ease-in-out;
+    }
+
     #misc .narrow-text{
         margin-top: 5%;
         margin-bottom: 5%;
@@ -2609,7 +2632,7 @@
 
         class SwapImage {
 
-            static get _BigElementId() { return 'ice-worm-gallery-big' }
+            static get _BigElementId() { return 'lost-ship' }
             static get _ElementClass() { return 'images-swap' }
 
             constructor(element, bigImageElement) {
@@ -2655,7 +2678,12 @@
             }
         }
 
-        //const SWAP_IMAGES = SwapImage.prepareImages();
+        const SWAP_IMAGES = SwapImage.prepareImages();
+
+        setInterval(
+            () => { SWAP_IMAGES.map((i) => {i.swap()} ); return; },
+            3000
+        )
 
     </script>
 
