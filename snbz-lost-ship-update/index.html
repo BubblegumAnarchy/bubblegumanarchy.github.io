@@ -284,6 +284,7 @@
 
         .nav a:hover {
             color: white;
+            text-decoration: none;
         }
 
         /** 
@@ -1086,7 +1087,7 @@
         <div class="narrow-container">
             <div class="flex overflow-boxes" id="trivalve">
                 <div class="two-thirds border shadow">
-                    <video autoplay loop muted playsinline poster="./images/trivalve.jpg">
+                    <video id="trivalve-video" autoplay loop muted playsinline poster="./images/trivalve.jpg">
                         <source src="./images/trivalve.mp4" type="video/mp4">
                     </video>
                 </div>
@@ -1527,12 +1528,12 @@
         content: attr(data-tip);
         font-size: 14px;
         position: absolute;
-        background: rgba(38, 39, 73, 0.85);
+        background: rgba(38, 73, 62, 0.85);
         color: #f2f3f7;
         line-height: 1.2em;
         padding: 0.5em;
         font-style: normal;
-        box-shadow: 0 1px 3px rgba(0, 27, 45, 0.3);
+        box-shadow: 0 1px 3px rgba(0, 45, 22, 0.3);
         min-width: 120px;
         text-align: center;
         opacity: 0;
@@ -1923,7 +1924,7 @@
 
     .two-thirds {
         flex-basis: 66.6%;
-        padding: 2rem;
+        /*padding: 2rem;*/
     }
 
     .one-half {
@@ -1980,6 +1981,11 @@
     #trivalve {
         margin-bottom: -5px;
         padding: 20px;
+    }
+
+    #trivalve-video {
+        object-fit: cover;
+        height: 100%;
     }
 
     #trivalve-image {
