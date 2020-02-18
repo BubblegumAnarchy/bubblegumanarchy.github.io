@@ -1052,7 +1052,7 @@
             <h1>LOST SHIP UPDATE</h1>
             <iframe 
                 id="video-trailer" 
-                src="https://www.youtube.com/embed/BWOT-AMJuU8" 
+                src="https://www.youtube.com/embed/rHfzWyQm82A" 
                 frameborder="0" 
                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
                 allowfullscreen="">
@@ -1064,7 +1064,7 @@
         <div class="wide-container background-image" id="lost-ship">
             <div class="textbox right textbox-animating">
                 <p>
-                    We’ve received a number of reports regarding two crashed ships, one discovered near Lilypad Islands and the other near Thermal Vents. Alterra warns visitors to enter downed-craft, such as this one, with great care. Fallen structures and dangerous creatures pose a great threat.
+                    We’ve received a number of reports regarding two crashed ships, one discovered near Lilypad Islands and the other near Thermal Vents. Alterra warns visitors when entering downed-craft, to do so with great care. Fallen structures and dangerous creatures pose a great threat.
                 </p>
             </div>
             <div class="background-image images-swap" id="lost-ship-2">
@@ -1077,7 +1077,7 @@
     
         <div class="textbox-mobile">
             <p>
-                We’ve received a number of reports regarding two crashed ships, one discovered near Lilypad Islands and the other near Thermal Vents. Alterra warns visitors to enter downed-craft, such as this one, with great care. Fallen structures and dangerous creatures pose a great threat.
+                We’ve received a number of reports regarding two crashed ships, one discovered near Lilypad Islands and the other near Thermal Vents. Alterra warns visitors when entering downed-craft, to do so with great care. Fallen structures and dangerous creatures pose a great threat.
             </p>
         </div>
         
@@ -1085,7 +1085,11 @@
 
         <div class="narrow-container">
             <div class="flex overflow-boxes" id="trivalve">
-                <div id="trivalve-image" class="two-thirds background-image border shadow"></div>
+                <div class="two-thirds border shadow">
+                    <video autoplay loop muted playsinline poster="./images/trivalve.jpg">
+                        <source src="./images/trivalve.mp4" type="video/mp4">
+                    </video>
+                </div>
                 <div class="one-third narrow-text shadow">
                     <h2>TRIVALVE</h2>
                     <p>
@@ -1098,8 +1102,8 @@
         <!-- DEEP LILYPADS VIDEO -->
 
         <div id= "deep-lilypads" class="wide-container">
-            <video muted playsinline preload id="crystal-caverns-video" poster="./images/crystal_caverns.jpg">
-                <source src="./images/crystal_caverns.mp4" type="video/mp4">
+            <video muted playsinline preload id="deep-lilypads-video" poster="./images/deep_lilypads.jpg">
+                <source src="./images/deep_lilypads.mp4" type="video/mp4">
             </video>
             <div class="textbox right textbox-animating">
                 <p>
@@ -1146,8 +1150,8 @@
         <!-- AURORA BOREALIS VIEDO -->
         
         <div id="aurora-borealis" class="wide-container">
-            <video autoplay loop muted playsinline poster="./images/leviathan.jpg">
-                <source src="./images/leviathan.mp4" type="video/mp4">
+            <video autoplay loop muted playsinline poster="./images/aurora_borealis.jpg">
+                <source src="./images/aurora_borealis.mp4" type="video/mp4">
             </video>
             <div class="textbox left textbox-animating">
                 <p>
@@ -1985,20 +1989,20 @@
     }
 
     #lost-ship {
-        background-image: url('./images/cs-1.png');
-        height: 60vh;
+        background-image: url('./images/cs-1.jpg');
+        height: 80vh;
     }
 
     #lost-ship-2 {
-        background-image: url('./images/cs-2.png');
+        background-image: url('./images/cs-2.jpg');
     }
 
     #lost-ship-3 {
-        background-image: url('./images/cs-3.png');
+        background-image: url('./images/cs-3.jpg');
     }
 
     #lost-ship-4 {
-        background-image: url('./images/cs-4.png');
+        background-image: url('./images/cs-4.jpg');
     }
 
     .images-swap {
@@ -2012,7 +2016,7 @@
     }
 
     #brinicles {
-        background-image: url('./images/brinicles.png');
+        background-image: url('./images/brinicles.jpg');
         height: 80vh;
     }
 
@@ -2022,14 +2026,14 @@
     }
 
     #hoverbike{
-        background-image: url('./images/lilypad-islands.png');
+        background-image: url('./images/snowfox.jpg');
         height: 30vh;
         z-index: 2;
         width: 100%;
     }
 
     #lilypads{
-        background-image: url('./images/lilypad-islands.png');
+        background-image: url('./images/lilypad-islands.jpg');
         height: 30vh;
         z-index: 2;
         width: 100%;
@@ -2043,7 +2047,7 @@
     }
 
     #story-changes {
-        background-image: url('./images/story.png');
+        background-image: url('./images/story.jpg');
         height: 40vh;
         z-index: 2;
     }
@@ -2071,7 +2075,7 @@
     }
 
     #twitter {
-        background-image: url('./images/twitter.png');
+        background-image: url('./images/twitter.jpg');
     }
 
     @media only screen and (max-width : 480px) {
@@ -2743,7 +2747,7 @@
             }
         }
 
-        const VIDEO1 = new AnimateVideo(document.getElementById('crystal-caverns-video'));
+        const VIDEO1 = new AnimateVideo(document.getElementById('deep-lilypads-video'));
         const VIDEO2 = new AnimateVideo(document.getElementById('hero'));
     </script>
 
