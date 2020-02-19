@@ -1065,7 +1065,7 @@
         <div class="wide-container background-image" id="lost-ship">
             <div class="textbox right textbox-animating">
                 <p>
-                    We’ve received a number of reports regarding two crashed ships, one discovered near Lilypad Islands and the other near Thermal Vents. Alterra warns visitors when entering downed-craft, to do so with great care. Fallen structures and dangerous creatures pose a great threat.
+                    We’ve received a number of reports regarding a crashed ship broken up on the ocean floor, one part discovered near Lilypad Islands and another near Thermal Vents. Alterra warns visitors when entering downed-craft, to do so with great care. Fallen structures and dangerous creatures pose a great threat.
                 </p>
             </div>
             <div class="background-image images-swap" id="lost-ship-2">
@@ -1078,7 +1078,7 @@
     
         <div class="textbox-mobile">
             <p>
-                We’ve received a number of reports regarding two crashed ships, one discovered near Lilypad Islands and the other near Thermal Vents. Alterra warns visitors when entering downed-craft, to do so with great care. Fallen structures and dangerous creatures pose a great threat.
+                We’ve received a number of reports regarding a crashed ship broken up on the ocean floor, one part discovered near Lilypad Islands and another near Thermal Vents. Alterra warns visitors when entering downed-craft, to do so with great care. Fallen structures and dangerous creatures pose a great threat.
             </p>
         </div>
         
@@ -1094,7 +1094,7 @@
                 <div class="one-third narrow-text shadow">
                     <h2>TRIVALVE</h2>
                     <p>
-                        Research continues on the recently discovered Trivalve, a curious creature that expresses attachment to other creatures and enjoys mimicking their behaviours. Some scientists have even reported an ongoing companionship with these adorable amphibians,
+                        Research continues on the recently discovered Trivalve, a curious creature that expresses attachment to other creatures and enjoys mimicking their behaviours. Some scientists have even reported an ongoing companionship with these adorable amphibians.
                     </p>
                 </div> 
             </div> 
@@ -1235,12 +1235,6 @@
                     </div>
                 </div>
                 <div class="twitter-image-container">
-                    <a href="https://twitter.com/disco_jill" alt="disco_jill" target="_blank"><img src="https://dkli3tbfz4zj3.cloudfront.net/all/201911_DeepDive/images/uwedev/disco_jill.jpg"></a>
-                    <div class="overlay">
-                        <div class="text">@disco_jill</div>
-                    </div>
-                </div>
-                <div class="twitter-image-container">
                     <a href="https://twitter.com/duxworth" alt="duxworth" target="_blank"><img src="https://dkli3tbfz4zj3.cloudfront.net/all/201906_SpyPengling/images/uwedev/duxworth.jpg"></a>
                     <div class="overlay">
                         <div class="text">@duxworth</div>
@@ -1283,6 +1277,12 @@
                     </div>
                 </div>
                 <div class="twitter-image-container">
+                <a href="https://www.instagram.com/Scottventurez/" alt="scottventurez" target="_blank"><img src="https://dkli3tbfz4zj3.cloudfront.net/all/201906_SpyPengling/images/uwedev/UWE_Klegran.jpg"></a>
+                    <div class="overlay">
+                        <div class="text">@scottventurez</div>
+                    </div>
+                </div>
+                <div class="twitter-image-container">
                     <a href="https://twitter.com/sewlek" alt="sewlek" target="_blank"><img src="https://dkli3tbfz4zj3.cloudfront.net/all/201906_SpyPengling/images/uwedev/sewlek.jpg"></a>
                     <div class="overlay">
                         <div class="text">@sewlek</div>
@@ -1304,12 +1304,6 @@
                     <a href="https://twitter.com/tedgill" alt="tedgill" target="_blank"><img src="https://dkli3tbfz4zj3.cloudfront.net/all/201906_SpyPengling/images/uwedev/tedgill.jpg"></a>
                     <div class="overlay">
                         <div class="text">@tedgill</div>
-                    </div>
-                </div>
-                <div class="twitter-image-container">
-                    <a href="https://twitter.com/UWE_Klegran" alt="UWE_Klegran" target="_blank"><img src="https://dkli3tbfz4zj3.cloudfront.net/all/201906_SpyPengling/images/uwedev/UWE_Klegran.jpg"></a>
-                    <div class="overlay">
-                        <div class="text">@UWE_Klegran</div>
                     </div>
                 </div>
                 <div class="twitter-image-container">
@@ -2011,11 +2005,6 @@
         background-image: url('https://dkli3tbfz4zj3.cloudfront.net/all/202002_LostShip/images/cs-4.jpg');
     }
 
-    .images-swap {
-        display: none;
-        transition: ease-in-out;
-    }
-
     #misc .narrow-text{
         margin-top: 5%;
         margin-bottom: 5%;
@@ -2103,6 +2092,16 @@
 
         .wrapper {
             height: 300px;
+        }
+
+        #brinicles .textbox {
+            display: block;
+            transform: unset;
+            width: 70%;
+        }
+
+        #brinicles .textbox p {
+            display: unset;
         }
     }
 
@@ -2692,7 +2691,7 @@
 
         setInterval(
             () => { SWAP_IMAGES.map((i) => {i.swap()} ); return; },
-            3000
+            5000
         )
 
     </script>
@@ -2820,7 +2819,7 @@
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
-    <!-- Analytics excluded (debug / development mode)
+    <!-- Analytics excluded (debug / development mode) -->
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-931975-7"></script>
     <script>
@@ -2930,5 +2929,5 @@
                 });
             }
         }
-    </script> -->
+    </script> 
 </html>
