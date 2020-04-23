@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="robots" content="index, follow">
-    <meta name="description" content=" ">
+    <meta name="description" content="The Below Zero Frosbite update has arrived! Start your brand new adventure on Planet 4546B with a revamped story and intro cinematic. But don’t linger too long out in the cold, or hypothermia might begin to set in…">
     <meta name="keywords" content="subnautica,below zero,arctic,biome,unknown worlds,steam,early access,pc,frostbite,update,uwe,epic,discord,glacial basin,quantum,locker,new story,intro,website,news,cold,weather,hypothermia,adventure,game,exploration">
     <meta property="og:title" content="Subnautica: Below Zero Frostbite Update">
     <meta property="og:site_name" content="Subnautica: Below Zero Frostbite Update">
@@ -16,7 +16,7 @@
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@subnautica">
     <meta name="twitter:title" content="Subnautica: Below Zero Frostbite Update">
-    <meta name="twitter:description" content=" ">
+    <meta name="twitter:description" content="The Below Zero Frosbite update has arrived! Start your brand new adventure on Planet 4546B with a revamped story and intro cinematic. But don’t linger too long out in the cold, or hypothermia might begin to set in…">
     <meta name="twitter:image" content="./images/twitter_card_og.jpg">
     <link rel="shortcut icon" href="./favicon.ico" type="image/vnd.microsoft.icon">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
@@ -1029,13 +1029,12 @@
       <div class="nav">
         <ul>
             <a href="#youtube"><i class="tooltip tooltip-left" data-tip="Frostbite Video"><li></li></i></a>
-            <a href="#lost-ship"><i class="tooltip tooltip-left" data-tip="The Lost Ship"><li></li></i></a>
-            <a href="#trivalve"><i class="tooltip tooltip-left" data-tip="Trivalve"><li></li></i></a>
-            <a href="#deep-lilypads"><i class="tooltip tooltip-left" data-tip="Deep Lilypads"><li></li></i></a>
-            <a href="#brinicles"><i class="tooltip tooltip-left" data-tip="Brinicles"><li></li></i></a>
-            <a href="#world-polish"><i class="tooltip tooltip-left" data-tip="Enhancements & Improvements"><li></li></i></a>
-            <a href="#aurora-borealis"><i class="tooltip tooltip-left" data-tip="Aurora Borealis"><li></li></i></a>
-            <a href="#story"><i class="tooltip tooltip-left" data-tip="Story Changes"><li></li></i></a>
+            <a href="#story-changes"><i class="tooltip tooltip-left" data-tip="Story Changes"><li></li></i></a>
+            <a href="#glacial-basin"><i class="tooltip tooltip-left" data-tip="Glacial Basin"><li></li></i></a>
+            <a href="#new-items"><i class="tooltip tooltip-left" data-tip="New Items"><li></li></i></a>
+            <a href="#polish"><i class="tooltip tooltip-left" data-tip="World Polish"><li></li></i></a>
+            <a href="#ui-improvements"><i class="tooltip tooltip-left" data-tip="UI Improvements"><li></li></i></a>
+            <a href="#ore-veins"><i class="tooltip tooltip-left" data-tip="Ore Veins"><li></li></i></a>
         </ul>
       </div>
     </nav>
@@ -1050,7 +1049,7 @@
         </div>
     
         <div class="narrow-container" id="youtube">
-            <h1>Frostbite UPDATE</h1>
+            <h1>FROSTBITE UPDATE</h1>
             <iframe 
                 id="video-trailer" 
                 src="https://www.youtube.com/embed/rHfzWyQm82A" 
@@ -1060,12 +1059,92 @@
             </iframe>
         </div>
 
-        <!-- Frostbite CAROUSEL -->
+        <!-- INTRO CINEMATIC VIDEO -->
 
-        <div class="wide-container background-image" id="lost-ship">
+        <div id="story-changes" class="wide-container">
+            <video autoplay loop muted playsinline poster="./images/aurora_borealis.jpg">
+                <source src="./images/aurora_borealis.mp4" type="video/mp4">
+            </video>
+            <div class="textbox left textbox-animating">
+                <p>
+                    Look up in the late hours of the night to catch an illusive, yet spectacular show in the upper atmosphere. A beautiful display of dancing colors illuminate the night-world of Planet 4546B.
+                </p>
+            </div>
+        </div>
+
+
+        <!-- STORY -->
+
+        <div class="narrow-container">
+            <div class="flex overflow-boxes">
+                <div id="story-text" class="narrow-text shadow">
+                    <h2>Story Changes</h2>
+                    <p>
+                        this is where we talk about changes we've made to the story! 
+                        <a href="https://unknownworlds.com/subnautica/the-future-of-below-zeros-story/">here</a>.
+                    </p>
+                </div>
+            </div> 
+        </div>
+
+        <!-- GLACIAL BASIN VIDEO -->
+
+        <div id= "glacial-basin" class="wide-container">
+            <video muted playsinline preload id="glacial-basin-video" poster="./images/deep_lilypads.jpg">
+                <source src="./images/deep_lilypads.mp4" type="video/mp4">
+            </video>
             <div class="textbox right textbox-animating">
                 <p>
-                    We’ve received a number of reports regarding a crashed ship broken up on the ocean floor, one part discovered near Lilypad Islands and another near Thermal Vents. Alterra warns visitors when entering downed-craft, to do so with great care. Fallen structures and dangerous creatures pose a great threat.
+                    Glacial basin words. 
+                </p>
+            </div>
+        </div>
+    
+        <div class="textbox-mobile">
+            <p>
+                Glacial basin words. 
+            </p>
+        </div>
+
+        <!-- NEW ITEMS -->
+
+        <div class="narrow-container" id="new-items">
+            <div class="overflow-boxes flex">
+                <div class="items background-image one-third shadow border" id="quantum-locker"></div>
+                <div class="item-description narrow-text left-item shadow">
+                    <h3>Quantum Locker</h3>
+                    <p>This is the best item.</p>
+                </div>
+            </div>
+            <div class="overflow-boxes flex">
+                <div class="item-description narrow-text right-item shadow">
+                    <h3>Surface Beacons</h3>
+                    <p>This is the best item.</p>
+                </div>
+                <div class="items background-image one-third shadow border" id="surface-beacons"></div>
+            </div>
+            <div class="overflow-boxes flex">
+                <div class="items background-image one-third shadow border" id="snowballs"></div>
+                <div class="item-description narrow-text left-item shadow">
+                    <h3>Snowballs</h3>
+                    <p>This is the best item.</p>
+                </div>
+            </div>
+            <div class="overflow-boxes flex">
+                <div class="item-description narrow-text right-item shadow">
+                    <h3>Purification Tablets</h3>
+                    <p>This is the best item.</p>
+                </div>
+                <div class="items background-image one-third shadow border" id="purification-tablets"></div>
+            </div>
+        </div>
+
+        <!-- POLISH CAROUSEL -->
+
+        <div class="wide-container background-image" id="world-polish">
+            <div class="textbox right textbox-animating">
+                <p>
+                    We polished a lot it is great. Thank you. 
                 </p>
             </div>
             <div class="background-image images-swap" id="lost-ship-2">
@@ -1078,109 +1157,49 @@
     
         <div class="textbox-mobile">
             <p>
-                We’ve received a number of reports regarding a crashed ship broken up on the ocean floor, one part discovered near Lilypad Islands and another near Thermal Vents. Alterra warns visitors when entering downed-craft, to do so with great care. Fallen structures and dangerous creatures pose a great threat.
+                We polished a lot it is great. Thank you. 
             </p>
         </div>
-        
-        <!-- TRIVALVE VIDEO -->
+
+        <!-- UI IMPROVEMENTS -->
 
         <div class="narrow-container">
-            <div class="flex overflow-boxes" id="trivalve">
-                <div class="two-thirds border shadow">
-                    <video id="trivalve-video" autoplay loop muted playsinline poster="./images/trivalve.jpg">
-                        <source src="./images/trivalve.mp4" type="video/mp4">
-                    </video>
-                </div>
-                <div class="one-third narrow-text shadow">
-                    <h2>TRIVALVE</h2>
+            <div id="ui-improvements" class="flex overflow-boxes">
+                <div id="status-icons" class="background-image border shadow"></div>
+                <div class="narrow-text shadow">
+                    <h2>UI Improvements</h2>
                     <p>
-                        Research continues on the recently discovered Trivalve, a curious creature that expresses attachment to other creatures and enjoys mimicking their behaviours. Some scientists have even reported an ongoing companionship with these adorable amphibians.
+                        Crispy text wooo. Status bars yas (queen)
                     </p>
-                </div> 
+                </div>
+                <div id="crisp-text" class="background-image border shadow"></div>
             </div> 
         </div>
 
-        <!-- DEEP LILYPADS VIDEO -->
+        <!-- ORE VEINS VIDEO -->
 
-        <div id= "deep-lilypads" class="wide-container">
-            <video muted playsinline preload id="deep-lilypads-video" poster="./images/deep_lilypads.jpg">
+        <div id= "ore-veins" class="wide-container">
+            <video muted playsinline preload id="ore-veins-video" poster="./images/deep_lilypads.jpg">
                 <source src="./images/deep_lilypads.mp4" type="video/mp4">
             </video>
             <div class="textbox right textbox-animating">
                 <p>
-                    Far below Lilypad Islands, a cave system housing gigantic glowing flowers subsists. Rich in resources, this dark corner of the world creates the perfect home for these stunningly beautiful flowers.
+                    Look at the shiny stuff oooo resources.
                 </p>
             </div>
         </div>
     
         <div class="textbox-mobile">
             <p>
-                Far below Lilypad Islands, a cave system housing gigantic glowing flowers subsists. Rich in resources, this dark corner of the world creates the perfect home for these stunningly beautiful flowers.
+                Look at the shiny stuff oooo resources.
             </p>
         </div>
 
-        <!-- BRINICLES -->
-
-        <div class="narrow-container background-image" id="brinicles">
-            <div class="textbox bottom">
-                <h2>Brinicles</h2>
-                <p>
-                    These spectacular and unusual ice formations may be found in the Sparse Arctic. While wildly enticing, make sure to steer clear as they promise to administer a nasty freeze.
-                </p>
-            </div>
-        </div>
-
-        <!-- WORLD POLISH -->
-
-        <div class="narrow-container">
-            <div id="world-polish" class="flex">
-                <div id="hoverbike" class="background-image border shadow"></div>
-                <div class="narrow-text shadow">
-                    <h2>Enhancements & Improvments</h2>
-                    <p>
-                        Many areas of the planet have undergone restoration and rehabilitation in the past month. 
-                        Areas such as Lilypad Island and Thermal Spires have responded gloriously to these efforts.
-                        Whether returning to Planet 4546B or visiting for the first time, make sure to stop by and see how they've changed.
-                        We've also put forth great effort to enhance the Snowfox experience, for those who prefer snow drifting.
-                    </p>
-                </div>
-                <div id="lilypads" class="background-image border shadow"></div>
-            </div> 
-        </div>
-
-        <!-- AURORA BOREALIS VIEDO -->
-        
-        <div id="aurora-borealis" class="wide-container">
-            <video autoplay loop muted playsinline poster="./images/aurora_borealis.jpg">
-                <source src="./images/aurora_borealis.mp4" type="video/mp4">
-            </video>
-            <div class="textbox left textbox-animating">
-                <p>
-                    Look up in the late hours of the night to catch an illusive, yet spectacular show in the upper atmosphere. A beautiful display of dancing colors illuminate the night-world of Planet 4546B.
-                </p>
-            </div>
-        </div>
-    
-        <div class="textbox-mobile">
-            <p>
-                Look up in the late hours of the night to catch an illusive, yet spectacular show in the upper atmosphere. A beautiful display of dancing colors illuminate the night-world of Planet 4546B.
-            </p>
-        </div>
-
-        <!-- STORY WARNING -->
-
-        <div class="narrow-container">
-            <div class="flex overflow-boxes" id="story">
-                <div class="two-thirds narrow-text shadow">
-                    <h2>Story Changes</h2>
-                    <p>
-                        We're making big changes to our existing story! This will be the last update with the
-                        current verison of the story playable. Read more about these changes 
-                        <a href="https://unknownworlds.com/subnautica/the-future-of-below-zeros-story/">here</a>.
-                    </p>
-                </div>
-                <div id="story-changes" class="one-third background-image border shadow"></div>
-            </div> 
+        <div class="narrow-container" id="patch-notes">
+            <a href='#'
+                class='btn btn-light'>
+                SEE FULL PATCH NOTES
+            </a>
         </div>
     
         <div class="narrow-container background-image" id="twitter">
@@ -1967,28 +1986,48 @@
         text-align:center;
     }
 
-    #aurora-borealis {
+    #story-text {
+        width: 100%;
+    }
+
+    #glacial-basin {
         margin-bottom: -6px;
         min-height: unset;
     }
 
-    #trivalve {
-        margin-bottom: -5px;
-        padding: 20px;
+    .items {
+        height: 25vh;
     }
 
-    #trivalve-video {
-        object-fit: cover;
-        height: 100%;
+    .item-description {
+        flex-basis: 60%;
     }
 
-    #trivalve-image {
-        background-image: url('./images/fabricator-base.jpg');
-        height: 50vh;
-        z-index: 2;
+    .left-item {
+        margin-left: 20px;
     }
 
-    #lost-ship {
+    .right-item {
+        margin-right: 20px;
+    }
+
+    #surface-beacons {
+        background-image: url('./images/cs-4.jpg');
+    }
+
+    #quantum-locker {
+        background-image: url('./images/cs-4.jpg');
+    }
+
+    #snowballs {
+        background-image: url('./images/cs-4.jpg');
+    }
+
+    #purification-tablets {
+        background-image: url('./images/cs-4.jpg');
+    }
+
+    #world-polish {
         background-image: url('./images/cs-1.jpg');
         height: 80vh;
     }
@@ -2005,46 +2044,27 @@
         background-image: url('./images/cs-4.jpg');
     }
 
-    #misc .narrow-text{
-        margin-top: 5%;
-        margin-bottom: 5%;
-    }
-
-    #brinicles {
-        background-image: url('./images/brinicles.jpg');
-        height: 80vh;
-    }
-
-    #brinicles .textbox {
-        width: 50%;
-        max-width: 900px;
-    }
-
-    #hoverbike{
+    #status-icons {
         background-image: url('./images/snowfox.jpg');
         height: 30vh;
         z-index: 2;
-        width: 100%;
+        width: 30%;
     }
 
-    #lilypads{
+    #crisp-text {
         background-image: url('./images/lilypad-islands.jpg');
         height: 30vh;
         z-index: 2;
-        width: 100%;
+        width: 30%;
     }
 
-    #world-polish .narrow-text {
-        margin-top: unset;
-        margin-bottom: unset;
-        margin-right: 3%;
-        margin-left: 3%;
+    #ui-improvements .narrow-text {
+        width: 39%;
     }
 
-    #story-changes {
-        background-image: url('./images/story.jpg');
-        height: 40vh;
-        z-index: 2;
+    #patch-notes {
+        text-align: center;
+        min-height: 200px;
     }
 
     .tooltip-style {
@@ -2641,7 +2661,7 @@
 
         class SwapImage {
 
-            static get _BigElementId() { return 'lost-ship' }
+            static get _BigElementId() { return 'world-polish' }
             static get _ElementClass() { return 'images-swap' }
 
             constructor(element, bigImageElement) {
@@ -2752,8 +2772,9 @@
             }
         }
 
-        const VIDEO1 = new AnimateVideo(document.getElementById('deep-lilypads-video'));
-        const VIDEO2 = new AnimateVideo(document.getElementById('hero'));
+        const VIDEO1 = new AnimateVideo(document.getElementById('glacial-basin-video'));
+        const VIDEO2 = new AnimateVideo(document.getElementById('ore-veins-video'));
+        const VIDEO3 = new AnimateVideo(document.getElementById('hero'));
     </script>
 
     <script>
@@ -2819,7 +2840,7 @@
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
-    <!-- Analytics excluded (debug / development mode) -->
+    <!-- Analytics excluded (debug / development mode) 
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-931975-7"></script>
     <script>
@@ -2929,5 +2950,5 @@
                 });
             }
         }
-    </script> 
+    </script> -->
 </html>
