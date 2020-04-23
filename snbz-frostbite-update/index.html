@@ -1041,8 +1041,8 @@
 
     <div class="main">
         <div class="hero-container">
-            <video muted playsinline preload id="hero" poster="./images/hero.jpg">
-                <source src="./images/hero.mp4" type="video/mp4">
+            <video muted playsinline preload id="hero" poster="https://dkli3tbfz4zj3.cloudfront.net/all/201911_DeepDive/images/hero.jpg">
+                <source src="https://dkli3tbfz4zj3.cloudfront.net/all/201911_DeepDive/images/hero.mp4" type="video/mp4">
             </video>
             <div class="hero-overlay"></div>
             <img src="./images/logo.png" class="logo" id="logo">
@@ -1090,8 +1090,8 @@
         <!-- GLACIAL BASIN VIDEO -->
 
         <div id= "glacial-basin" class="wide-container">
-            <video muted playsinline preload id="glacial-basin-video" poster="./images/deep_lilypads.jpg">
-                <source src="./images/deep_lilypads.mp4" type="video/mp4">
+            <video muted playsinline preload id="glacial-basin-video" poster="https://dkli3tbfz4zj3.cloudfront.net/all/201911_DeepDive/images/crystal_caverns.jpg">
+                <source src="https://dkli3tbfz4zj3.cloudfront.net/all/201911_DeepDive/images/crystal_caverns.mp4" type="video/mp4">
             </video>
             <div class="textbox right textbox-animating">
                 <p>
@@ -1174,6 +1174,16 @@
                 </div>
                 <div id="crisp-text" class="background-image border shadow"></div>
             </div> 
+            <!-- <div id="crisp-text-slider">
+                <div class="border shadow wrapper mobile-hidden">
+                    <div id="before-image" class="before" draggable="false"></div>
+                    <div id="after-image"class="after" draggable="false"></div>
+                    <div class="scroller">
+                        <svg class="scroller__thumb" xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><polygon points="0 50 37 68 37 32 0 50" style="fill:#fff"/><polygon points="100 50 64 32 64 68 100 50" style="fill:#fff"/></svg>
+                    </div>
+                </div>
+                <img src="https://dkli3tbfz4zj3.cloudfront.net/all/201911_DeepDive/images/filmic.jpg" class="image-responsive border shadow mobile-visible">
+            </div>  -->
         </div>
 
         <!-- ORE VEINS VIDEO -->
@@ -2058,6 +2068,21 @@
         width: 30%;
     }
 
+    #before-image {
+        background-image: url('./images/lilypad-islands.jpg');
+        
+    }
+
+    #after-image {
+        background-image: url('./images/snowfox.jpg');
+        user-drag: none; 
+        user-select: none;
+        -moz-user-select: none;
+        -webkit-user-drag: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+    }
+
     #ui-improvements .narrow-text {
         width: 39%;
     }
@@ -2097,31 +2122,13 @@
         h2 {
             font-size: 14px;
         }
-        
-        #fb-image {
-            height: 30vh;
-        }
 
         .narrow-text{
             margin-top: 0;
         }
 
-        #misc .narrow-text {
-            margin-top: 0;
-        }
-
         .wrapper {
             height: 300px;
-        }
-
-        #brinicles .textbox {
-            display: block;
-            transform: unset;
-            width: 70%;
-        }
-
-        #brinicles .textbox p {
-            display: unset;
         }
     }
 
@@ -2649,6 +2656,57 @@
             // Add animateout method
 
         }
+    </script>
+
+    <script>
+        /* Frostbite Update Site - Before/After Script */
+        
+        let active = false;
+
+        document.querySelector('.scroller').addEventListener('mousedown',function(){
+            active = true;
+            document.querySelector('.scroller').classList.add('scrolling');
+        });
+
+        document.body.addEventListener('mouseup',function(){
+            active = false;
+            document.querySelector('.scroller').classList.remove('scrolling');
+        });
+
+        document.body.addEventListener('mouseleave',function(){
+            active = false;
+            document.querySelector('.scroller').classList.remove('scrolling');
+        });
+
+        document.body.addEventListener('mousemove',function(e){
+            if (!active) return;
+            let x = e.pageX;
+            x -= document.querySelector('.wrapper').getBoundingClientRect().left;
+            scrollIt(x);
+        });
+
+        // For mobile
+        document.querySelector('.scroller').addEventListener('touchstart',function(){
+            active = true;
+            document.querySelector('.scroller').classList.add('scrolling');
+        });
+
+        document.body.addEventListener('touchend',function(){
+            active = false;
+            document.querySelector('.scroller').classList.remove('scrolling');
+        });
+        
+        document.body.addEventListener('touchcancel',function(){
+            active = false;
+            document.querySelector('.scroller').classList.remove('scrolling');
+        });
+
+        function scrollIt(x){
+            let transform = Math.max(0,(Math.min(x,document.querySelector('.wrapper').offsetWidth)));
+            document.querySelector('.after').style.width = transform+"px";
+            document.querySelector('.scroller').style.left = transform-25+"px";
+        }
+        scrollIt(150);
     </script>
 
     <script>
