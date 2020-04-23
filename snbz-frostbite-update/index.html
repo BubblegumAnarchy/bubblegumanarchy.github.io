@@ -1141,17 +1141,15 @@
 
         <!-- POLISH CAROUSEL -->
 
-        <div class="wide-container background-image" id="world-polish">
+        <div class="wide-container" id="world-polish">
+            <span class="background-image" id="lost-ship-1"></span>
+            <span class="background-image" id="lost-ship-2"></span>
+            <span class="background-image" id="lost-ship-3"></span>
+            <span class="background-image" id="lost-ship-4"></span>
             <div class="textbox right textbox-animating">
                 <p>
                     We polished a lot it is great. Thank you. 
                 </p>
-            </div>
-            <div class="background-image images-swap" id="lost-ship-2">
-            </div>
-            <div class="background-image images-swap" id="lost-ship-3">
-            </div>
-            <div class="background-image images-swap" id="lost-ship-4">
             </div>
         </div>
     
@@ -2038,8 +2036,32 @@
     }
 
     #world-polish {
-        background-image: url('./images/cs-1.jpg');
+        position: relative;
         height: 80vh;
+    }
+
+    #world-polish > span 
+    {
+        opacity: 0;
+        object-fit: cover;
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        width: 100%;
+        height: 100%;
+        -webkit-transition: all 0.5s ease-out;
+        -moz-transition:all 0.5s ease-out;
+        -o-transition:all 0.5s ease-out;
+        transition:all 0.5s ease-out;
+        z-index: 5;
+    }
+
+    #world-polish > span.visible {
+        opacity: 1;
+    }
+
+    #lost-ship-1 {
+        background-image: url('./images/cs-1.jpg');  
     }
 
     #lost-ship-2 {
@@ -2075,12 +2097,6 @@
 
     #after-image {
         background-image: url('./images/snowfox.jpg');
-        user-drag: none; 
-        user-select: none;
-        -moz-user-select: none;
-        -webkit-user-drag: none;
-        -webkit-user-select: none;
-        -ms-user-select: none;
     }
 
     #ui-improvements .narrow-text {
@@ -2717,60 +2733,170 @@
         * 
         */
 
-        class SwapImage {
+        class CyclableImage {
 
-            static get _BigElementId() { return 'world-polish' }
-            static get _ElementClass() { return 'images-swap' }
+            static get _VisibleClass() { return 'visible'; }
 
-            constructor(element, bigImageElement) {
-                this._element = element;
-                this._bigImageElement = bigImageElement;
-                if (!this._element) {
-                    throw Error("Image element can't be falsey", this._element);
-                }
-                const self = this;
-                this._element.addEventListener(
-                    'click', this.swap.bind(self)
+            constructor(
+                image  // HTML Dom ELement
+            ){
+                this._image = image;
+                return;
+            }
+
+            show() {
+                requestAnimationFrame(() => {
+                    this._image.classList.add(CyclableImage._VisibleClass);
+                });
+                return;
+            }
+
+            hide() {
+                this._image.classList.remove(
+                    CyclableImage._VisibleClass
                 );
                 return;
             }
 
-            swap() {
-                const viewportWidth = window.innerWidth || document.documentElement.clientWidth;
-
-                if (viewportWidth > 480) {
-                    const elementStyle = getComputedStyle(this._element, '');
-                    const bigStyle = getComputedStyle(this._bigImageElement, '');
-                    const elementSource = elementStyle.getPropertyValue('background-image');
-                    const bigImageSource = bigStyle.getPropertyValue('background-image');
-                    this._bigImageElement.style.backgroundImage = elementSource;
-                    this._element.style.backgroundImage = bigImageSource;
-                    return;
-                } else { return; }
+            _adjustZIndex(change) {
+                const existing = Number(this._image.style.zIndex);
+                const newZ = existing + change;
+                this._image.style.zIndex = String(newZ);
+                return;
             }
 
-            static prepareImages() {
-                const imageElements = document.getElementsByClassName(
-                    SwapImage._ElementClass
+            incrementZIndex() {
+                this._adjustZIndex(1);
+                return;
+            }
+
+            decrementZIndex() {
+                this._adjustZIndex(-1);
+                return;
+            }
+
+        }
+
+        class ImageCycler {
+            
+            static get _FadeTime() { return 500; } // Milliseconds
+            static get _CycleTime() { return 5000; } // Milliseconds
+
+            constructor(
+                images,      // Array of CyclableImages
+                imageFrame   // DOM element in which images will cycle
+            ) {
+
+                this._images = images;
+                this._imageFrame = imageFrame;
+                this._index = 0;
+                this._images[this._index].show();
+
+                const self = this;
+                setInterval(
+                    () => { self._cycle(); },
+                    ImageCycler._CycleTime
                 );
+                return;
+            }
 
-                const images = Array();
+            _cycle() {
 
-                for (let i = 0; i < imageElements.length; i++) {
-                    const image = new SwapImage(imageElements[i], document.getElementById(SwapImage._BigElementId));
-                    images.push(image);
+                const Self = ImageCycler;
+                const indexToFadeOut = this._index;
+
+                this._index += 1;
+                if (this._index >= this._images.length) {
+                    this._index = 0;
                 }
 
-                return images;
+                this._images[this._index].incrementZIndex();
+                this._images[indexToFadeOut].decrementZIndex();
+                this._images[this._index].show();
+
+                setTimeout(
+                    () => {
+                        this._images[indexToFadeOut].hide();
+                    },
+                    Self._FadeTime
+                );
+
+                return;
+            }
+
+            static initialize(elementId) {
+                const frame = document.getElementById(elementId);
+                const rawImages = Array.from(
+                    frame.getElementsByTagName('span')
+                );
+                const images = rawImages.map(
+                    (rawImage) => { return new CyclableImage(rawImage); }
+                )
+                return new ImageCycler(images, frame);
             }
         }
 
-        const SWAP_IMAGES = SwapImage.prepareImages();
+        const IMAGE_CYCLER = ImageCycler.initialize('world-polish');
 
-        setInterval(
-            () => { SWAP_IMAGES.map((i) => {i.swap()} ); return; },
-            5000
-        )
+    </script>
+
+    <script>
+    /**
+    * 
+    * UWE Subnautica Updates - Swap Images Class
+    * Author - jess@unknownworlds.com
+    * 
+    */
+
+    class SwapImage {
+
+        static get _BigElementId() { return 'id-of-big-image' }
+        static get _ElementClass() { return 'images-swap' }
+
+        constructor(element, bigImageElement) {
+            this._element = element;
+            this._bigImageElement = bigImageElement;
+            if (!this._element) {
+                throw Error("Image element can't be falsey", this._element);
+            }
+            const self = this;
+            this._element.addEventListener(
+                'click', this.swap.bind(self)
+            );
+            return;
+        }
+
+        swap() {
+            const viewportWidth = window.innerWidth || document.documentElement.clientWidth;
+
+            if (viewportWidth > 480) {
+                const elementStyle = getComputedStyle(this._element, '');
+                const bigStyle = getComputedStyle(this._bigImageElement, '');
+                const elementSource = elementStyle.getPropertyValue('background-image');
+                const bigImageSource = bigStyle.getPropertyValue('background-image');
+                this._bigImageElement.style.backgroundImage = elementSource;
+                this._element.style.backgroundImage = bigImageSource;
+                return;
+            } else { return; }
+        }
+
+        static prepareImages() {
+            const imageElements = document.getElementsByClassName(
+                SwapImage._ElementClass
+            );
+
+            const images = Array();
+
+            for (let i = 0; i < imageElements.length; i++) {
+                const image = new SwapImage(imageElements[i], document.getElementById(SwapImage._BigElementId));
+                images.push(image);
+            }
+
+            return images;
+        }
+    }
+
+    //const SWAP_IMAGES = SwapImage.prepareImages();
 
     </script>
 
