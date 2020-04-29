@@ -5,11 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="robots" content="index, follow">
-    <meta name="description" content="The Subnautica: Below Zero Frosbite update has arrived! Start your brand new adventure on Planet 4546B with a revamped story and intro cinematic. But don’t linger too long out in the cold, or hypothermia might begin to set in…">
+    <meta name="description" content="The Subnautica: Below Zero Frostbite update has arrived! Start your brand new adventure on Planet 4546B with a revamped story and intro cinematic. But don’t linger too long out in the cold, or hypothermia might begin to set in…">
     <meta name="keywords" content="subnautica,below zero,arctic,biome,unknown worlds,steam,early access,pc,frostbite,update,uwe,epic,discord,glacial basin,quantum,locker,new story,intro,website,news,cold,weather,hypothermia,adventure,game,exploration">
     <meta property="og:title" content="Subnautica: Below Zero Frostbite Update">
     <meta property="og:site_name" content="Subnautica: Below Zero Frostbite Update">
-    <meta property="og:url" content="https://unknownworlds.com/subnautica/below-zero-lost-ship-update">
+    <meta property="og:url" content="https://unknownworlds.com/subnautica/below-zero-frostbite-update">
     <meta property="og:description" content=" ">
     <meta property="og:type" content="website">
     <meta property="og:image" content="./images/twitter_card_og.jpg">
@@ -53,14 +53,14 @@
             font-size: 14px;
             line-height: 1.42857143;
             color: #f2f3f7;
-            background-color: #021c29;
+            background-color: #021029;
         }
 
         .main {
             margin-left: auto;
             margin-right: auto;
             max-width: 2048px;
-            background-color: #023021;
+            background-color: #1c4078;
             overflow: hidden;
         }
 
@@ -234,12 +234,25 @@
 
         .btn-light {
             border: none;
+            background: #d4edfe;
+            color: #174474;
+            box-shadow: 0 5px #34496e;
+        }
+
+        .btn-light:hover {
+            background: #a2c4da;
+            color: #174474;
+            text-decoration: none;
+        }
+
+        .btn-accent {
+            border: none;
             background: #ffdc72;
             color: #e18e25;
             box-shadow: 0 5px #fd9f29;
         }
 
-        .btn-light:hover {
+        .btn-accent:hover {
             color: white;
             text-decoration: none;
         }
@@ -1021,7 +1034,7 @@
         >
       </a>
 
-      <button class="btn btn-light" id="buybar-button">Buy</button>
+      <button class="btn btn-accent" id="buybar-button">Buy</button>
 
       <div class="nav-filler"></div>
 
@@ -1034,7 +1047,9 @@
             <a href="#new-items"><i class="tooltip tooltip-left" data-tip="New Items"><li></li></i></a>
             <a href="#polish"><i class="tooltip tooltip-left" data-tip="World Polish"><li></li></i></a>
             <a href="#ui-improvements"><i class="tooltip tooltip-left" data-tip="UI Improvements"><li></li></i></a>
-            <a href="#ore-veins"><i class="tooltip tooltip-left" data-tip="Ore Veins"><li></li></i></a>
+            <a href="#ore-vein"><i class="tooltip tooltip-left" data-tip="Ore Veins"><li></li></i></a>
+            <a href="#escalating-weather"><i class="tooltip tooltip-left" data-tip="Weather Changes"><li></li></i></a>
+            <a href="#cold-mechanics"><i class="tooltip tooltip-left" data-tip="Cold Mechanics"><li></li></i></a>
         </ul>
       </div>
     </nav>
@@ -1099,7 +1114,7 @@
                     After extended time without human interference, Glacial 
                     Basin and Glacial Bay are returning to their natural state. 
                     Brightly-colored fauna flourishes in the shadows of the 
-                    towering crevasses. Below these icey formations, a network 
+                    towering crevasses. Below these icy formations, a network 
                     of extensive caves hides. 
                 </p>
             </div>
@@ -1110,7 +1125,7 @@
                 After extended time without human interference, Glacial 
                 Basin and Glacial Bay are returning to their natural state. 
                 Brightly-colored fauna flourishes in the shadows of the 
-                towering crevasses. Below these icey formations, a network 
+                towering crevasses. Below these icy formations, a network 
                 of extensive caves hides.  
             </p>
         </div>
@@ -1177,16 +1192,17 @@
         <!-- POLISH CAROUSEL -->
 
         <div id="world-polish" class="wide-container shadow">
-            <span class="background-image" id="lost-ship-1"></span>
-            <span class="background-image" id="lost-ship-2"></span>
-            <span class="background-image" id="lost-ship-3"></span>
-            <span class="background-image" id="lost-ship-4"></span>
+            <span class="background-image" id="polish-1"></span>
+            <span class="background-image" id="polish-2"></span>
+            <span class="background-image" id="polish-3"></span>
+            <span class="background-image" id="polish-4"></span>
             <div class="textbox right textbox-animating">
                 <p>
                     Similar to Glacial Basin, many areas of 4546B are thriving 
                     thanks to an absence of invasive species. Budding botanists and 
                     hobbyist xenobiologists alike will enjoy the metamorphosis the 
-                    planet is undergoing. 
+                    planet is undergoing, especially in the Arctic Trench and 
+                    Thermal Vents regions. 
                 </p>
             </div>
         </div>
@@ -1196,7 +1212,8 @@
                 Similar to Glacial Basin, many areas of 4546B are thriving 
                 thanks to an absence of invasive species. Budding botanists and 
                 hobbyist xenobiologists alike will enjoy the metamorphosis the 
-                planet is undergoing. 
+                planet is undergoing, especially in the Arctic Trench and 
+                Thermal Vents regions. 
             </p>
         </div>
 
@@ -1208,10 +1225,11 @@
                 <div class="narrow-text shadow">
                     <h2>UI Improvements</h2>
                     <p>
-                        Items that utilize power such as batteries now display 
-                        bar reflecting their status. As the battery wears down, 
-                        the status indicator lowers. We’ve also upgraded the 
-                        text to provide a clearer, crispier experience.
+                        Items that degrade over time, such as anything using 
+                        power, now display a bar reflecting their status. As the
+                         item wears down, the status indicator lowers. We’ve 
+                        also upgraded the text to provide a clearer, crispier 
+                        experience.
                     </p>
                 </div>
                 <div id="crisp-text" class="background-image border shadow"></div>
@@ -1228,12 +1246,9 @@
             </div>  -->
         </div>
 
-        <!-- ORE VEINS VIDEO -->
+        <!-- ORE VEINS -->
 
-        <div id= "ore-veins" class="wide-container shadow">
-            <video muted playsinline preload id="ore-veins-video" poster="./images/deep_lilypads.jpg">
-                <source src="./images/deep_lilypads.mp4" type="video/mp4">
-            </video>
+        <div id= "ore-vein" class="wide-container shadow background-image">
             <div class="textbox right textbox-animating">
                 <p>
                     Running low on a precious resource? Keep an eye out for Ore 
@@ -1433,7 +1448,7 @@
                     Subnautica Dev Team List</a>
                 </p>
                 <a href='https://twitter.com/Subnautica/lists/subnautica-dev-team/members'
-                    class='btn btn-light'>
+                    class='btn btn-accent'>
                     Follow All Devs
                 </a>
 
@@ -1555,7 +1570,7 @@
     **/
 
     a {
-        color: #fff;
+        color: #478daa;
         text-decoration: none;
     }
 
@@ -1599,7 +1614,7 @@
     h2 {
         font-family: 'Open Sans', sans-serif;
         margin: 20px auto 20px auto;
-        color: #f2f3f7;
+        color: #174474;
         /*text-align: center;*/
         letter-spacing: 2px;
         font-weight: 600;
@@ -1607,9 +1622,13 @@
         text-transform: uppercase;
     }
 
+    h3 {
+        color: #174474
+    }
+
     p {
         font-family: 'Open Sans', sans-serif;
-        color: #f2f3f7;
+        color: #174474;
         margin: 0 0 10px;
         font-weight: 400;
         font-size: 16px;
@@ -1620,7 +1639,7 @@
     }
 
     hr {
-        border: 0.5px solid;
+        border: 0.5px solid #174474;
         margin: 3rem 0;
     }
 
@@ -1642,18 +1661,18 @@
         content: attr(data-tip);
         font-size: 14px;
         position: absolute;
-        background: rgba(38, 73, 62, 0.85);
+        background: rgba(18, 29, 43, 0.85);
         color: #f2f3f7;
         line-height: 1.2em;
         padding: 0.5em;
         font-style: normal;
-        box-shadow: 0 1px 3px rgba(0, 45, 22, 0.3);
+        box-shadow: 0 1px 3px rgba(0, 1, 48, 0.55);
         min-width: 120px;
         text-align: center;
         opacity: 0;
         visibility: hidden;
         transition: all .3s ease-in-out;
-        text-shadow: 1px 1px 1px rgba(204, 205, 233, 0.5);
+        text-shadow: 1px 1px 1px rgba(2, 3, 9, 0.5);
         letter-spacing: 0;
         font-weight: 600;
     }
@@ -1685,7 +1704,7 @@
 
     .tooltip-left:after {
         border-width: 8px 0 8px 8px;
-        border-color: transparent transparent transparent rgba(38, 39, 73, 0.85);
+        border-color: transparent transparent transparent rgba(18, 29, 43, 0.85);
         left: -8px;
         top: 50%;
         transform: translate(0, -50%);
@@ -1764,7 +1783,7 @@
     **/
 
     .textbox {
-        background: rgba(12, 47, 36, 0.5); 
+        background: rgba(81, 118, 153, 0.78); 
         width: 450px;
         padding-top: 30px;
         padding-left: 36px;
@@ -1786,7 +1805,7 @@
 
     .textbox-mobile {
         display: none;
-        background: rgba(255,255,255, 0.41); 
+        background: #d4edfe; 
         width: 100%;
         padding-top: 18px;
         padding-bottom: 18px;
@@ -1969,7 +1988,7 @@
     */
 
     .narrow-container {
-        background-color: #04283a;
+        background-color: #46719f;
         color: #f2f3f7;
         /*min-height: 400px;*/
         padding: 50px 20px;
@@ -1990,15 +2009,15 @@
     }
 
     .rborder {
-        border-right: 2px solid #2b3043
+        border-right: 2px solid #d4edfe;
     }
 
     .tborder {
-        border-top: 2px solid #2b3043;
+        border-top: 2px solid #d4edfe;
     }
 
     .border {
-        border: #079d87;
+        border: #d4edfe;
         border-width: 1px;
         border-style: solid;
     }
@@ -2058,7 +2077,7 @@
     }
 
     .narrow-text {
-        background-color: #079d87;
+        background-color: #d4edfe;
         margin-top: 3%;
         margin-bottom: 3%;
         padding: 25px 50px;
@@ -2121,19 +2140,19 @@
     }
 
     #surface-beacons {
-        background-image: url('./images/cs-4.jpg');
+        background-image: url('./images/beacon.png');
     }
 
     #quantum-locker {
-        background-image: url('./images/cs-4.jpg');
+        background-image: url('./images/quantum-locker.png');
     }
 
     #snowballs {
-        background-image: url('./images/cs-4.jpg');
+        background-image: url('./images/snowball.png');
     }
 
     #purification-tablets {
-        background-image: url('./images/cs-4.jpg');
+        background-image: url('./images/tablets.png');
     }
 
     #world-polish {
@@ -2161,55 +2180,60 @@
         opacity: 1;
     }
 
-    #lost-ship-1 {
-        background-image: url('./images/cs-1.jpg');  
+    #polish-1 {
+        background-image: url('./images/polish-1.png');  
     }
 
-    #lost-ship-2 {
-        background-image: url('./images/cs-2.jpg');
+    #polish-2 {
+        background-image: url('./images/polish-2.png');
     }
 
-    #lost-ship-3 {
-        background-image: url('./images/cs-3.jpg');
+    #polish-3 {
+        background-image: url('./images/polish-3.png');
     }
 
-    #lost-ship-4 {
-        background-image: url('./images/cs-4.jpg');
+    #polish-4 {
+        background-image: url('./images/polish-4.png');
     }
 
     #status-icons {
-        background-image: url('./images/snowfox.jpg');
+        background-image: url('./images/status.gif');
         height: 30vh;
         z-index: 2;
-        width: 30%;
+        flex-basis: 30%;
+    }
+
+    #ore-vein {
+        background-image: url('./images/ore-vein.png');
     }
 
     #crisp-text {
-        background-image: url('./images/lilypad-islands.jpg');
+        background-image: url('./images/text-after.png');
         height: 30vh;
         z-index: 2;
-        width: 30%;
+        flex-basis: 30%;
     }
 
     #before-image {
-        background-image: url('./images/lilypad-islands.jpg');
+        background-image: url('./images/text-before.png');
         
     }
 
     #after-image {
-        background-image: url('./images/snowfox.jpg');
+        background-image: url('./images/text-after.png');
     }
 
     #ui-improvements .narrow-text {
-        width: 39%;
+        flex-basis: 39%;
     }
 
     #cold-mechanics {
-        background-image: url('./images/lilypad-islands.jpg');
+        background-image: url('./images/cold.jpg');
+        height: 75vh;
     }
     
     #weather-details {
-        background: #079d87;
+        background: #d4edfe;
         margin-top: -50px;
         padding: 50px;
         margin-left: 50px;
@@ -2252,7 +2276,7 @@
     }
 
     #twitter {
-        background-image: url('./images/twitter.jpg');
+        background-image: url('./images/twitter.png');
     }
 
     @media only screen and (max-width : 480px) {
@@ -2262,10 +2286,82 @@
 
         .narrow-text{
             margin-top: 0;
+            margin-bottom: 0;
         }
 
         .wrapper {
             height: 300px;
+        }
+
+        .item-description {
+            flex-basis: 100%;
+        }
+
+        #new-items > div.overflow-boxes {
+            height: unset;
+        }
+
+        #status-icons {
+            flex-basis: 100%;
+        }
+
+        #crisp-text {
+            flex-basis: 100%;
+        }
+
+        #ui-improvements .narrow-text {
+            flex-basis: 100%;
+        }
+
+        .items {
+            height: 200px;
+        }
+
+        .left-item {
+            order: 2;
+        }
+
+        .right-item {
+            order: 2;
+        }
+
+        #surface-beacons {
+            order: 1;
+        }
+
+        #quantum-locker {
+            order: 1;
+        }
+
+        #snowballs {
+            order: 1;
+        }
+
+        #purification-tablets {
+            order: 1;
+        }
+    }
+
+    @media (min-width : 481px) and (max-width: 850px) {
+
+        .overflow-boxes {
+            margin-left: 0 !important;
+            margin-right: 0 !important;
+        }
+
+        #status-icons {
+            height: 50vh;
+        }
+
+        #crisp-text {
+            height: 50vh;
+        }
+
+    }
+
+    @media (min-width : 481px) and (max-width: 1679px) {
+        #new-items > div.overflow-boxes {
+            height: 50vh;
         }
     }
 
@@ -2287,7 +2383,7 @@
         padding: 3em 5em 3em 5em;
         margin: 50px 0 0px 0;
         max-width: 1000px;
-        background-color: rgba(13, 26, 38, 0.41);
+        background-color: rgba(147, 168, 187, 0.41);
     }
 
     .twitter-grid h2 {
@@ -2303,6 +2399,10 @@
         align-self: center;
         margin-top: 36px;
         color: white;
+    }
+
+    .twitter-grid > p > a {
+        color: #ade6fd;
     }
 
     .twitter-grid img {
@@ -2357,7 +2457,7 @@
         position: relative;
         overflow: hidden; 
         min-height: 100vh; 
-        background-image: url('./images/footer.jpg');
+        background-image: url('./images/footer.png');
         background-size: cover;
         margin-right: 0px;
         margin-left: 0px;
@@ -2472,7 +2572,7 @@
         font-size: 14px;
         letter-spacing: 1px;
         text-align: center;
-        text-shadow: 0px 0px 3px rgba(0, 0, 0, 1);
+        text-shadow: 0px 0px 3px rgba(168, 192, 207, 1);
     }
 
 
@@ -2491,7 +2591,7 @@
 
     footer p {
         font-size: 10px;
-        color: #58dfcc;
+        color: white;
     }
 
 
@@ -2507,17 +2607,19 @@
     }
     @media screen and (max-width: 1279px) {
         #video-trailer, .video-embed {
-            width: 720px;
-            height: 405px;
+            width: 640px;
+            height: 360px;
+/*             width: 720px;
+            height: 405px; */
         } 
     }
-    @media screen and (max-width: 850px) {
+/*     @media screen and (max-width: 850px) {
         #video-trailer, .video-embed {
             width: 640px;
             height: 360px;
         } 
-    }
-    @media screen and (max-width: 760px) {
+    } */
+    @media screen and (max-width: 1160px) {
         #video-trailer, .video-embed {
             width: 416px;
             height: 234px;
@@ -2598,20 +2700,12 @@
             padding: 1em 2em 1em 2em;
         }
 
-        /* .mailchimp-textbox-mobile {
-            display: block;
-        } */
-
         .mailchimp-textbox {
             position: unset;
             top: unset;
             left: unset;
             transform: unset;
         }
-
-        /* .mailchimp-desktop {
-            display: none;
-        } */
 
         footer {
             display: none;
@@ -3078,7 +3172,6 @@
         }
 
         const VIDEO1 = new AnimateVideo(document.getElementById('glacial-basin-video'));
-        const VIDEO2 = new AnimateVideo(document.getElementById('ore-veins-video'));
         const VIDEO3 = new AnimateVideo(document.getElementById('hero'));
     </script>
 
