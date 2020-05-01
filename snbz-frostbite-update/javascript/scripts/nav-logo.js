@@ -1,1 +1,0 @@
-const NAVLOGO = new NavLogo('nav-wrapper', 'logo');
