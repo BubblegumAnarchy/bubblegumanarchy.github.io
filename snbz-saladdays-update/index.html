@@ -1,0 +1,3349 @@
+<!DOCTYPE html>
+  <head>
+    <title>Subnautica: Below Zero Frostbite Update</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="robots" content="index, follow">
+    <meta name="description" content="The Subnautica: Below Zero Frostbite update has arrived! Start your brand new adventure on Planet 4546B with a revamped story and intro cinematic. But don’t linger too long out in the cold, or hypothermia might begin to set in…">
+    <meta name="keywords" content="subnautica,below zero,arctic,biome,unknown worlds,steam,early access,pc,frostbite,update,uwe,epic,discord,glacial basin,quantum,locker,new story,intro,website,news,cold,weather,hypothermia,adventure,game,exploration">
+    <meta property="og:title" content="Subnautica: Below Zero Frostbite Update">
+    <meta property="og:site_name" content="Subnautica: Below Zero Frostbite Update">
+    <meta property="og:url" content="https://unknownworlds.com/subnautica/below-zero-frostbite-update">
+    <meta property="og:description" content=" ">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://dkli3tbfz4zj3.cloudfront.net/all/202004_Frostbite/images/twitter_card_og.jpg">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@subnautica">
+    <meta name="twitter:title" content="Subnautica: Below Zero Frostbite Update">
+    <meta name="twitter:description" content="The Subnautica: Below Zero Frosbite update has arrived! Start your brand new adventure on Planet 4546B with a revamped story and intro cinematic. But don’t linger too long out in the cold, or hypothermia might begin to set in…">
+    <meta name="twitter:image" content="https://dkli3tbfz4zj3.cloudfront.net/all/202004_Frostbite/images/twitter_card_og.jpg">
+    <link rel="shortcut icon" href="https://dkli3tbfz4zj3.cloudfront.net/all/202004_Frostbite/favicon.ico" type="image/vnd.microsoft.icon">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+    <style>
+        /** 
+        * Base site styles such as h1, i, background color, etc 
+        **/
+
+        * {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        *:before,
+        *:after {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        html {
+        font-family: sans-serif;
+        font-size: 10px;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        -webkit-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 14px;
+            line-height: 1.42857143;
+            color: #f2f3f7;
+            background-color: #021029;
+        }
+
+        .main {
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 2048px;
+            background-color: #1c4078;
+            overflow: hidden;
+        }
+
+        input,
+        button,
+        select,
+        textarea {
+            font-family: inherit;
+            font-size: inherit;
+            line-height: inherit;
+        }
+
+        h1 {
+            font-family: 'Open Sans', sans-serif;
+            margin: 20px auto 40px auto;
+            color: #f2f3f7;
+            text-align: center;
+            letter-spacing: 4px;
+            font-weight: 400;
+            font-size: 36px;
+            text-transform: uppercase;
+            text-shadow: 2px 2px 10px rgba(110, 166, 197, 0.84);
+        }
+
+        /**
+        * Loading screen style
+        */
+
+        .loading-screen {
+            position: fixed;
+            width: 100vw;
+            height: 100vh;
+            top: 0px;
+            left: 0px;
+            background-color: white;
+            z-index: 50;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            opacity: 1;
+            transition: all 0.9s ease-out;
+        }
+        #loading-screen p {
+            color: slategrey;
+            font-size: 18px;
+            margin: 12px;
+            text-shadow: none;
+        }
+        #loading-screen-graph {
+            width: 100%;
+            height: 100%;
+        }
+        #loading-screen-graph-container {
+            display: block;
+            position: absolute;
+            width: 340px;
+            height: 340px;
+            z-index: -1
+        }
+        .loading-screen-fadeout {
+            opacity: 0;
+        }
+
+        /**
+        * Hero Styles
+        */
+
+        .hero-container {
+            width: 100%;
+            height: auto;
+            position: relative;
+            padding: 0px;
+            margin: 0px 0px -15px 0px;
+        }
+
+        .hero-container img {
+            position: absolute;
+            width: 50%;
+            top: 45%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 4;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            height: calc(100% - 5px);
+            /*background-color: rgba(0, 0, 0, 0.4);*/
+            z-index: 2;
+            padding: 0px;
+            margin: 0px;
+        }
+
+        .hero-container video {
+            width: 100%;
+            height: auto;
+            min-height: 100%;
+            overflow: hidden;
+            padding: 0px;
+            margin: 0px;
+            background-color: black;
+        }
+
+        .logo {
+            position: absolute;
+            top: 20%;
+            width: 40%;
+            max-width: 700px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        #logo {
+            z-index: 4;
+        }
+
+        #sparkle {
+            z-index: 5;
+        }
+
+        @media only screen and (max-width : 480px) {
+            .logo {
+                top: 25%;
+            }
+        }
+
+        /**
+            Button Styles
+        */
+
+        .btn {
+            font-family: inherit;
+            font-size: inherit;
+            color: inherit;
+            background: none;
+            cursor: pointer;
+            padding: 15px 40px;
+            display: inline-block;
+            margin: 15px 30px;
+            text-transform: uppercase;
+            text-align: center;
+            letter-spacing: 1px;
+            font-weight: 700;
+            outline: none;
+            position: relative;
+            -webkit-transition: all 0.3s;
+            -moz-transition: all 0.3s;
+            transition: all 0.3s;
+            border-radius: 7px;
+        }
+
+        .btn:after {
+            content: '';
+            position: absolute;
+            z-index: -1;
+            -webkit-transition: all 0.3s;
+            -moz-transition: all 0.3s;
+            transition: all 0.3s;
+        }
+
+        .btn-dark {
+            border: none;
+            background: #2b3043;
+            color: white;
+            box-shadow: 0 5px #000;
+        }
+
+        .btn-light {
+            border: none;
+            background: #d4edfe;
+            color: #174474;
+            box-shadow: 0 5px #34496e;
+        }
+
+        .btn-light:hover {
+            background: #a2c4da;
+            color: #174474;
+            text-decoration: none;
+        }
+
+        .btn-accent {
+            border: none;
+            background: #ffdc72;
+            color: #e18e25;
+            box-shadow: 0 5px #fd9f29;
+        }
+
+        .btn-accent:hover {
+            color: white;
+            text-decoration: none;
+        }
+
+
+        /** 
+        * Navbar Styles
+        **/
+
+        .nav-logo {
+            max-width: 200px;
+            padding: 10px;
+            will-change: opacity;
+        }
+
+        .nav-wrapper {
+            height: 40px;
+            position: fixed;
+            z-index: 30;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .nav-filler {
+            flex-basis: 85%;
+        }
+
+        .nav {
+            margin-top: 20vh;
+            margin-right: 20px;
+            height: 40px;
+            width: 100%;
+            transform: translate(95%);
+        }
+
+        .nav a {
+            color: #ade6fd;
+            text-decoration: none;
+        }
+
+        .nav a:hover {
+            color: white;
+            text-decoration: none;
+        }
+
+        /** 
+        * Buy Modal 
+        **/
+
+        .buymodal {
+            position: fixed;
+            top: 25vh;
+            left: calc(50vw - 250px);
+            z-index: 15;
+            width: 100vw;
+            max-width: 500px;
+            transition: all 0.15s ease-out;
+            opacity: 1;
+        }
+        @media screen and (max-width: 500px) {
+            .buymodal {
+                left: 0px;
+            }
+        }
+        .buymodal-hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+        
+        @media only screen and (max-width : 480px) {
+            h1 {
+                font-size: 16px;
+            }
+
+            .nav-logo {
+                width: 140px;
+            }
+
+            #buybar-button {
+                margin: 10px;
+                height: 40px;
+                padding: 10px 40px;
+            }
+
+            .hero-container video {
+                width: 135%;
+                height: auto;
+            }
+
+            .nav {
+                transform: unset;
+                padding-left: 80%;
+            }
+        }
+
+
+        /**
+        * Store Container Styles
+        **/
+
+        .store-container {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+            margin-top: 80px;
+            margin-bottom: 80px;
+            position: relative;
+        }
+        @media screen and (max-width: 1280px) {
+            .store-container {
+                margin-top: 7vw;
+                margin-bottom: 3vw;
+            }
+        }
+        .store-price-info {
+            padding-left: 32px;
+            padding-right: 32px;
+            margin-top: 8px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            color: white;
+            font-weight: bolder;
+            width: calc(100% - 64px);
+        }
+        @media screen and (max-width: 410px) {
+            .store-price-optional {
+                display: none;
+            }
+        }
+        .store-box {
+            width: 100%;
+            height: auto;
+            position: relative;
+        }
+        @media screen and (max-width: 485px) {
+            .store-box {
+                width: 480px;
+            }
+        }
+        .store-box-container {
+            width: 100vw;
+            max-width: 500px;
+            position: relative;
+        }
+        @media screen and (max-width: 485px) {
+            .store-box-container {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+            }
+        }
+        .store-info-container {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            height: 100%;
+        }
+        .store-info-container h2 {
+            text-align: center;
+            color: white;
+            margin-top: 24px;
+        }
+        .stores {
+            margin-top: 48px;
+            padding-left: 48px;
+            padding-right: 48px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        .store {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            position: relative;
+            background-color: rgba(255,255,255,0);
+            border-radius: 2px;
+            border-width: 0px;
+            transition: all 0.15s ease-out;
+            padding-top: 8px;
+            padding-bottom: 8px;
+        }
+        .store:hover {
+            background-color: rgba(255,255,255,0.2);
+        }
+        .store img {
+            width: 50%;
+            height: auto;
+        }
+        .store-coming {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            box-sizing: border-box;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255,255,255,0.8);
+            border-radius: 2px;
+            border-width: 0px;
+            color: darkslategray;
+            font-weight: bold;
+            opacity: 0;
+            transition: all 0.15s ease-out;
+            font-size: 20px;
+        }
+        .store-coming:hover {
+            opacity: 1;
+        }
+        .store-description {
+            max-width: 450px;
+            color: white;
+            font-size: 18px;
+            background-color: rgba(3, 27, 55, 0.6);
+            border-radius: 2px;
+            border-width: 0px;
+            margin-left: 16px;
+            margin-right: 16px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.45);
+            padding-bottom: 8px;
+        }
+        @media screen and (max-width: 900px) {
+            .store-description {
+                margin-top: 32px;
+            }
+        }
+        .store-description p, .store-description h2 {
+            padding-left: 32px;
+            padding-right: 32px;
+        }
+        .store-description img {
+            border-top-left-radius: 2px;
+            border-top-right-radius: 2px;
+            width: 100%;
+            height: auto;
+            padding: 0px;
+            margin-bottom: 12px;
+        }
+    </style>
+
+    <script>
+    /**
+     * 
+     * UWE Subnautica Expansion - Nav Logo Class
+     * Author - jess@unknownworlds.com, hugh@unknownworlds.com
+     * 
+     */
+
+    class NavLogo {
+        constructor(elementId, primaryLogoId) {
+            this._element = document.getElementById(elementId);
+            this._primaryLogoElement = document.getElementById(primaryLogoId);
+            if (!this._element) { throw Error('nav logo element not found');}
+            const self = this;
+            this._lastCall = 0;
+            window.addEventListener('scroll', this.animate.bind(self));
+            this.draw();
+        }
+
+        animate(callTime) {
+            const self = this;
+            const innerBind = this.animate.bind(self);
+            if (callTime <= this._lastCall) {
+                requestAnimationFrame(innerBind);
+                return;
+            }
+            this.draw();
+            return;
+        }
+
+        draw() {
+            /* Is the primary logo out of view? */
+            const primaryRect = this._primaryLogoElement.getBoundingClientRect();
+            const primaryBottom = primaryRect.bottom;
+            const overlap = (this._primaryLogoElement.clientHeight / 3);
+            const threshold = primaryBottom - overlap;
+            if (threshold > 0) {
+                this._element.style.opacity = 0;
+                return;
+            }
+            const animationDistance = this._element.clientHeight * 2;
+            if (-threshold >= animationDistance) {
+                this._element.style.opacity = 1;
+                return;
+            }
+            const proportion = -threshold / animationDistance;
+            if (proportion > 1) { throw Error('Nav logo proportion > 1') }
+            if (proportion < 0) { throw Error('Nav logo proportion < 0') }
+            this._element.style.opacity = proportion;
+            return;
+
+        }
+    }
+    </script>
+
+    <script>
+    /**
+     * 
+     * UWE Subnautica Expansion - Loading Screen Class
+     * Author - hugh@unknownworlds.com
+     * 
+     */
+
+    const LOADING_FADEOUT = 'loading-screen-fadeout';
+    const LOAD_TIME = 2000;
+
+    class LoadingScreen {
+        constructor(elementId, timerId, graphId) {
+            const element = document.getElementById(elementId);
+            if (!element) { throw Error("No load screen element found!") }
+            const timer = document.getElementById(timerId);
+            if (!timer) { throw Error("No timer found!") }
+            this._timer = timer;
+            this._element = element;
+            this._graph = new ArcGraph(graphId);
+            this._start = (new Date()).getTime();
+            this._end = this._start + LOAD_TIME;
+            this._lastCall = 0;
+            const self = this;
+            const innerBind = this.animate.bind(self)
+            requestAnimationFrame(innerBind);
+            return;
+        }
+
+        animate(callTime) {
+            const self = this;
+            const innerBind = this.animate.bind(self)
+            if (callTime <= this._lastCall) {
+                requestAnimationFrame(innerBind);
+                return 
+            };
+            this._lastCall = callTime;
+            const now = (new Date()).getTime();
+            const remaining = (this._end - now).toFixed(0);
+            if (remaining < 5) { this._close(); return }
+            this.drawTimer(remaining);
+            const proportionRemaining = remaining / LOAD_TIME;
+            const completed = 1 - proportionRemaining;
+            this.drawGraph(completed);
+            requestAnimationFrame(innerBind);
+            return;
+        }
+
+        drawGraph(proportion) {
+            this._graph.draw(proportion);
+            return;
+        }
+
+        drawTimer(remaining) {
+            const timerString =  ((1 - (remaining / 2000)) * 100).toFixed(0);
+            this._timer.innerHTML = timerString + '%';
+            return;
+        }
+
+        _close() {
+            this._graph.draw(1);
+            this._timer.innerHTML = '100%';
+            const forceScroll = setInterval(() => {
+                scroll(0, 0);
+                return;
+            }, 30);
+            this._element.classList.add(LOADING_FADEOUT);
+            setTimeout(() => {
+                clearInterval(forceScroll);
+                this._element.parentElement.removeChild(this._element);
+                return;
+            }, 900)
+            return;
+        }
+    }
+    </script>
+
+    <script>
+    /*
+        Subnautica Expansion
+        Arc Graph
+        author: hugh@unknownworlds.com
+    */
+
+    const ARC_START = Math.PI * 0.50;
+    const ARC_END = Math.PI * 0.50;
+    const ARCGRAPH_FULL_TURN = Math.PI * 2 - ARC_START + ARC_END;
+    const ARC_WIDTH_RATIO = 0.02;
+    const INNER_RADIUS_RATIO = 0.460;
+
+    class ArcGraph {
+        /*
+            A graph showing percentage completion as a coloured arc of a circle..
+        */
+        constructor(
+            canvas_id,
+            fill_colour='lightgrey',
+            bg_colour='white',
+            canvas_colour='white',
+            arc_width_ratio=ARC_WIDTH_RATIO,
+            inner_radius_ratio=INNER_RADIUS_RATIO,
+        ) {
+            if (bg_colour === null) {
+                bg_colour = 'lightgrey';
+            }
+            this._bg_colour = bg_colour;
+            this._canvas_colour = canvas_colour;
+            this._canvas_id = canvas_id;
+            this._canvas = document.getElementById(canvas_id);
+            this._inner_radius_ratio = inner_radius_ratio;
+            this._arc_width_ratio = arc_width_ratio;
+            this._fill_colour = fill_colour;
+            this._parent = this._canvas.parentElement;
+            this._shouldEndDrawing = false;
+            this.draw(0);
+            return;
+        }
+
+        draw(percentage) {
+            /*
+                Returns null. Draw the graph on the target canvas to the percentage
+                specified.
+            */
+        if (percentage > 1 || percentage < 0) {
+                throw 'Cannot display > 100% / < 0%: ' + percentage;
+            }
+            var brush = this._canvas.getContext('2d');
+            this._prepare_canvas_dimensions(brush);
+            this._draw_background(brush);
+            this._draw_100pc_arc(brush, this._outer_radius, this._inner_radius);
+            var completion_radians = ARC_START + (
+                ARCGRAPH_FULL_TURN * percentage
+            );
+            this._draw_completed_arc(
+                brush,
+                this._canvas_colour,
+                completion_radians
+            );
+            this._draw_completed_arc(brush, this._fill_colour, completion_radians);
+            return;
+        }
+
+        _draw_background(brush) {
+            /*
+                Returns null. Draws a white background the full width and height of
+                the canvas.
+            */
+            brush.fillStyle = this._canvas_colour;
+            const height = this._canvas.height * this._scale();
+            const width = this._canvas.width * this._scale();
+            brush.fillRect(0, 0, width, height);
+            return;
+        }
+
+        _draw_100pc_arc(brush, outer_radius, inner_radius) {
+            /*
+                Returns null. Draws a full completion background arc using the
+                background colour supplied at instantiation.
+
+                brush
+                Supply a canvas 2d context. For example, obtained using
+                canvas.getContext('2d')
+            */
+            brush.beginPath();
+            brush.fillStyle = this._bg_colour;
+            this._draw_arc(brush, outer_radius);
+            this._draw_arc(brush, inner_radius, ARC_END, ARC_START, true);
+            brush.closePath();
+            brush.fill();
+            return;
+        }
+
+        _draw_completed_arc(brush, colour, completion_radians){
+            /*
+                Returns null. Draws a completion arc using the supplied
+                colour.
+            */
+            brush.beginPath();
+            brush.fillStyle = colour;
+            this._draw_arc(
+                brush,
+                this._outer_radius,
+                ARC_START,
+                completion_radians
+            );
+            this._draw_arc(
+                brush,
+                this._inner_radius,
+                completion_radians,
+                ARC_START,
+                true
+            );
+            brush.closePath();
+            brush.fill();
+            return;
+        }
+
+        _draw_arc(
+            brush,
+            radius,
+            start_radians=ARC_START,
+            end_radians=ARC_END,
+            reverse=false
+        ) {
+            /*
+                Returns null. Draws an arc using the supplied brush and
+                parameters.
+            */
+            brush.arc(
+                this._origin_x,
+                this._origin_y,
+                radius, 
+                start_radians, 
+                end_radians, 
+                reverse);
+            return;
+        }
+
+        _prepare_canvas_dimensions(context_brush){
+            /*
+                Returns null. Coerces canvas dimensions to match element dimensions,
+                and updates the graph origin.
+            */
+            const scale = this._scale();
+            const start_width = this._parent.clientWidth;
+            const start_height = this._parent.clientHeight;
+            this._arc_width = this._arc_width_ratio * start_width;
+            this._inner_radius = this._inner_radius_ratio * start_width;
+            this._outer_radius = this._inner_radius + this._arc_width;
+            this._canvas.width = start_width * scale;
+            this._canvas.height = start_height * scale;
+            this._canvas.style.width = start_width + "px";
+            this._canvas.style.height = start_height + "px";
+            this._origin_x = this._compute_origin_x(scale);
+            this._origin_y = this._compute_origin_y(scale);
+            context_brush.scale(scale, scale);
+            return;
+        }
+
+        _scale() {
+            /*
+                Returns a number scale value for canvas drawing
+            */
+        let scale = 1;
+        if (window.devicePixelRatio) {
+            scale = window.devicePixelRatio;
+        }
+        return scale;
+        }
+
+        _compute_origin_x(scale){
+            /*
+                Returns an integer representing the x-coordinate of the arc graph
+                origin
+            */
+            return this._canvas.width / 2 / scale;
+        }
+
+        _compute_origin_y(scale){
+            /*
+                Returns an integer representing the y-coordinate of the arc graph
+                origin
+            */
+            return this._canvas.height / 2 / scale;
+        }
+    }
+    </script>
+
+    <script>
+        'use strict';
+        
+        /* Frostbite Update Site - Buy Modal Class */
+
+        const BUYMODAL_HIDDEN_CLASS = 'buymodal-hidden';
+
+        class BuyModal {
+
+            constructor(element) {
+                if (!element) { throw Error('Missing buy modal element') }
+                this._element = element;
+                return;
+            }
+
+            static loadFromElementId(elementId) {
+                const element = document.getElementById(elementId);
+                return new BuyModal(element);
+            }
+
+            show() {
+                const self = this;
+                const _ = new Catcher(this.hide.bind(self));
+                this._element.classList.remove(BUYMODAL_HIDDEN_CLASS);
+                return;
+            }
+
+            hide() {
+                this._element.classList.add(BUYMODAL_HIDDEN_CLASS);
+                return;
+            }
+        }
+                    
+        /* Frostbite Update Class - Buybar Class */
+
+        const BUYBAR_START_THRESHOLD = 0.3;
+        const BUYBAR_END_THRESHOLD = 0.6;
+
+        class BuyBar {
+
+            constructor(element, buyModal) {
+                if (!element) { throw Error('Missing buybar element') }
+                this._element = element;
+                const self = this;
+                const scrollCall = this._considerOpacity.bind(self);
+                const animationCall = window.requestAnimationFrame.bind(
+                    null,
+                    scrollCall
+                );
+                document.addEventListener('scroll', animationCall);
+                this._lastUpdated = 0;
+                this._buyModal = buyModal;
+                this._button = this._element.getElementsByTagName('button')[0];
+                this._button.addEventListener(
+                    'click', this._buyModal.show.bind(buyModal)
+                );
+                this._element.style.opacity = this._calculateOpacity();
+                return;
+            }
+
+            _considerOpacity(time) {
+                const now = performance.now();
+                if (this._lastUpdated >= now) { return; }
+                this._lastUpdated = now;
+                this._element.style.opacity = this._calculateOpacity();
+                return;
+            }
+
+            _calculateOpacity() {
+                const height = window.innerHeight;
+                const offset = height * BUYBAR_START_THRESHOLD;
+                const startThreshold = height * BUYBAR_START_THRESHOLD - offset;
+                const endThreshold = height * BUYBAR_END_THRESHOLD - offset;
+                const currentScroll = window.scrollY - offset;
+                if (currentScroll <= startThreshold) { return 0 }
+                if (currentScroll >= endThreshold) { return 1 }
+                const scrollDistance = endThreshold - startThreshold;
+                const scrollProportion = currentScroll / scrollDistance;
+                if (scrollProportion > 1 || scrollProportion < 0) {
+                    throw Error('Scroll proportion exceeds bounds ' + scrollProportion);
+                }
+                return scrollProportion;
+            }
+
+            static loadFromElementId(elementId, buyModal) {
+                const element = document.getElementById(elementId);
+                return new BuyBar(element, buyModal);
+            }
+
+        }
+
+        /* Frostbite Update Site - Catcher Class */
+
+        const CATCHER_Z_INDEX = 20;
+        const CATCHER_TRANSITION_TIME = 0.15;
+
+        class Catcher {
+
+            constructor(onClickCallback) {
+                this._onClickCallback = onClickCallback;
+                const element = document.createElement('div');
+                element.style.width = '100vw';
+                element.style.height = '100vh';
+                element.style.backgroundColor = 'rgba(0, 0, 0, 0.7)';
+                element.style.opacity = 1;
+                element.style.position = 'fixed';
+                element.style.top = '0px';
+                element.style.left = '0px';
+                element.style.zIndex = '12';
+                const transition = 'all ' + CATCHER_TRANSITION_TIME + 's ease-out';
+                element.style.trasition = transition;
+                const self = this;
+                element.addEventListener(
+                    'click',
+                    this._respondToClick.bind(self)
+                );
+                const body = document.getElementsByTagName('body')[0];
+                this._element = element;
+                body.appendChild(element);
+                return;
+            }
+
+            _respondToClick() {
+                this._element.style.opacity = 0;
+                const self = this;
+                setTimeout(this._destroy.bind(self, CATCHER_TRANSITION_TIME));
+                this._onClickCallback();
+                return;
+            }
+
+            _destroy() {
+                this._element.parentElement.removeChild(this._element);
+                return;
+            }
+
+        }
+    </script>
+
+  </head>
+
+  <body>
+    <div id="loading-screen" class="loading-screen">
+      <div id="loading-screen-graph-container">
+          <canvas id='loading-screen-graph'></canvas>
+      </div>
+      <p>Booting PDA in emergency mode</p>
+      <p id="loading-timer">0%</p>
+    </div>
+    <script>
+        const _ = new LoadingScreen(
+          'loading-screen',
+          'loading-timer',
+          'loading-screen-graph'
+        );
+    </script>
+
+    <div class="buymodal buymodal-hidden" id="buymodal">
+        <div class="store-box-container">
+            <img
+            class="store-box"
+            src="https://dkli3tbfz4zj3.cloudfront.net/all/201901XX_BZ_Countdown/20190123_SN_BZ_CountdownBox.png"
+            >
+            <div class="store-info-container">
+                <h2>Buy in Early Access</h2>
+                <div id="store-selection" class="stores">
+                    <a href="https://store.steampowered.com/app/848450/Subnautica_Below_Zero/"
+                        class="store"
+                        target="_blank"
+                        data-store-name='Steam'
+                    >
+                        <img src="https://dkli3tbfz4zj3.cloudfront.net/all/201901XX_BZ_Countdown/20190123_SN_BZ_SteamLogo_2.png">
+                    </a>
+                    <a href="https://www.epicgames.com/store/en-US/product/subnautica-below-zero/home"
+                        class="store"
+                        target="_blank"
+                        data-store-name='Epic'
+                    >
+                        <img src="https://dkli3tbfz4zj3.cloudfront.net/all/201901XX_BZ_Countdown/20190123_SN_BZ_Epic_3.png">
+                    </a>
+                    <a href="https://discordapp.com/store/skus/535869836748783616/subnautica-below-zero"
+                        class="store"
+                        target="_blank"
+                        data-store-name='Discord'
+                    >
+                        <img src="https://dkli3tbfz4zj3.cloudfront.net/all/201901XX_BZ_Countdown/20190123_SN_BZ_Discord.png">
+                    </a>
+                </div>
+                <!--<div class="store-price-info">
+                    <p>$19.99</p>
+                    <p>€16.79</p>
+                    <p>£15.49</p>
+                    <p class="store-price-optional">A$28.95</p>
+                    <p class="store-price-optional">C$22.79</p>
+                </div>-->
+            </div>
+        </div>
+    </div>
+
+    <nav class="nav-wrapper" id="nav-wrapper">
+      <a href="https://unknownworlds.com/subnautica">
+        <img src="https://dkli3tbfz4zj3.cloudfront.net/all/202004_Frostbite/images/20180828_SNZ_LogoHorizontal_400.png"
+          alt="Subnautica Logo"
+          class="nav-logo"
+          id="nav-logo"
+        >
+      </a>
+
+      <button class="btn btn-accent" id="buybar-button">Buy</button>
+
+      <div class="nav-filler"></div>
+
+      <!-- Animation: This should fade in once the user scrolls past 50% of hero section -->
+      <div class="nav">
+        <ul>
+            <a href="#youtube"><i class="tooltip tooltip-left" data-tip="Frostbite Video"><li></li></i></a>
+            <a href="#story-changes"><i class="tooltip tooltip-left" data-tip="Story Changes"><li></li></i></a>
+            <a href="#glacial-basin"><i class="tooltip tooltip-left" data-tip="Glacial Basin"><li></li></i></a>
+            <a href="#new-items"><i class="tooltip tooltip-left" data-tip="New Items"><li></li></i></a>
+            <a href="#polish"><i class="tooltip tooltip-left" data-tip="World Polish"><li></li></i></a>
+            <a href="#ui-improvements"><i class="tooltip tooltip-left" data-tip="UI Improvements"><li></li></i></a>
+            <a href="#ore-vein"><i class="tooltip tooltip-left" data-tip="Ore Veins"><li></li></i></a>
+            <a href="#escalating-weather"><i class="tooltip tooltip-left" data-tip="Weather Changes"><li></li></i></a>
+            <a href="#cold-mechanics"><i class="tooltip tooltip-left" data-tip="Cold Mechanics"><li></li></i></a>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="main">
+        <div class="hero-container">
+            <video muted playsinline preload id="hero" poster="https://dkli3tbfz4zj3.cloudfront.net/all/202004_Frostbite/images/hero.jpg">
+                <source src="https://dkli3tbfz4zj3.cloudfront.net/all/202004_Frostbite/images/hero.mp4" type="video/mp4">
+            </video>
+            <div class="hero-overlay"></div>
+            <img src="https://dkli3tbfz4zj3.cloudfront.net/all/202004_Frostbite/images/logo.png" class="logo" id="logo">
+        </div>
+    
+        <div class="narrow-container" id="youtube">
+            <h1>FROSTBITE UPDATE VIDEO</h1>
+            <iframe 
+                id="video-trailer" 
+                src="https://www.youtube.com/embed/SXnjJxMmec0" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen="">
+            </iframe>
+        </div>
+
+        <!-- INTRO CINEMATIC VIDEO -->
+
+        <div id="story-changes" class="wide-container shadow">
+            <video autoplay loop muted playsinline poster="https://dkli3tbfz4zj3.cloudfront.net/all/202004_Frostbite/images/intro.jpg">
+                <source src="https://dkli3tbfz4zj3.cloudfront.net/all/202004_Frostbite/images/intro.mp4" type="video/mp4">
+            </video>
+        </div>
+
+
+        <!-- STORY -->
+
+        <div id="story-text" class="narrow-container">
+            <h2>START OF AN ALL-NEW STORY & INTRO</h2>
+            <p>
+                In an effort to uncover the truth behind what happened 
+                to her sister, Robin Ayou set out alone to Planet 4546B. 
+                Once aboard the small craft that would take 
+                her to the planet surface, things did not go as planned. 
+                What’s worse? She’s not alone...
+            </p>
+            <hr />
+            <p>
+                This update marks the beginning of our new storyline. It's 
+                still a work-in-progress, so there is a lot more to look 
+                forward to. Get a behind the scenes peak at how we approach 
+                story <a href="https://unknownworlds.com/subnautica/how-we-approach-story/" target="_blank">here</a>.
+            </p>
+        </div>
+
+        <!-- GLACIAL BASIN VIDEO -->
+
+        <div id= "glacial-basin" class="wide-container shadow">
+            <video muted playsinline preload id="glacial-basin-video" poster="https://dkli3tbfz4zj3.cloudfront.net/all/202004_Frostbite/images/glacial-basin.jpg">
+                <source src="https://dkli3tbfz4zj3.cloudfront.net/all/202004_Frostbite/images/glacial-basin.mp4" type="video/mp4">
+            </video>
+            <div class="textbox right textbox-animating">
+                <p>
+                    After extended time without human interference, Glacial 
+                    Basin and Glacial Bay are returning to their natural state. 
+                    Brightly-colored fauna flourishes in the shadows of the 
+                    towering crevasses. Below these icy formations, a network 
+                    of extensive caves hides. 
+                </p>
+            </div>
+        </div>
+    
+        <div class="textbox-mobile">
+            <p>
+                After extended time without human interference, Glacial 
+                Basin and Glacial Bay are returning to their natural state. 
+                Brightly-colored fauna flourishes in the shadows of the 
+                towering crevasses. Below these icy formations, a network 
+                of extensive caves hides.  
+            </p>
+        </div>
+
+        <!-- NEW ITEMS -->
+
+        <div class="narrow-container" id="new-items">
+            <div class="overflow-boxes flex">
+                <div class="items background-image one-third shadow border" id="quantum-locker"></div>
+                <div class="item-description narrow-text left-item shadow">
+                    <h3>QUANTUM LOCKER</h3>
+                    <p>
+                        Upgrade your storage for access anywhere using a Quantum
+                         Locker (patent pending). This Precursor-tech container 
+                        allows a user to access its contents from any Quantum 
+                        Locker in the world. Of course, quantum mechanics is 
+                        still relatively mysterious, even we’re not quite sure 
+                        how it works.
+                    </p>
+                </div>
+            </div>
+            <div class="overflow-boxes flex">
+                <div class="item-description narrow-text right-item shadow">
+                    <h3>SURFACE BEACONS</h3>
+                    <p>
+                        Not great with directions? No problem. Upgrade your 
+                        Survival Kit to include Beacons, now compatible with 
+                        terrestrial environments. Use beacons to navigate back 
+                        to a particular location anywhere in the world.
+                    </p>
+                </div>
+                <div class="items background-image one-third shadow border" id="surface-beacons"></div>
+            </div>
+            <div class="overflow-boxes flex">
+                <div class="items background-image one-third shadow border" id="snowballs"></div>
+                <div class="item-description narrow-text left-item shadow">
+                    <h3>SNOWBALLS</h3>
+                    <p>
+                        If it’s not broken, don’t fix it. That’s why, official 
+                        as of today, Alterra is sanctioning the use of 
+                        snowballs to escape an aggressive Snow Stalker or in 
+                        combination with Purification Tablets to create 
+                        drinkable water. Use outside of these instances is not 
+                        condoned.
+                    </p>
+                </div>
+            </div>
+            <div class="overflow-boxes flex">
+                <div class="item-description narrow-text right-item shadow">
+                    <h3>WATER PURIFICATION TABLETS</h3>
+                    <p>
+                        When stranded on an alien planet covered in water 
+                        (frozen or otherwise), one can never have too many ways 
+                        to create drinking water. That’s why the scientists at 
+                        Alterra decided to invent something truly clever: A 
+                        tablet that combines with snowballs to create drinking 
+                        water.
+                    </p>
+                </div>
+                <div class="items background-image one-third shadow border" id="purification-tablets"></div>
+            </div>
+        </div>
+
+        <!-- POLISH CAROUSEL -->
+
+        <div id="world-polish" class="wide-container shadow">
+            <span class="background-image" id="polish-1"></span>
+            <span class="background-image" id="polish-2"></span>
+            <span class="background-image" id="polish-3"></span>
+            <span class="background-image" id="polish-4"></span>
+            <div class="textbox left textbox-animating">
+                <p>
+                    Similar to Glacial Basin, many areas of 4546B are thriving 
+                    thanks to an absence of invasive species. Budding botanists and 
+                    hobbyist xenobiologists alike will enjoy the metamorphosis the 
+                    planet is undergoing, especially in the Arctic Trench and 
+                    Thermal Vents regions. 
+                </p>
+            </div>
+        </div>
+    
+        <div class="textbox-mobile">
+            <p>
+                Similar to Glacial Basin, many areas of 4546B are thriving 
+                thanks to an absence of invasive species. Budding botanists and 
+                hobbyist xenobiologists alike will enjoy the metamorphosis the 
+                planet is undergoing, especially in the Arctic Trench and 
+                Thermal Vents regions. 
+            </p>
+        </div>
+
+        <!-- UI IMPROVEMENTS -->
+
+        <div id="ui-improvements" class="narrow-container">
+            <div class="border shadow wrapper mobile-hidden">
+                <div class="before">
+                    <img class="content-image" src="https://dkli3tbfz4zj3.cloudfront.net/all/202004_Frostbite/images/text-before.jpg" draggable="false"/>   
+                </div>
+                <div class="after">
+                    <img class="content-image" src="https://dkli3tbfz4zj3.cloudfront.net/all/202004_Frostbite/images/text-after.jpg" draggable="false"/>
+                </div>
+                <div class="scroller">
+                    <svg class="scroller__thumb" xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><polygon points="0 50 37 68 37 32 0 50" style="fill:#fff"/><polygon points="100 50 64 32 64 68 100 50" style="fill:#fff"/></svg>
+                </div>
+            </div>
+            <img src="https://dkli3tbfz4zj3.cloudfront.net/all/202004_Frostbite/images/text.jpg" class="image-responsive border shadow mobile-visible">
+            <div id="ui-details" class="shadow">
+                <h2>UI Improvements</h2>
+                <p>
+                    Items that degrade over time, such as anything using 
+                    power, now display a bar reflecting their status. As the
+                        item wears down, the status indicator lowers. We’ve 
+                    also upgraded the text to provide a clearer, crispier 
+                    experience.  
+                </p>
+            </div>
+        </div> 
+
+        <!-- ORE VEINS -->
+
+        <div id= "ore-vein" class="wide-container shadow background-image">
+            <div class="textbox right textbox-animating">
+                <p>
+                    Running low on a precious resource? Keep an eye out for Ore 
+                    Veins while adventuring out of the water. These resource-
+                    rich caches provide an abundance of various types of ore on 
+                    the surface. 
+                </p>
+            </div>
+        </div>
+    
+        <div class="textbox-mobile">
+            <p>
+                Running low on a precious resource? Keep an eye out for Ore 
+                Veins while adventuring out of the water. These resource-
+                rich caches provide an abundance of various types of ore on 
+                the surface. 
+            </p>
+        </div>
+
+        <!-- ESCALATING WEATHER VIDEO -->
+
+        <div id="escalating-weather" class="narrow-container">
+            <video class="shadow border" autoplay loop muted playsinline poster="https://dkli3tbfz4zj3.cloudfront.net/all/202004_Frostbite/images/weather.jpg">
+                <source src="https://dkli3tbfz4zj3.cloudfront.net/all/202004_Frostbite/images/weather.mp4" type="video/mp4">
+            </video>
+            <div id="weather-details" class="shadow">
+                <h2>ESCALATING WEATHER</h2>
+                <p>
+                    Weather now transitions gradually. If the weather worsens, 
+                    that might be a cue to seek shelter. Likewise, if it’s 
+                    easing, it could indicate a safe forecast.
+                </p>
+            </div>
+        </div>
+        
+        <!-- COLD MECHANICS IMAGE -->
+
+        <div id="cold-mechanics"class="wide-container background-image shadow">
+            <div class="textbox left textbox-animating">
+                <p>
+                    It’s not really the arctic without hypothermia. There is now
+                     a meter on the heads-up-display to indicate temperature 
+                    exposure while on land. To warm up, visit a Thermal Lilly, 
+                    drink some coffee, or head into an enclosed space.
+                </p>
+            </div>
+        </div>
+
+        <div class="textbox-mobile">
+            <p>
+                It’s not really the arctic without hypothermia. There is now a 
+                meter on the heads-up-display to indicate temperature 
+                exposure while on land. To warm up, visit a Thermal Lilly, 
+                drink some coffee, or head into an enclosed space.
+            </p>
+        </div>
+
+        <div class="narrow-container" id="patch-notes">
+            <a href='#'
+                class='btn btn-light'>
+                SEE FULL PATCH NOTES
+            </a>
+        </div>
+    
+        <div class="narrow-container background-image" id="twitter">
+            <div class="twitter-grid">
+                <h2>Follow the dev team on Twitter</h2>
+                <div class="twitter-image-container">
+                    <a href="https://twitter.com/acwjones" alt="acwjones" target="_blank"><img src="https://dkli3tbfz4zj3.cloudfront.net/all/201906_SpyPengling/images/uwedev/acwjones.jpg"></a>
+                    <div class="overlay">
+                        <div class="text">@acwjones</div>
+                    </div>
+                </div>
+                <div class="twitter-image-container">
+                    <a href="https://twitter.com/BenPrunty" alt="BenPrunty" target="_blank"><img src="https://dkli3tbfz4zj3.cloudfront.net/all/201906_SpyPengling/images/uwedev/BenPrunty.jpg"></a>
+                    <div class="overlay">
+                        <div class="text">@BenPrunty</div>
+                    </div>
+                </div>
+                <div class="twitter-image-container">
+                    <a href="https://twitter.com/BJCummings" alt="BJCummings" target="_blank"><img src="https://dkli3tbfz4zj3.cloudfront.net/all/201906_SpyPengling/images/uwedev/BJCummings.jpg"></a>
+                    <div class="overlay">
+                        <div class="text">@BJCummings</div>
+                    </div>
+                </div>
+                <div class="twitter-image-container">
+                    <a href="https://twitter.com/CodeLumpN" alt="CodeLumpN" target="_blank"><img src="https://dkli3tbfz4zj3.cloudfront.net/all/201906_SpyPengling/images/uwedev/CodeLumpN.jpg"></a>
+                    <div class="overlay">
+                        <div class="text">@CodeLumpN</div>
+                    </div>
+                </div>
+                <div class="twitter-image-container">
+                    <a href="https://twitter.com/ColinKnueppel" alt="ColinKnueppel" target="_blank"><img src="https://dkli3tbfz4zj3.cloudfront.net/all/201906_SpyPengling/images/uwedev/ColinKnueppel.jpg"></a>
+                    <div class="overlay">
+                        <div class="text">@ColinKnueppel</div>
+                    </div>
+                </div>
+                <div class="twitter-image-container">
+                    <a href="https://twitter.com/corystrader" alt="corystrader" target="_blank"><img src="https://dkli3tbfz4zj3.cloudfront.net/all/201906_SpyPengling/images/uwedev/corystrader.jpg"></a>
+                    <div class="overlay">
+                        <div class="text">@corystrader</div>
+                    </div>
+                </div>
+                <div class="twitter-image-container">
+                    <a href="https://twitter.com/damjess" alt="damjess" target="_blank"><img src="https://dkli3tbfz4zj3.cloudfront.net/all/201906_SpyPengling/images/uwedev/damjess.jpg"></a>
+                    <div class="overlay">
+                        <div class="text">@damjess</div>
+                    </div>
+                </div>
+                <div class="twitter-image-container">
+                    <a href="https://twitter.com/davekalina" alt="davekalina" target="_blank"><img src="https://dkli3tbfz4zj3.cloudfront.net/all/201906_SpyPengling/images/uwedev/davekalina.jpg"></a>
+                    <div class="overlay">
+                        <div class="text">@davekalina</div>
+                    </div>
+                </div>
+                <div class="twitter-image-container">
+                    <a href="https://twitter.com/duxworth" alt="duxworth" target="_blank"><img src="https://dkli3tbfz4zj3.cloudfront.net/all/201906_SpyPengling/images/uwedev/duxworth.jpg"></a>
+                    <div class="overlay">
+                        <div class="text">@duxworth</div>
+                    </div>
+                </div>
+                <div class="twitter-image-container">
+                    <a href="https://twitter.com/Flayra" alt="Flayra" target="_blank"><img src="https://dkli3tbfz4zj3.cloudfront.net/all/201906_SpyPengling/images/uwedev/Flayra.jpg"></a>
+                    <div class="overlay">
+                        <div class="text">@Flayra</div>
+                    </div>
+                </div>
+                <div class="twitter-image-container">
+                    <a href="https://twitter.com/kielmcdonald" alt="kielmcdonald" target="_blank"><img src="https://dkli3tbfz4zj3.cloudfront.net/all/201906_SpyPengling/images/uwedev/kielmcdonald.jpg"></a>
+                    <div class="overlay">
+                        <div class="text">@kielmcdonald</div>
+                    </div>
+                </div>
+                <div class="twitter-image-container">
+                    <a href="https://twitter.com/LiamTart" alt="LiamTart" target="_blank"><img src="https://dkli3tbfz4zj3.cloudfront.net/all/201906_SpyPengling/images/uwedev/LiamTart.jpg"></a>
+                    <div class="overlay">
+                        <div class="text">@LiamTart</div>
+                    </div>
+                </div>
+                <div class="twitter-image-container">
+                    <a href="https://twitter.com/lnowaczek" alt="lnowaczek" target="_blank"><img src="https://dkli3tbfz4zj3.cloudfront.net/all/201906_SpyPengling/images/uwedev/lnowaczeck.jpg"></a>
+                    <div class="overlay">
+                        <div class="text">@lnowaczek</div>
+                    </div>
+                </div>
+                <div class="twitter-image-container">
+                    <a href="https://twitter.com/madsauce" alt="madsauce" target="_blank"><img src="https://dkli3tbfz4zj3.cloudfront.net/all/201906_SpyPengling/images/uwedev/madsauce.jpg"></a>
+                    <div class="overlay">
+                        <div class="text">@madsauce</div>
+                    </div>
+                </div>
+                <div class="twitter-image-container">
+                    <a href="https://twitter.com/obraxis" alt="obraxis" target="_blank"><img src="https://dkli3tbfz4zj3.cloudfront.net/all/201906_SpyPengling/images/uwedev/obraxis.jpg"></a>
+                    <div class="overlay">
+                        <div class="text">@obraxis</div>
+                    </div>
+                </div>
+                <div class="twitter-image-container">
+                <a href="https://www.instagram.com/Scottventurez/" alt="scottventurez" target="_blank"><img src="https://dkli3tbfz4zj3.cloudfront.net/all/201906_SpyPengling/images/uwedev/UWE_Klegran.jpg"></a>
+                    <div class="overlay">
+                        <div class="text">@scottventurez</div>
+                    </div>
+                </div>
+                <div class="twitter-image-container">
+                    <a href="https://twitter.com/sewlek" alt="sewlek" target="_blank"><img src="https://dkli3tbfz4zj3.cloudfront.net/all/201906_SpyPengling/images/uwedev/sewlek.jpg"></a>
+                    <div class="overlay">
+                        <div class="text">@sewlek</div>
+                    </div>
+                </div>
+                <div class="twitter-image-container">
+                    <a href="https://twitter.com/slice3d" alt="slice3d" target="_blank"><img src="https://dkli3tbfz4zj3.cloudfront.net/all/201906_SpyPengling/images/uwedev/slice3d.jpg"></a>
+                    <div class="overlay">
+                        <div class="text">@slice3d</div>
+                    </div>
+                </div>
+                <div class="twitter-image-container">
+                    <a href="https://twitter.com/SylvainHel" alt="SylvainHel" target="_blank"><img src="https://dkli3tbfz4zj3.cloudfront.net/all/201906_SpyPengling/images/uwedev/SylvainHel.jpg"></a>
+                    <div class="overlay">
+                        <div class="text">@SylvainHel</div>
+                    </div>
+                </div>
+                <div class="twitter-image-container">
+                    <a href="https://twitter.com/tedgill" alt="tedgill" target="_blank"><img src="https://dkli3tbfz4zj3.cloudfront.net/all/201906_SpyPengling/images/uwedev/tedgill.jpg"></a>
+                    <div class="overlay">
+                        <div class="text">@tedgill</div>
+                    </div>
+                </div>
+                <div class="twitter-image-container">
+                    <a href="https://twitter.com/virtual_don" alt="virtual_don" target="_blank"><img src="https://dkli3tbfz4zj3.cloudfront.net/all/201909_IceWorm/images/uwedev/virtual_don.jpg"></a>
+                    <div class="overlay">
+                        <div class="text">@virtual_don</div>
+                    </div>
+                </div>
+                <p style="text-align:center;">
+                    You can follow the entire dev team at once by subscribing to the
+                    <a class="twitter-all" href='https://twitter.com/Subnautica/lists/subnautica-dev-team/members'>
+                    Subnautica Dev Team List</a>
+                </p>
+                <a href='https://twitter.com/Subnautica/lists/subnautica-dev-team/members'
+                    class='btn btn-accent'>
+                    Follow All Devs
+                </a>
+
+                <h2>Participate in Development</h2>
+                <div class="follow-items">
+                    <a class="follow-item" target="_blank" href="https://youtube.com/subnautica">
+                        <img src="https://dkli3tbfz4zj3.cloudfront.net/all/201901XX_BZ_Countdown/20190123_SN_BZ_YouTube.png">
+                        <p>YouTube</p>
+                    </a>
+                    <a class="follow-item" target="_blank" href="https://discordapp.com/invite/subnautica">
+                        <img src="https://dkli3tbfz4zj3.cloudfront.net/all/201901XX_BZ_Countdown/20190123_SN_BZ_Discord.png">
+                        <p>Discord Chat</p>
+                    </a>
+                    <a class="follow-item" target="_blank" href="https://unknownworlds.com/subnautica/newsletter">
+                        <img src="https://dkli3tbfz4zj3.cloudfront.net/all/201901XX_BZ_Countdown/20190124_SN_BZ_Newsletter.png">
+                        <p>Newsletter</p>
+                    </a>
+                    <a class="follow-item" target="_blank" href="https://twitter.com/subnautica">
+                        <img src="https://dkli3tbfz4zj3.cloudfront.net/all/201901XX_BZ_Countdown/20190124_SN_BZ_Twitter.png">
+                        <p>Twitter</p>
+                    </a>
+                    <a class="follow-item" target="_blank" href="https://instagram.com/subnautica">
+                        <img src="https://dkli3tbfz4zj3.cloudfront.net/all/201901XX_BZ_Countdown/20190124_SN_BZ_Instagram.png">
+                        <p>Instagram</p>
+                    </a>
+                    <a class="follow-item" target="_blank" href="https://steamcommunity.com/games/848450">
+                        <img src="https://dkli3tbfz4zj3.cloudfront.net/all/201901XX_BZ_Countdown/20190123_SN_BZ_SteamLogo_2.png">
+                        <p>Steam Community</p>
+                    </a>
+                    <a class="follow-item" target="_blank" href="https://unknownworlds.com/subnautica">
+                        <img src="https://dkli3tbfz4zj3.cloudfront.net/all/201901XX_BZ_Countdown/20190124_SN_BZ_Blog.png">
+                        <p>Blog</p>
+                    </a>
+                    <a class="follow-item" target="_blank" href="https://forums.unknownworlds.com/categories/subnautica">
+                        <img src="https://dkli3tbfz4zj3.cloudfront.net/all/201901XX_BZ_Countdown/20190124_SN_BZ_Forums.png">
+                        <p>Forums</p>
+                    </a>
+                    <a class="follow-item" target="_blank" href="https://favro.com/organization/35200a08dbbad85b26102638/0d9378db42299691bb14c708">
+                        <img src="https://dkli3tbfz4zj3.cloudfront.net/all/201901XX_BZ_Countdown/20190124_SN_BZ_Favro.png">
+                        <p>Favro Task Tracker</p>
+                    </a>
+                    <a class="follow-item" target="_blank" href="https://facebook.com/subnautica">
+                        <img src="https://dkli3tbfz4zj3.cloudfront.net/all/201901XX_BZ_Countdown/20190124_SN_BZ_Facebook.png">
+                        <p>Facebook</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="mailchimp-textbox mailchimp-textbox-mobile" id="signup">
+            <h2>Get Development Updates</h2>
+            <p>Sign up to the Subnautica mailing list to hear about updates to Early Access first.</p>
+            <!-- Begin MailChimp Signup Form -->
+            <div id="mc_embed_signup">
+            <form action="https://unknownworlds.us6.list-manage.com/subscribe/post?u=bf02bb8619c14d31027c73d97&amp;id=8fa28cd2f4" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                <div id="mc_embed_signup_scroll">
+                <div class="mc-field-group">
+                <input type="email" value="" name="EMAIL" class="required email mailchimp-input" id="mce-EMAIL" placeholder = "subnaut@example.com">
+                </div>
+                <div id="mce-responses" class="clear">
+                <div class="response" id="mce-error-response" style="display:none"></div>
+                <div class="response" id="mce-success-response" style="display:none"></div>
+                </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_bf02bb8619c14d31027c73d97_8fa28cd2f4" tabindex="-1" value=""></div>
+                <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="btn btn-dark"></div>
+                </div>
+            </form>
+            </div>
+            <!--End mc_embed_signup-->
+        </div>
+
+        <div class="final" id="sign_up">
+            <div class="mailchimp-textbox mailchimp-desktop">
+                <h2>Get Development Updates</h2>
+                <p>Sign up to the Subnautica mailing list to hear about updates to Early Access first.</p>
+                <!-- Begin MailChimp Signup Form -->
+                <div id="mc_embed_signup">
+                <form action="https://unknownworlds.us6.list-manage.com/subscribe/post?u=bf02bb8619c14d31027c73d97&amp;id=8fa28cd2f4" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                    <div id="mc_embed_signup_scroll">
+                    <div class="mc-field-group">
+                    <input type="email" value="" name="EMAIL" class="required email mailchimp-input" id="mce-EMAIL" placeholder = "subnaut@example.com">
+                    </div>
+                    <div id="mce-responses" class="clear">
+                    <div class="response" id="mce-error-response" style="display:none"></div>
+                    <div class="response" id="mce-success-response" style="display:none"></div>
+                    </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_bf02bb8619c14d31027c73d97_8fa28cd2f4" tabindex="-1" value=""></div>
+                    <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="btn btn-dark"></div>
+                    </div>
+                </form>
+                </div>
+                <!--End mc_embed_signup-->
+            </div>
+
+            <footer>
+                <div>
+                    <img src="https://dkli3tbfz4zj3.cloudfront.net/all/202004_Frostbite/images/uwe_full_vector.svg" alt="Unknown Worlds Entertainment" height="35">
+                </div>
+                <div>
+                    <p><a href="https://unknownworlds.com/subnautica/community/" target="_blank">community </a>//
+                        <a href="https://status.unknownworlds.com/" target="_blank"> system status </a>//
+                        <a href="https://unknownworlds.com/subnautica/community/" target="_blank"> copyright </a>//
+                        <a href="https://unknownworlds.com/subnautica/privacy-policy/" target="_blank"> privacy policy </a>//
+                        <a href="https://unknownworlds.com/video-policy/" target="_blank"> youtube & twitch monetisation </a>//
+                        <a href="https://unknownworlds.com/subnautica/terms-of-use/" target="_blank"> terms of use </a></p>
+                </div>
+                <div>
+                    <p>© 2020, <a href = "http://unknownworlds.com" target="_blank">Unknown Worlds Entertainment</a>. All rights reserved.</p>
+                </div>
+            </footer>
+
+        </div>
+    </div>
+  </body>
+
+  <style>
+    /** 
+    * Base site styles such as h1, i, background color, etc 
+    **/
+
+    a {
+        color: #478daa;
+        text-decoration: none;
+    }
+
+    a:hover,
+    a:focus {
+        color: #ade6fd;
+        text-decoration: underline;
+    }
+
+    a:focus {
+        outline: thin dotted;
+        outline: 5px auto -webkit-focus-ring-color;
+        outline-offset: -2px;
+    }
+
+    ul,
+    ol {
+        margin-top: 0;
+        margin-bottom: 10px;
+        width:100%;
+        font-size: 1.2em;
+    }
+    ul ul,
+    ol ul,
+    ul ol,
+    ol ol {
+        margin-bottom: 0;
+    }
+
+    li::after {
+        content: "•"; 
+        color: #cccde9;
+        font-size: 34px;
+    }
+
+    li {
+        list-style-type: none;
+        opacity: 0.6;
+    }
+
+    h2 {
+        font-family: 'Open Sans', sans-serif;
+        margin: 20px auto 20px auto;
+        color: #174474;
+        /*text-align: center;*/
+        letter-spacing: 2px;
+        font-weight: 600;
+        font-size: 20px;
+        text-transform: uppercase;
+    }
+
+    h3 {
+        color: #174474
+    }
+
+    p {
+        font-family: 'Open Sans', sans-serif;
+        color: #174474;
+        margin: 0 0 10px;
+        font-weight: 400;
+        font-size: 16px;
+    }
+
+    i {
+        font-style: italic;
+    }
+
+    hr {
+        border: 0.5px solid #174474;
+        margin: 3rem 0;
+    }
+
+
+    /**
+    * Tooltip Styles
+    */
+
+    .tooltip {
+        display: block;
+        position: relative;
+        cursor: pointer;
+        box-sizing: border-box;
+        font-style: normal;
+        transition:all .25s ease-in-out;
+    }
+
+    .tooltip:before {
+        content: attr(data-tip);
+        font-size: 14px;
+        position: absolute;
+        background: rgba(18, 29, 43, 0.85);
+        color: #f2f3f7;
+        line-height: 1.2em;
+        padding: 0.5em;
+        font-style: normal;
+        box-shadow: 0 1px 3px rgba(0, 1, 48, 0.55);
+        min-width: 120px;
+        text-align: center;
+        opacity: 0;
+        visibility: hidden;
+        transition: all .3s ease-in-out;
+        text-shadow: 1px 1px 1px rgba(2, 3, 9, 0.5);
+        letter-spacing: 0;
+        font-weight: 600;
+    }
+
+    .tooltip:after {
+        width: 0;
+        height: 0;
+        border-style: solid;
+        content: '';
+        position: absolute;
+        opacity: 0;
+        visibility: hidden;
+        transition: all .3s ease-in-out;
+    }
+
+    .tooltip:hover:before,
+    .tooltip:hover:after {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    .tooltip-left:before {
+        left: 0;
+        top: 50%;
+        transform: translate(calc(-100% - 8px), -50%);
+        box-sizing: border-box;
+        border-radius: 3px;
+    }
+
+    .tooltip-left:after {
+        border-width: 8px 0 8px 8px;
+        border-color: transparent transparent transparent rgba(18, 29, 43, 0.85);
+        left: -8px;
+        top: 50%;
+        transform: translate(0, -50%);
+    }
+
+
+    /**
+    * Parallax Styles
+    */
+
+    .parallax-group {
+        display: block;
+        position: relative;
+        z-index: 1;
+        overflow: hidden;
+        padding: 0px;
+        margin: 0px;
+        box-sizing: border-box;
+    }
+
+    .parallax-background-image {
+        width: 100%;
+        z-index: 2;
+    }
+
+    .parallax-element {
+        display: block;
+        width: 100%;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        z-index: 3;
+        overflow: hidden;
+        will-change: transform;
+    }
+
+    .image-gradient-bottom {
+        position: absolute;
+        height: 20%;
+        width: 100%;
+        bottom: 0;
+        right: 0;
+        background: -webkit-linear-gradient(top, rgba(27,91,139,0), rgba(0, 27, 45,1)); /* For Safari 5.1 to 6.0 */
+        background: -o-linear-gradient(bottom, rgba(27,91,139,0), rgba(0, 27, 45,1)); /* For Opera 11.1 to 12.0 */
+        background: -moz-linear-gradient(bottom, rgba(27,91,139,0), rgba(0, 27, 45,1)); /* For Firefox 3.6 to 15 */
+        background: linear-gradient(to bottom, rgba(27,91,139,0), rgba(0, 27, 45,1)); /* Standard syntax (must be last) */
+        z-index: 10;
+    }
+
+    .image-gradient-top {
+        position: absolute;
+        height: 20%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        background: -webkit-linear-gradient(top, rgb(113, 111, 253), rgba(255,255,255,0)); /* For Safari 5.1 to 6.0 */
+        background: -o-linear-gradient(bottom, rgba(113, 111, 253,1), rgba(255,255,255,0)); /* For Opera 11.1 to 12.0 */
+        background: -moz-linear-gradient(bottom, rgba(113, 111, 253,1), rgba(255,255,255,0)); /* For Firefox 3.6 to 15 */
+        background: linear-gradient(to bottom, rgba(113, 111, 253,1), rgba(249, 250,255,0)); /* Standard syntax (must be last) */
+        z-index: 10;
+    }
+    .parallax-element-container {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        perspective: 100px;
+        -webkit-perspective: 100px;
+    }
+
+
+    /** 
+    * Animated Textbox Styles
+    **/
+
+    .textbox {
+        background: rgba(81, 118, 153, 0.78); 
+        width: 450px;
+        padding-top: 30px;
+        padding-left: 36px;
+        padding-right: 36px;
+        padding-bottom: 30px;
+        text-align: left;
+        position: absolute;
+        z-index: 11;
+        border-width: 1px;
+        border-style: solid;
+        border-color: #fff;
+    }
+
+    .textbox p {
+        font-size: 18px;
+        text-shadow: 2px 2px 10px rgba(15, 15, 16, 0.65);
+        color: #fff;
+    }
+
+    .textbox-mobile {
+        display: none;
+        background: #d4edfe; 
+        width: 100%;
+        padding-top: 18px;
+        padding-bottom: 18px;
+    }
+
+    .textbox-mobile p {
+        padding-left: 36px;
+        padding-right: 36px;
+    }
+
+    .textbox-animating {
+        opacity: 0;
+        transition: all 0.3s ease-out;
+        transform: translateY(30px);
+        will-change: opacity;
+    }
+
+    .textbox-animating p {
+        opacity: 0;
+    }
+
+    .textbox-animate-in {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+
+    .textbox-animate-in p {
+        opacity: 1;
+    }
+
+    .textbox-rollover {
+        opacity: 0;
+        transition: all 0.3s ease-out;
+        transform: translateY(30px);
+        will-change: opacity;
+    }
+
+    .textbox-rollover p {
+        opacity: 0;
+    }
+
+    .textbox-rollover-in {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+
+    .textbox-rollover-in p {
+        opacity: 1;
+    }
+
+    .left {
+        top: 50%;
+        left: 70%;
+        transform: translate(-50%, -70%);
+    }
+
+    .right {
+        top: 40%;
+        left: 20%;
+        transform: translate(-40%, -20%);
+    }
+
+    .bottom {
+        left: 20%;
+        transform: translate(10%, 250%);
+    }
+
+    .textbox .btn {
+        margin-left: 0px;
+    }
+
+    .download-link {
+        position: absolute;
+        z-index: 25;
+        opacity: 0.25;
+        font-size: 35px;
+        bottom: 0;
+        right: 0;
+        padding-right: 20px;
+        padding-bottom: 45px;
+    }
+
+    /** 
+    * Before/After Styles
+    */
+
+    .wrapper{
+        width: 100%;
+        height: 700px;
+        position: relative;
+        overflow: hidden;
+        margin: 40px 30px 10px 0;
+    }
+
+    .before,
+    .after {
+        width:100%;
+        height:100%;
+        background-repeat:no-repeat;
+        background-color: white;
+        background-size: cover;
+        background-position: center;
+        position: absolute;
+        top:0;
+        left:0;
+        pointer-events:none;
+        overflow: hidden;
+    }
+
+    .content-image{
+        height:100%;
+    }
+
+    .after{
+        width:125px;
+    }
+
+    .scroller{
+        width: 50px;
+        height:50px;
+        position: absolute;
+        left:100px;
+        top:50%;
+        transform:translateY(-50%);
+        border-radius:50%;
+        background-color: transparent;
+        opacity:0.9;
+        pointer-events:auto;
+        cursor: pointer;
+    }
+
+    .scroller:hover{
+        opacity:1;
+    }
+
+    .scrolling{
+        pointer-events:none;
+        opacity:1;
+        z-index: 1;
+    }
+
+    .scroller__thumb{
+        width:100%;
+        height:100%;
+        padding:5px;
+    }
+
+    .scroller:before,
+    .scroller:after{
+        content:" ";
+        display: block;
+        width: 7px;
+        height: 9999px;
+        position: absolute;
+        left: 50%;
+        margin-left: -3.5px;
+        z-index: 30;
+        transition:0.1s;
+    }
+
+    .scroller:before{
+        top:100%;
+    }
+
+    .scroller:after{
+        bottom:100%;
+    }
+
+    .scroller{
+        border: 5px solid #fff;
+    }
+
+    .scroller:before,
+    .scroller:after{
+        background: #fff;
+    }
+
+    /** 
+    * Narrow Container Styles
+    */
+
+    .narrow-container {
+        background-color: #46719f;
+        color: #f2f3f7;
+        /*min-height: 400px;*/
+        padding: 50px 20px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.45);
+    }
+
+    .flex {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .shadow {
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.45);
+    }
+
+    .shadow > video {
+        margin-bottom: -6px;
+    }
+
+    .rborder {
+        border-right: 2px solid #d4edfe;
+    }
+
+    .tborder {
+        border-top: 2px solid #d4edfe;
+    }
+
+    .border {
+        border: #d4edfe;
+        border-width: 1px;
+        border-style: solid;
+    }
+
+    .box {
+        background-color: rgba(255, 255, 255, 0.46);
+    }
+
+    .mobile-visible {
+        display: none;
+    }
+
+    .mobile-hidden {
+        display: '';
+    }
+
+    .to-edges {
+        margin: -20px;
+    }
+
+
+    /**
+    * Wide Container Styles
+    */
+
+    .wide-container {
+        width: 100%;
+        min-height: 500px;
+        position: relative;
+        margin-bottom: -6px;
+    }
+
+
+    /**
+    * Width Instructions
+    */
+
+    .one-third {
+        flex-basis: 33.3%;
+    }
+
+    .two-thirds {
+        flex-basis: 66.6%;
+        /*padding: 2rem;*/
+    }
+
+    .one-half {
+        flex-basis: 50%;
+        padding: 2rem;
+        margin: auto;
+        min-height: 200px;
+    }
+
+    .overflow-boxes {
+        margin-left: -10vw;
+        margin-right: -10vw;
+    }
+
+    .narrow-text {
+        background-color: #d4edfe;
+        margin-top: 3%;
+        margin-bottom: 3%;
+        padding: 25px 50px;
+    }
+
+    .image-responsive {
+        width: 100%;
+        height: auto;
+    }
+
+    .background-image {
+        background-size: cover;
+        background-position: center;
+    }
+
+    video {
+        width: 100%;
+        height: auto;
+    }
+
+    .center {
+        text-align: center;
+    }
+
+    /** 
+    * Update Specific Styles
+    */
+
+    #youtube {
+        text-align:center;
+    }
+
+    #story-text {
+        width: 100%;
+        background-color: #d4edfe;
+        padding: 70px 100px;
+    }
+
+    #glacial-basin {
+        margin-bottom: -6px;
+        min-height: unset;
+    }
+
+    #new-items > div.overflow-boxes {
+        height: 30vh;
+    }
+
+    .items {
+        height: 100%;
+    }
+
+    .item-description {
+        flex-basis: 60%;
+    }
+
+    .left-item {
+        margin-left: 20px;
+    }
+
+    .right-item {
+        margin-right: 20px;
+    }
+
+    #surface-beacons {
+        background-image: url('https://dkli3tbfz4zj3.cloudfront.net/all/202004_Frostbite/images/beacon.jpg');
+    }
+
+    #quantum-locker {
+        background-image: url('https://dkli3tbfz4zj3.cloudfront.net/all/202004_Frostbite/images/quantum-locker.jpg');
+    }
+
+    #snowballs {
+        background-image: url('https://dkli3tbfz4zj3.cloudfront.net/all/202004_Frostbite/images/snowball.jpg');
+    }
+
+    #purification-tablets {
+        background-image: url('https://dkli3tbfz4zj3.cloudfront.net/all/202004_Frostbite/images/tablets.jpg');
+    }
+
+    #world-polish {
+        position: relative;
+        height: 80vh;
+    }
+
+    #world-polish > span 
+    {
+        opacity: 0;
+        object-fit: cover;
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        width: 100%;
+        height: 100%;
+        -webkit-transition: all 0.5s ease-out;
+        -moz-transition:all 0.5s ease-out;
+        -o-transition:all 0.5s ease-out;
+        transition:all 0.5s ease-out;
+        z-index: 5;
+    }
+
+    #world-polish > span.visible {
+        opacity: 1;
+    }
+
+    #polish-1 {
+        background-image: url('https://dkli3tbfz4zj3.cloudfront.net/all/202004_Frostbite/images/polish-1.jpg');  
+    }
+
+    #polish-2 {
+        background-image: url('https://dkli3tbfz4zj3.cloudfront.net/all/202004_Frostbite/images/polish-2.jpg');
+    }
+
+    #polish-3 {
+        background-image: url('https://dkli3tbfz4zj3.cloudfront.net/all/202004_Frostbite/images/polish-3.jpg');
+    }
+
+    #polish-4 {
+        background-image: url('https://dkli3tbfz4zj3.cloudfront.net/all/202004_Frostbite/images/polish-4.jpg');
+    }
+
+    #ore-vein {
+        background-image: url('https://dkli3tbfz4zj3.cloudfront.net/all/202004_Frostbite/images/ore-vein.jpg');
+    }
+
+    #ui-improvements .narrow-text {
+        flex-basis: 39%;
+    }
+
+    #ui-details {
+        background: #d4edfe;
+        margin-top: -50px;
+        padding: 50px;
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+
+    #ui-improvements h2 {
+        text-align: center;
+    }
+
+    #ui-improvements p {
+        text-align: center;
+    }
+
+    #cold-mechanics {
+        background-image: url('https://dkli3tbfz4zj3.cloudfront.net/all/202004_Frostbite/images/cold.jpg');
+        height: 75vh;
+    }
+    
+    #weather-details {
+        background: #d4edfe;
+        margin-top: -50px;
+        padding: 50px;
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+
+    #weather-details h2 {
+        text-align: center;
+    }
+
+    #weather-details p {
+        text-align: center;
+    }
+
+    #patch-notes {
+        text-align: center;
+        min-height: 200px;
+    }
+
+    .tooltip-style {
+        background-color: rgba(255, 255, 255, 0.50);
+        margin: 10px;
+        padding: 20px;
+    }
+
+    .tooltip-style:before {
+        left: 0;
+        top: 50%;
+        transform: translate(calc(-100% - 8px), -50%);
+        box-sizing: border-box;
+        border-radius: 3px;
+    }
+
+    .tooltip-style:after {
+        border-width: 8px 0 8px 8px;
+        border-color: transparent transparent transparent rgba(0, 27, 45, 0.85);
+        left: -8px;
+        top: 50%;
+        transform: translate(0, -50%);
+    }
+
+    #twitter {
+        background-image: url('https://dkli3tbfz4zj3.cloudfront.net/all/202004_Frostbite/images/twitter.jpg');
+    }
+
+    @media only screen and (max-width : 480px) {
+        h2 {
+            font-size: 14px;
+        }
+
+        .narrow-text{
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+
+        .wrapper {
+            height: 300px;
+        }
+
+        .item-description {
+            flex-basis: 100%;
+        }
+
+        #new-items > div.overflow-boxes {
+            height: unset;
+        }
+
+        #status-icons {
+            flex-basis: 100%;
+        }
+
+        #crisp-text {
+            flex-basis: 100%;
+        }
+
+        #ui-improvements .narrow-text {
+            flex-basis: 100%;
+        }
+
+        .items {
+            height: 200px;
+        }
+
+        .left-item {
+            order: 2;
+        }
+
+        .right-item {
+            order: 2;
+        }
+
+        #surface-beacons {
+            order: 1;
+        }
+
+        #quantum-locker {
+            order: 1;
+        }
+
+        #snowballs {
+            order: 1;
+        }
+
+        #purification-tablets {
+            order: 1;
+        }
+
+        #cold-mechanics {
+            height: 35vh;
+        }
+    }
+
+    @media (min-width : 481px) and (max-width: 850px) {
+
+        .overflow-boxes {
+            margin-left: 0 !important;
+            margin-right: 0 !important;
+        }
+
+        #status-icons {
+            height: 50vh;
+        }
+
+        #crisp-text {
+            height: 50vh;
+        }
+
+    }
+
+    @media (min-width : 481px) and (max-width: 1679px) {
+        #new-items > div.overflow-boxes {
+            height: 50vh;
+        }
+    }
+
+    @media screen and (min-width: 2048px) {
+        .bottom {
+            transform: translate(35%, 250%);
+        }
+    }
+
+
+    /**
+    * Twitter Grid Styles
+    */
+
+    .twitter-grid {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        padding: 3em 5em 3em 5em;
+        margin: 50px 0 0px 0;
+        max-width: 1000px;
+        background-color: rgba(147, 168, 187, 0.41);
+    }
+
+    .twitter-grid h2 {
+        flex-basis: 100%;
+        align-self: center;
+        margin-bottom: 36px;
+        color: white;
+        text-align: center;
+    }
+
+    .twitter-grid p {
+        flex-basis: 100%;
+        align-self: center;
+        margin-top: 36px;
+        color: white;
+    }
+
+    .twitter-grid > p > a {
+        color: #ade6fd;
+    }
+
+    .twitter-grid img {
+        align-self: center;
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+
+    .overlay {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 100%;
+        width: 100%;
+        opacity: 0;
+        transition: .5s ease;
+        background-color: #fafdff;
+        pointer-events: none;
+    }
+
+    .twitter-image-container {
+        position: relative;
+        cursor: pointer;
+    }
+
+    .twitter-image-container:hover .overlay {
+        opacity: 0.75;
+    }
+    
+    .text {
+        color: #2b3043;
+        font-size: 8px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+
+
+    /** 
+    * Mailchimp signup styles
+    **/
+
+    .final {
+        height: fit-content;
+        position: relative;
+        overflow: hidden; 
+        min-height: 100vh; 
+        background-image: url('https://dkli3tbfz4zj3.cloudfront.net/all/202004_Frostbite/images/footer.jpg');
+        background-size: cover;
+        margin-right: 0px;
+        margin-left: 0px;
+    }
+
+    .mailchimp-textbox {
+        max-width: 490px;
+        width: 100%;
+        text-align: center;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: rgba(236, 251, 255, 0.29); 
+        padding: 40px;
+        z-index: 11;
+        border-radius: 2px;
+        mix-blend-mode: hard-light;
+    }
+
+    .mailchimp-textbox p {
+        margin-bottom: 36px;
+        color: white;
+    }
+
+    .mailchimp-textbox h2 {
+        color: white;
+    }
+
+    .mailchimp-input {
+        background: rgba(255, 255, 255,0.8); 
+        font-size: 18px;
+        font-weight: bold;
+        border-radius: 2px;
+        border-width: 0px;
+        outline: none;
+        width: 100%;
+        color: white;
+        text-align: center;
+        margin-bottom: 18px;
+    }
+
+    .mailchimp-textbox-mobile {
+        display: none;
+    }
+
+    .email {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .follow-items {
+        display: grid;
+        margin-left: 16px;
+        margin-right: 16px;
+        margin-top: 32px;
+        max-width: 800px;
+        grid-template-columns: repeat(5, 1fr);
+        grid-gap: 16px;
+    }
+
+    @media screen and (max-width: 704px) {
+        .follow-items {
+            grid-gap: 8px;
+        }
+    }
+    @media screen and (max-width: 586px) {
+        .follow-items {
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 16px;
+        }
+        .follow-item {
+            max-width: 120px;
+            padding-left: 16px;
+            padding-right: 16px;
+        }
+    }
+
+    .follow-item {
+        padding: 8px;
+        border-radius: 2px;
+        transition: all 0.16s ease-out;
+        background-color:  rgba(255,255,255, 0);
+        cursor: pointer;
+    }
+
+    .follow-item:hover {
+        background-color: rgba(255,255,255, 0.2);
+    }
+
+    a.follow-item {
+        text-decoration: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: auto;
+        height: 100%;
+    }
+
+    .follow-item img {
+        width: 100%;
+        max-width: 50px;
+        height: auto;
+    }
+
+    .follow-item p {
+        color: white;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-weight: bolder;
+        font-size: 14px;
+        letter-spacing: 1px;
+        text-align: center;
+        text-shadow: 0px 0px 3px rgba(168, 192, 207, 1);
+    }
+
+
+    /** 
+    * Footer styles
+    **/
+
+    footer {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 40px 10px 40px;
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+    }
+
+    footer p {
+        font-size: 10px;
+        color: white;
+    }
+
+
+    /** 
+    * Media queries for mobile
+    **/
+
+    #video-trailer, .video-embed  {
+        width: 800px;
+        height: 450px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.45);
+        margin:auto;
+    }
+    @media screen and (max-width: 1279px) {
+        #video-trailer, .video-embed {
+            width: 640px;
+            height: 360px;
+/*             width: 720px;
+            height: 405px; */
+        } 
+    }
+/*     @media screen and (max-width: 850px) {
+        #video-trailer, .video-embed {
+            width: 640px;
+            height: 360px;
+        } 
+    } */
+    @media screen and (max-width: 1160px) {
+        #video-trailer, .video-embed {
+            width: 416px;
+            height: 234px;
+        } 
+    }
+    @media screen and (max-width: 680px) {
+        #video-trailer, .video-embed {
+            width: 416px;
+            height: 234px;
+        } 
+    }
+    @media screen and (max-width: 430px) {
+        #video-trailer, .video-embed {
+            width: 320px;
+            height: 180px;
+        } 
+    }
+
+    @media only screen and (max-width : 480px) {
+        h2 {
+            font-size: 14px;
+        }
+
+        .quote-inner {
+            padding: 4em;
+        }
+
+        .quote > p {
+            margin-top: 20px;
+        }
+
+        .wide-container {
+            max-height: 400px;
+            min-height: unset;
+        }
+
+        .one-third {
+            flex-basis: 100%;
+        }
+
+        .two-thirds {
+            flex-basis: 100%;
+            /*padding: 2rem;*/
+        }
+
+        .one-half {
+            flex-basis: 100%;
+            padding: 2rem;
+            margin: auto;
+        }
+
+        .rborder {
+            border-right: unset;
+            border-bottom: 2px solid #2b3043;
+        }
+
+        .textbox {
+            position: unset;
+            padding: 20px;
+            margin: 40px;
+            width: unset;
+        }
+
+        .textbox-animating {
+            display: none;
+        }
+
+        .textbox-mobile {
+            display: block;
+        }
+
+        .textbox-mobile p {
+            padding-left: 18px;
+            padding-right: 18px;
+        }
+
+        .twitter-grid {
+            padding: 1em 2em 1em 2em;
+        }
+
+        .mailchimp-textbox {
+            position: unset;
+            top: unset;
+            left: unset;
+            transform: unset;
+        }
+
+        footer {
+            display: none;
+        }
+    }
+
+    @media (max-width: 580px) {
+        .textbox-mobile p {
+            padding-left: 24px;
+            padding-right: 24px;
+        }
+    }
+
+    @media (max-width: 776px) {
+        .textbox {
+            padding-top: 20px;
+            padding-left: 26px;
+            padding-right: 26px;
+            padding-bottom: 20px;
+            width: 400px;
+        }
+        .textbox p {
+            font-size: 16px;
+        }
+    }
+
+    @media (max-width: 750px) {
+        .textbox {
+            display: none;
+        }
+        .textbox p {
+            display: none;
+        }
+        .textbox-mobile {
+            display: inherit;
+        }
+        .mobile-visible {
+            display: unset;
+        }
+
+        .mobile-hidden {
+            display: none;
+        }
+    }
+
+    @media (max-width: 920px) {
+        .textbox {
+            padding-top: 25px;
+            padding-left: 31px;
+            padding-right: 31px;
+            padding-bottom: 25px;
+        }
+        .textbox p {
+            font-size: 17px;
+        }
+    }
+
+    @media (min-width: 920px) {
+        .narrow-container {
+            max-width: 1080px;
+            margin-left: 20vw;
+            margin-right: 20vw;
+        }
+    }
+  </style>
+
+    <script>
+        /**
+         * 
+         * UWE Subnautica Updates - Logo Animation Class
+         * Author - jess@unknownworlds.com
+         * 
+         */
+    
+        class AnimateLogo {
+            static get _EffectId() { return 'sparkle' };
+
+            constructor() {
+                this._effect = document.getElementById(AnimateLogo._EffectId);
+                if (!this._effect) { 
+                    throw Error('Effect cannot be falsey'); 
+                }
+                const self = this;
+                this._lastCall = 0;
+                window.addEventListener('scroll', this.animate.bind(self));
+                this.draw();
+            }
+    
+            animate(callTime) {
+                const self = this;
+                const innerBind = this.animate.bind(self);
+                if (callTime <= this._lastCall) {
+                    requestAnimationFrame(innerBind);
+                    return;
+                }
+                this.draw();
+                return;
+            }
+    
+            draw() {
+                const effectRect = this._effect.getBoundingClientRect();
+                const effectBottom = effectRect.bottom;
+                const effectHeight = effectRect.height;
+                const distanceToTop = effectBottom / effectHeight;
+
+                if (distanceToTop > 1.1) {
+                    this._effect.style.opacity = 0;
+                    return;
+                }
+                if (distanceToTop < 0.80) {
+                    this._effect.style.opacity = 0;
+                    return;
+                }
+
+                const x = distanceToTop - 0.95;
+                const x2 = x * x;
+                const a = -44.44 * x2;
+                const y = a + 1;
+                this._effect.style.opacity = y;
+                return;
+    
+            }
+        }
+
+        //const ANIMATELOGO = new AnimateLogo();
+    </script>
+
+    <script>
+        /**
+        * 
+        * UWE Subnautica Expansion - Animate Textbox Class
+        * Author - jess@unknownworlds.com, hugh@unknownworlds.com
+        * 
+        */
+        const ANIMATING_TEXTBOX_CLASS = 'textbox-animating';
+        const ANIMATING_TEXTBOX_IN = 'textbox-animate-in';
+
+        class AnimatingTextbox {
+            constructor(element) {
+                this._element = element;
+                if (!this._element) {
+                    throw Error("Textbox element can't be falsey", element);
+                }
+                this._hasFadedIn = false;
+                const self = this;
+                document.addEventListener('scroll', this.animate.bind(self));
+                window.addEventListener('resize', this.animate.bind(self));
+                return;
+            }
+
+            animate() {
+                if (this._hasFadedIn) { return; }
+                const elementRect = this._element.getBoundingClientRect();
+                const elementTop = elementRect.top;
+                const elementBottom = elementRect.bottom;
+                const isVisible = elementTop < window.innerHeight && elementBottom >= 0;
+                if (!isVisible) { return; }
+                const distanceFromBottom = elementBottom - window.innerHeight;
+                const marginOut = window.innerHeight - this._element.offsetHeight;
+                const marginIn = -(marginOut) / 5;
+                if (distanceFromBottom < marginIn) { this._animateIn(); return; }
+                const fallback = this._element.offsetHeight + 50;
+                if (window.innerHeight < fallback) { this._animateIn(); return; }
+                return;
+            }
+
+            _animateIn() {
+                this._element.classList.add(ANIMATING_TEXTBOX_IN);
+                this._hasFadedIn = true;
+                return;
+            }
+
+            _animateOut() {
+                this._element.classList.remove(ANIMATING_TEXTBOX_IN);
+                this._hasFadedIn = false;
+                return;
+            }
+
+            // Add animateout method
+
+        }
+    </script>
+
+    <script>
+        /* Frostbite Update Site - Before/After Script */
+        
+        let active = false;
+
+        document.querySelector('.scroller').addEventListener('mousedown',function(){
+            active = true;
+            document.querySelector('.scroller').classList.add('scrolling');
+        });
+
+        document.body.addEventListener('mouseup',function(){
+            active = false;
+            document.querySelector('.scroller').classList.remove('scrolling');
+        });
+
+        document.body.addEventListener('mouseleave',function(){
+            active = false;
+            document.querySelector('.scroller').classList.remove('scrolling');
+        });
+
+        document.body.addEventListener('mousemove',function(e){
+            if (!active) return;
+            let x = e.pageX;
+            x -= document.querySelector('.wrapper').getBoundingClientRect().left;
+            scrollIt(x);
+        });
+
+        // For mobile
+        document.querySelector('.scroller').addEventListener('touchstart',function(){
+            active = true;
+            document.querySelector('.scroller').classList.add('scrolling');
+        });
+
+        document.body.addEventListener('touchend',function(){
+            active = false;
+            document.querySelector('.scroller').classList.remove('scrolling');
+        });
+        
+        document.body.addEventListener('touchcancel',function(){
+            active = false;
+            document.querySelector('.scroller').classList.remove('scrolling');
+        });
+
+        function scrollIt(x){
+            let transform = Math.max(0,(Math.min(x,document.querySelector('.wrapper').offsetWidth)));
+            document.querySelector('.after').style.width = transform+"px";
+            document.querySelector('.scroller').style.left = transform-25+"px";
+        }
+        scrollIt(150);
+    </script>
+
+    <script>
+        /**
+        * 
+        * UWE Subnautica Updates - Swap Images Class
+        * Author - jess@unknownworlds.com
+        * 
+        */
+
+        class CyclableImage {
+
+            static get _VisibleClass() { return 'visible'; }
+
+            constructor(
+                image  // HTML Dom ELement
+            ){
+                this._image = image;
+                return;
+            }
+
+            show() {
+                requestAnimationFrame(() => {
+                    this._image.classList.add(CyclableImage._VisibleClass);
+                });
+                return;
+            }
+
+            hide() {
+                this._image.classList.remove(
+                    CyclableImage._VisibleClass
+                );
+                return;
+            }
+
+            _adjustZIndex(change) {
+                const existing = Number(this._image.style.zIndex);
+                const newZ = existing + change;
+                this._image.style.zIndex = String(newZ);
+                return;
+            }
+
+            incrementZIndex() {
+                this._adjustZIndex(1);
+                return;
+            }
+
+            decrementZIndex() {
+                this._adjustZIndex(-1);
+                return;
+            }
+
+        }
+
+        class ImageCycler {
+            
+            static get _FadeTime() { return 500; } // Milliseconds
+            static get _CycleTime() { return 5000; } // Milliseconds
+
+            constructor(
+                images,      // Array of CyclableImages
+                imageFrame   // DOM element in which images will cycle
+            ) {
+
+                this._images = images;
+                this._imageFrame = imageFrame;
+                this._index = 0;
+                this._images[this._index].show();
+
+                const self = this;
+                setInterval(
+                    () => { self._cycle(); },
+                    ImageCycler._CycleTime
+                );
+                return;
+            }
+
+            _cycle() {
+
+                const Self = ImageCycler;
+                const indexToFadeOut = this._index;
+
+                this._index += 1;
+                if (this._index >= this._images.length) {
+                    this._index = 0;
+                }
+
+                this._images[this._index].incrementZIndex();
+                this._images[indexToFadeOut].decrementZIndex();
+                this._images[this._index].show();
+
+                setTimeout(
+                    () => {
+                        this._images[indexToFadeOut].hide();
+                    },
+                    Self._FadeTime
+                );
+
+                return;
+            }
+
+            static initialize(elementId) {
+                const frame = document.getElementById(elementId);
+                const rawImages = Array.from(
+                    frame.getElementsByTagName('span')
+                );
+                const images = rawImages.map(
+                    (rawImage) => { return new CyclableImage(rawImage); }
+                )
+                return new ImageCycler(images, frame);
+            }
+        }
+
+        const IMAGE_CYCLER = ImageCycler.initialize('world-polish');
+
+    </script>
+
+    <script>
+    /**
+    * 
+    * UWE Subnautica Updates - Swap Images Class
+    * Author - jess@unknownworlds.com
+    * 
+    */
+
+    class SwapImage {
+
+        static get _BigElementId() { return 'id-of-big-image' }
+        static get _ElementClass() { return 'images-swap' }
+
+        constructor(element, bigImageElement) {
+            this._element = element;
+            this._bigImageElement = bigImageElement;
+            if (!this._element) {
+                throw Error("Image element can't be falsey", this._element);
+            }
+            const self = this;
+            this._element.addEventListener(
+                'click', this.swap.bind(self)
+            );
+            return;
+        }
+
+        swap() {
+            const viewportWidth = window.innerWidth || document.documentElement.clientWidth;
+
+            if (viewportWidth > 480) {
+                const elementStyle = getComputedStyle(this._element, '');
+                const bigStyle = getComputedStyle(this._bigImageElement, '');
+                const elementSource = elementStyle.getPropertyValue('background-image');
+                const bigImageSource = bigStyle.getPropertyValue('background-image');
+                this._bigImageElement.style.backgroundImage = elementSource;
+                this._element.style.backgroundImage = bigImageSource;
+                return;
+            } else { return; }
+        }
+
+        static prepareImages() {
+            const imageElements = document.getElementsByClassName(
+                SwapImage._ElementClass
+            );
+
+            const images = Array();
+
+            for (let i = 0; i < imageElements.length; i++) {
+                const image = new SwapImage(imageElements[i], document.getElementById(SwapImage._BigElementId));
+                images.push(image);
+            }
+
+            return images;
+        }
+    }
+
+    //const SWAP_IMAGES = SwapImage.prepareImages();
+
+    </script>
+
+    <script>
+        /**
+         * 
+         * UWE Subnautica Updates - Animate Video Class
+         * Author - jess@unknownworlds.com
+         * Requires a video of 3 seconds length
+         * 
+         */
+        class AnimateVideo {
+
+            constructor(videoElement) {
+                this._videoElement = videoElement;
+                if (!this._videoElement) {
+                    throw Error("Video element can't be falsey", this._videoElement);
+                }
+                const self = this;
+                this._lastCall = 0;
+                window.addEventListener('scroll', this.animate.bind(self));
+                this._changeFrame();
+                return;
+            }
+
+            animate(callTime) {
+                const self = this;
+                const innerBind = this.animate.bind(self);
+                if (callTime <= this._lastCall) {
+                    requestAnimationFrame(innerBind);
+                    return;
+                }
+                this._changeFrame();
+                return;
+            }
+
+            _changeFrame() {
+                const rect = this._videoElement.getBoundingClientRect();
+                const offset = window.pageYOffset;
+                const top = rect.top;
+                const bottom = rect.bottom;
+                const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+                let newFrame;
+
+                if (
+                    top <= (viewportHeight) &&
+                    bottom >= 0
+                ) {
+                    const x = top - viewportHeight;
+                    const y = rect.height + viewportHeight;
+                    const w = x/y;
+                    const v = Math.abs(w*3);
+
+                    newFrame = Math.round(v * 100) / 100;
+                    this._videoElement.currentTime = newFrame;
+                }
+            }
+        }
+
+        const VIDEO1 = new AnimateVideo(document.getElementById('glacial-basin-video'));
+        const VIDEO3 = new AnimateVideo(document.getElementById('hero'));
+    </script>
+
+    <script>
+        /**
+        * 
+        * UWE Subnautica Expansion - Textbox Script
+        * Author - hugh@unknownworlds.com
+        * 
+        */
+
+        function prepareTextboxes() {
+            const textboxElements = document.getElementsByClassName(
+                ANIMATING_TEXTBOX_CLASS
+            );
+            let textboxes = Array();
+            for (let i = 0; i < textboxElements.length; i++) {
+                let box = new AnimatingTextbox(textboxElements[i]);
+                textboxes.push(box);
+            }
+            return textboxes
+        }
+
+        const ANIMATING_TEXTBOXES = prepareTextboxes();
+
+    </script>
+
+    <script>
+        const NAVLOGO = new NavLogo('nav-wrapper', 'logo');
+    </script>
+
+    <script>
+        /* Frostbite Update Site - Buybar Script */
+
+        const BUYMODAL_ID = 'buymodal';
+        const BUYMODAL = BuyModal.loadFromElementId(BUYMODAL_ID);
+        const BUYBAR_ID = 'nav-wrapper';
+        const BUYBAR = BuyBar.loadFromElementId(BUYBAR_ID, BUYMODAL);
+
+                
+        /* Subnautica Below Zero Buy Page - Randomise Stores Script */
+
+        const RANDOM_STORE_CLASS = 'store';
+        const RANDOM_STORE_PARENT_ID = 'store-selection';
+        const STORES = document.getElementsByClassName(RANDOM_STORE_CLASS);
+        const PARENT = document.getElementById(RANDOM_STORE_PARENT_ID);
+
+        function generateRandom(max, not1, not2) {
+            const number = Math.floor(Math.random() * Math.floor(max));
+            if (number === not1 || number === not2) {
+                return generateRandom(max, not1, not2);
+            }
+            return number;
+        }
+
+        const FIRST = generateRandom(3, 4, 5);
+        const SECOND = generateRandom(3, FIRST, 5);
+        const THIRD = generateRandom(3, FIRST, SECOND);
+
+        PARENT.appendChild(STORES[FIRST]);
+        PARENT.appendChild(STORES[SECOND]);
+        PARENT.appendChild(STORES[THIRD]);
+    </script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+    <!-- Analytics excluded (debug / development mode) -->
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-931975-7"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-931975-7');
+    </script>
+
+    <script>
+        'use strict';
+        
+        const STORE_GA_CLASS = 'store';
+        const FOLLOW_CLASS = 'follow-item';
+        const TWITTER_CLASS = 'twitter-image-contatiner';
+        const TWITTER_ALL_CLASS = 'twitter-all';
+        const SOURCES = {
+            1: "facebook",
+            2: "twitter",
+            3: "youtube",
+            4: "twitch",
+            5: "instagram",
+            6: "mail",
+            7: "blog",
+            8: "steam",
+            9: "discord",
+            10: "in_game",
+            11: "epic"
+        }
+
+
+        function applyLabels() {
+            const storesGA = document.getElementsByClassName(STORE_GA_CLASS);
+            for (let i = 0; i < storesGA.length; i ++) {
+                storesGA[i].addEventListener('click', function() {
+                    const label = storesGA[i].dataset.storeName;
+                    gtag(
+                        'event',
+                        'click',
+                        {
+                            'event_category': 'Store',
+                            'event_label': label
+                        }
+                    );
+                });
+            }
+
+            const followGA = document.getElementsByClassName(FOLLOW_CLASS);
+            for (let i = 0; i < followGA.length; i ++) {
+                followGA[i].addEventListener('click', function() {
+                    const label = followGA[i].getElementsByTagName('p')[0].innerText;
+                    gtag(
+                        'event',
+                        'click',
+                        {
+                            'event_category': 'Media',
+                            'event_label': label
+                        }
+                    );
+                });
+            }
+            
+            const PAGE_URL = new URL(window.location);
+            const KEY = PAGE_URL.searchParams.get('k');
+            let eventsSourcesLabel = 'unknown';
+            const SOURCE = SOURCES[KEY];
+            if (SOURCE) {
+                eventsSourcesLabel = SOURCE;
+            }
+            gtag(
+                'event',
+                'visit',
+                {
+                    'event_category': 'Source',
+                    'event_label': eventsSourcesLabel
+                }
+            );
+            
+            const twitterGA = document.getElementsByClassName(TWITTER_CLASS);
+            for (let i = 0; i < twitterGA.length; i ++) {
+                twitterGA[i].addEventListener('click', function() {
+                    const anchor = twitterGA[i].getElementsByTagName('a')[0];
+                    const label = anchor.attributes.alt.value;
+                    gtag(
+                        'event',
+                        'click',
+                        {
+                            'event_category': 'Dev Twitter',
+                            'event_label': label
+                        }
+                    );
+                });
+            }
+            const twitterAll = document.getElementsByClassName(TWITTER_ALL_CLASS);
+            const twitterAllLabel = 'all';
+            for (let i = 0; i < twitterAll.length; i ++) {
+                twitterAll[i].addEventListener('click', function() {
+                    gtag(
+                        'event',
+                        'click',
+                        {
+                            'event_category': 'Dev Twitter',
+                            'event_label': twitterAllLabel
+                        }
+                    );
+                });
+            }
+        }
+    </script>
+</html>
