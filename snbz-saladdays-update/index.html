@@ -1057,7 +1057,7 @@
 
     <div class="main">
         <div class="hero-container">
-            <video muted playsinline preload id="hero" poster="./images/hero.jpg">
+            <video autoplay loop muted playsinline poster="./images/hero.jpg">
                 <source src="./images/hero.mp4" type="video/mp4">
             </video>
             <div class="hero-overlay"></div>
@@ -1078,8 +1078,8 @@
         <!-- LOOPING RADIO TOWER VIDEO -->
 
         <div id="radio-tower" class="wide-container shadow">
-            <video autoplay loop muted playsinline poster="./images/intro.jpg">
-                <source src="./images/intro.mp4" type="video/mp4">
+            <video autoplay loop muted playsinline poster="./images/radio-tower.jpg">
+                <source src="./images/radio-tower.mp4" type="video/mp4">
             </video>
             <div class="textbox right textbox-animating">
                 <p>
@@ -1143,8 +1143,8 @@
         <!-- DEEP PURPLE VENTS VIDEO -->
 
         <div id= "deep-purple" class="wide-container shadow">
-            <video muted playsinline preload id="deep-purple-video" poster="./images/glacial-basin.jpg">
-                <source src="./images/glacial-basin.mp4" type="video/mp4">
+            <video muted playsinline preload id="deep-purple-video" poster="./images/purple-vents.jpg">
+                <source src="./images/purple-vents.mp4" type="video/mp4">
             </video>
             <div class="textbox right textbox-animating">
                 <p>
@@ -1299,8 +1299,8 @@
         <!-- UI SCALING -->
 
         <div id="ui-scaling" class="narrow-container">
-            <video class="shadow border" autoplay loop muted playsinline poster="./images/weather.jpg">
-                <source src="./images/weather.mp4" type="video/mp4">
+            <video class="shadow border" autoplay loop muted playsinline poster="./images/ui-scaling.jpg">
+                <source src="./images/ui-scaling.mp4" type="video/mp4">
             </video>
             <div id="ui-details" class="shadow">
                 <h2>UI SCALING</h2>
@@ -1794,7 +1794,7 @@
     **/
 
     .textbox {
-        background: rgba(6, 48, 28, 0.78); 
+        background: rgba(242, 255, 252, 0.69); 
         width: 450px;
         padding-top: 30px;
         padding-left: 36px;
@@ -1810,8 +1810,8 @@
 
     .textbox p {
         font-size: 18px;
-        text-shadow: 2px 2px 10px rgba(15, 15, 16, 0.65);
-        color: #fff;
+        text-shadow: 2px 2px 10px rgba(21, 55, 60, 0.45);
+        color: #145c57;
     }
 
     .textbox-mobile {
@@ -3145,7 +3145,6 @@
         }
 
         const VIDEO1 = new AnimateVideo(document.getElementById('deep-purple-video'));
-        const VIDEO3 = new AnimateVideo(document.getElementById('hero'));
     </script>
 
     <script>
