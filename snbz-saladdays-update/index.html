@@ -1042,14 +1042,15 @@
       <div class="nav">
         <ul>
             <a href="#youtube"><i class="tooltip tooltip-left" data-tip="Salad Days Video"><li></li></i></a>
-            <a href="#story-changes"><i class="tooltip tooltip-left" data-tip="Story Changes"><li></li></i></a>
-            <a href="#glacial-basin"><i class="tooltip tooltip-left" data-tip="Glacial Basin"><li></li></i></a>
-            <a href="#new-items"><i class="tooltip tooltip-left" data-tip="New Items"><li></li></i></a>
-            <a href="#polish"><i class="tooltip tooltip-left" data-tip="World Polish"><li></li></i></a>
-            <a href="#ui-improvements"><i class="tooltip tooltip-left" data-tip="UI Improvements"><li></li></i></a>
-            <a href="#ore-vein"><i class="tooltip tooltip-left" data-tip="Ore Veins"><li></li></i></a>
-            <a href="#escalating-weather"><i class="tooltip tooltip-left" data-tip="Weather Changes"><li></li></i></a>
-            <a href="#cold-mechanics"><i class="tooltip tooltip-left" data-tip="Cold Mechanics"><li></li></i></a>
+            <a href="#radio-tower"><i class="tooltip tooltip-left" data-tip="Welcome to 4546B"><li></li></i></a>
+            <a href="#marg-greenhouse"><i class="tooltip tooltip-left" data-tip="Marg's Greenhouse"><li></li></i></a>
+            <a href="#bases"><i class="tooltip tooltip-left" data-tip="World-Class Accommodations"><li></li></i></a>
+            <a href="#deep-purple"><i class="tooltip tooltip-left" data-tip="See the Deep Purple Vents"><li></li></i></a>
+            <a href="#new-items"><i class="tooltip tooltip-left" data-tip="Great Amenities"><li></li></i></a>
+            <a href="#iceberg-zone"><i class="tooltip tooltip-left" data-tip="Explore the Iceberg Zone"><li></li></i></a>
+            <a href="#other-additions"><i class="tooltip tooltip-left" data-tip="Friendly Locals"><li></li></i></a>
+            <a href="#polish"><i class="tooltip tooltip-left" data-tip="Stunning Vistas"><li></li></i></a>
+            <a href="#ui-scaling"><i class="tooltip tooltip-left" data-tip="Accessibility"><li></li></i></a>
         </ul>
       </div>
     </nav>
@@ -1074,39 +1075,80 @@
             </iframe>
         </div>
 
-        <!-- INTRO CINEMATIC VIDEO -->
+        <!-- LOOPING RADIO TOWER VIDEO -->
 
-        <div id="story-changes" class="wide-container shadow">
+        <div id="radio-tower" class="wide-container shadow">
             <video autoplay loop muted playsinline poster="./images/intro.jpg">
                 <source src="./images/intro.mp4" type="video/mp4">
             </video>
+            <div class="textbox right textbox-animating">
+                <p>
+                    After extended time without human interference, Glacial 
+                    Basin and Glacial Bay are returning to their natural state. 
+                    Brightly-colored fauna flourishes in the shadows of the 
+                    towering crevasses. Below these icy formations, a network 
+                    of extensive caves hides. 
+                </p>
+            </div>
         </div>
-
-
-        <!-- STORY -->
-
-        <div id="story-text" class="narrow-container">
-            <h2>START OF AN ALL-NEW STORY & INTRO</h2>
+    
+        <div class="textbox-mobile">
             <p>
-                In an effort to uncover the truth behind what happened 
-                to her sister, Robin Ayou set out alone to Planet 4546B. 
-                Once aboard the small craft that would take 
-                her to the planet surface, things did not go as planned. 
-                What’s worse? She’s not alone...
-            </p>
-            <hr />
-            <p>
-                This update marks the beginning of our new storyline. It's 
-                still a work-in-progress, so there is a lot more to look 
-                forward to. Get a behind the scenes peak at how we approach 
-                story <a href="https://unknownworlds.com/subnautica/how-we-approach-story/" target="_blank">here</a>.
+                After extended time without human interference, Glacial 
+                Basin and Glacial Bay are returning to their natural state. 
+                Brightly-colored fauna flourishes in the shadows of the 
+                towering crevasses. Below these icy formations, a network 
+                of extensive caves hides.  
             </p>
         </div>
 
-        <!-- GLACIAL BASIN VIDEO -->
+        <!-- MARG'S GREENHOUSE -->
 
-        <div id= "glacial-basin" class="wide-container shadow">
-            <video muted playsinline preload id="glacial-basin-video" poster="./images/glacial-basin.jpg">
+        <div id="marg-greenhouse" class="narrow-container">
+            <video class="shadow border" autoplay loop muted playsinline poster="./images/weather.jpg">
+                <source src="./images/weather.mp4" type="video/mp4">
+            </video>
+        </div>
+
+        <!-- BASES -->
+
+        <span id="bases"></span>
+        <div id= "omega-base" class="wide-container shadow background-image"></div>
+        <div id= "outpost-zero" class="wide-container shadow background-image"></div>
+        <div id= "delta-station" class="wide-container shadow background-image"></div>
+
+        <!-- STORY  -->
+
+        <div id="story-updates" class="narrow-container">
+            <div class="flex overflow-boxes" id="al-an">
+                <div class="two-thirds narrow-text shadow">
+                    <h2>AL-AN Calls</h2>
+                    <p>
+                        We're making big changes to our existing story! This will be the last update with the
+                        current verison of the story playable. Read more about these changes 
+                        <a href="https://unknownworlds.com/subnautica/the-future-of-below-zeros-story/">here</a>.
+                    </p>
+                </div>
+                <div id="al-an-image" class="one-third background-image border shadow"></div>
+            </div> 
+            <div class="flex overflow-boxes" id="arctic-bridge">
+                <div id="arctic-bridge-image" class="one-third background-image border shadow"></div>
+                <div class="two-thirds narrow-text shadow">
+                    <h2>Arctic Bridge</h2>
+                    <p>
+                        We're making big changes to our existing story! This will be the last update with the
+                        current verison of the story playable. Read more about these changes 
+                        <a href="https://unknownworlds.com/subnautica/the-future-of-below-zeros-story/">here</a>.
+                    </p>
+                </div>
+            </div> 
+        </div>
+
+
+        <!-- DEEP PURPLE VENTS VIDEO -->
+
+        <div id= "deep-purple" class="wide-container shadow">
+            <video muted playsinline preload id="deep-purple-video" poster="./images/glacial-basin.jpg">
                 <source src="./images/glacial-basin.mp4" type="video/mp4">
             </video>
             <div class="textbox right textbox-animating">
@@ -1134,9 +1176,9 @@
 
         <div class="narrow-container" id="new-items">
             <div class="overflow-boxes flex">
-                <div class="items background-image one-third shadow border" id="quantum-locker"></div>
+                <div class="items background-image one-third shadow border" id="recyclotron"></div>
                 <div class="item-description narrow-text left-item shadow">
-                    <h3>QUANTUM LOCKER</h3>
+                    <h3>RECYCLOTRON</h3>
                     <p>
                         Upgrade your storage for access anywhere using a Quantum
                          Locker (patent pending). This Precursor-tech container 
@@ -1149,7 +1191,7 @@
             </div>
             <div class="overflow-boxes flex">
                 <div class="item-description narrow-text right-item shadow">
-                    <h3>SURFACE BEACONS</h3>
+                    <h3>COFFEE MACHINE & THERMOS</h3>
                     <p>
                         Not great with directions? No problem. Upgrade your 
                         Survival Kit to include Beacons, now compatible with 
@@ -1157,36 +1199,75 @@
                         to a particular location anywhere in the world.
                     </p>
                 </div>
-                <div class="items background-image one-third shadow border" id="surface-beacons"></div>
+                <div class="items background-image one-third shadow border" id="coffee"></div>
             </div>
             <div class="overflow-boxes flex">
-                <div class="items background-image one-third shadow border" id="snowballs"></div>
+                <div class="items background-image one-third shadow border" id="ice-bubbles"></div>
                 <div class="item-description narrow-text left-item shadow">
-                    <h3>SNOWBALLS</h3>
+                    <h3>ICE BUBBLES</h3>
                     <p>
-                        If it’s not broken, don’t fix it. That’s why, official 
-                        as of today, Alterra is sanctioning the use of 
-                        snowballs to escape an aggressive Snow Stalker or in 
-                        combination with Purification Tablets to create 
-                        drinkable water. Use outside of these instances is not 
-                        condoned.
+                        Upgrade your storage for access anywhere using a Quantum
+                         Locker (patent pending). This Precursor-tech container 
+                        allows a user to access its contents from any Quantum 
+                        Locker in the world. Of course, quantum mechanics is 
+                        still relatively mysterious, even we’re not quite sure 
+                        how it works.
                     </p>
                 </div>
             </div>
-            <div class="overflow-boxes flex">
-                <div class="item-description narrow-text right-item shadow">
-                    <h3>WATER PURIFICATION TABLETS</h3>
-                    <p>
-                        When stranded on an alien planet covered in water 
-                        (frozen or otherwise), one can never have too many ways 
-                        to create drinking water. That’s why the scientists at 
-                        Alterra decided to invent something truly clever: A 
-                        tablet that combines with snowballs to create drinking 
-                        water.
-                    </p>
-                </div>
-                <div class="items background-image one-third shadow border" id="purification-tablets"></div>
+        </div>
+
+        <!-- ICEBERG ZONE -->
+
+        <div id="iceberg-zone"class="wide-container background-image shadow">
+            <div class="textbox left textbox-animating">
+                <p>
+                    It’s not really the arctic without hypothermia. There is now
+                     a meter on the heads-up-display to indicate temperature 
+                    exposure while on land. To warm up, visit a Thermal Lilly, 
+                    drink some coffee, or head into an enclosed space.
+                </p>
             </div>
+        </div>
+
+        <div class="textbox-mobile">
+            <p>
+                It’s not really the arctic without hypothermia. There is now a 
+                meter on the heads-up-display to indicate temperature 
+                exposure while on land. To warm up, visit a Thermal Lilly, 
+                drink some coffee, or head into an enclosed space.
+            </p>
+        </div>
+
+        <!-- OTHER ADDITIONS -->
+
+        <div class="narrow-container">
+            <div class="flex overflow-boxes" id="other-additions">
+                <div id="snowstalkers" class="two-thirds background-image border shadow"></div>
+                <div class="one-third narrow-text shadow">
+                    <h2>SNOWSTALKERS</h2>
+                    <p>
+                        Another surprisingly hostile inhabitant of the Crystal Caverns, the Hidden Croc spends 
+                        its days terrorizing surrounding schools of fish and scientists alike. Its bright scales 
+                        and sharp teeth pose a fair warning to its neighbors that should be heeded as soon as possible. 
+                    </p>
+                </div> 
+                <div class="one-third narrow-text shadow mobile-hidden">
+                    <h2>ICE WORM SPECIMIN</h2>
+                    <p>
+                        Found lazily floating around the Glacial Connection, this mysterious invertebrate is best 
+                        appreciated from the above. The tentacles below pose a shocking threat to all passersby. 
+                    </p>
+                </div> 
+                <div id="ice-worm" class="two-thirds background-image border shadow"></div>
+                <div class="one-third narrow-text shadow mobile-visible">
+                    <h2>ICE WORM SPECIMIN</h2>
+                    <p>
+                        Found lazily floating around the Glacial Connection, this mysterious invertebrate is best 
+                        appreciated from the above. The tentacles below pose a shocking threat to all passersby. 
+                    </p>
+                </div> 
+            </div> 
         </div>
 
         <!-- POLISH CAROUSEL -->
@@ -1217,63 +1298,14 @@
             </p>
         </div>
 
-        <!-- UI IMPROVEMENTS -->
+        <!-- UI SCALING -->
 
-        <div id="ui-improvements" class="narrow-container">
-            <div class="border shadow wrapper mobile-hidden">
-                <div class="before">
-                    <img class="content-image" src="./images/text-before.jpg" draggable="false"/>   
-                </div>
-                <div class="after">
-                    <img class="content-image" src="./images/text-after.jpg" draggable="false"/>
-                </div>
-                <div class="scroller">
-                    <svg class="scroller__thumb" xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><polygon points="0 50 37 68 37 32 0 50" style="fill:#fff"/><polygon points="100 50 64 32 64 68 100 50" style="fill:#fff"/></svg>
-                </div>
-            </div>
-            <img src="./images/text.jpg" class="image-responsive border shadow mobile-visible">
-            <div id="ui-details" class="shadow">
-                <h2>UI Improvements</h2>
-                <p>
-                    Items that degrade over time, such as anything using 
-                    power, now display a bar reflecting their status. As the
-                        item wears down, the status indicator lowers. We’ve 
-                    also upgraded the text to provide a clearer, crispier 
-                    experience.  
-                </p>
-            </div>
-        </div> 
-
-        <!-- ORE VEINS -->
-
-        <div id= "ore-vein" class="wide-container shadow background-image">
-            <div class="textbox right textbox-animating">
-                <p>
-                    Running low on a precious resource? Keep an eye out for Ore 
-                    Veins while adventuring out of the water. These resource-
-                    rich caches provide an abundance of various types of ore on 
-                    the surface. 
-                </p>
-            </div>
-        </div>
-    
-        <div class="textbox-mobile">
-            <p>
-                Running low on a precious resource? Keep an eye out for Ore 
-                Veins while adventuring out of the water. These resource-
-                rich caches provide an abundance of various types of ore on 
-                the surface. 
-            </p>
-        </div>
-
-        <!-- ESCALATING WEATHER VIDEO -->
-
-        <div id="escalating-weather" class="narrow-container">
-            <video class="shadow border" autoplay loop muted playsinline poster="./images/weather.jpg">
-                <source src="./images/weather.mp4" type="video/mp4">
+        <div id="ui-scaling" class="narrow-container">
+            <video class="shadow border" autoplay loop muted playsinline poster="https://dkli3tbfz4zj3.cloudfront.net/all/202004_Frostbite/images/weather.jpg">
+                <source src="https://dkli3tbfz4zj3.cloudfront.net/all/202004_Frostbite/images/weather.mp4" type="video/mp4">
             </video>
-            <div id="weather-details" class="shadow">
-                <h2>ESCALATING WEATHER</h2>
+            <div id="ui-details" class="shadow">
+                <h2>UI SCALING</h2>
                 <p>
                     Weather now transitions gradually. If the weather worsens, 
                     that might be a cue to seek shelter. Likewise, if it’s 
@@ -1282,27 +1314,6 @@
             </div>
         </div>
         
-        <!-- COLD MECHANICS IMAGE -->
-
-        <div id="cold-mechanics"class="wide-container background-image shadow">
-            <div class="textbox left textbox-animating">
-                <p>
-                    It’s not really the arctic without hypothermia. There is now
-                     a meter on the heads-up-display to indicate temperature 
-                    exposure while on land. To warm up, visit a Thermal Lilly, 
-                    drink some coffee, or head into an enclosed space.
-                </p>
-            </div>
-        </div>
-
-        <div class="textbox-mobile">
-            <p>
-                It’s not really the arctic without hypothermia. There is now a 
-                meter on the heads-up-display to indicate temperature 
-                exposure while on land. To warm up, visit a Thermal Lilly, 
-                drink some coffee, or head into an enclosed space.
-            </p>
-        </div>
         <div class="narrow-container" id="patch-notes">
             <a href='https://snexpansion.unknownworlds.com/changes-and-checkins'
                 target="_blank"
@@ -2114,13 +2125,31 @@
         text-align:center;
     }
 
-    #story-text {
-        width: 100%;
-        background-color: #d4edfe;
-        padding: 70px 100px;
+    #al-an-image {
+        background-image: url('https://dkli3tbfz4zj3.cloudfront.net/all/202002_LostShip/images/story.jpg');
+        height: 40vh;
+        z-index: 2;
     }
 
-    #glacial-basin {
+    #arctic-bridge-image {
+        background-image: url('https://dkli3tbfz4zj3.cloudfront.net/all/202002_LostShip/images/story.jpg');
+        height: 40vh;
+        z-index: 2;
+    }
+
+    #ice-worm {
+        background-image: url('https://dkli3tbfz4zj3.cloudfront.net/all/201911_DeepDive/images/hidden-croc.jpg');
+        height: 40vh;
+        z-index: 2;
+    }
+
+    #snowstalkers {
+        background-image: url('https://dkli3tbfz4zj3.cloudfront.net/all/201911_DeepDive/images/jellyfish.jpg');
+        height: 40vh;
+        z-index: 2;
+    }
+
+    #deep-purple {
         margin-bottom: -6px;
         min-height: unset;
     }
@@ -2145,20 +2174,16 @@
         margin-right: 20px;
     }
 
-    #surface-beacons {
+    #recyclotron {
         background-image: url('./images/beacon.jpg');
     }
 
-    #quantum-locker {
+    #coffee {
         background-image: url('./images/quantum-locker.jpg');
     }
 
-    #snowballs {
+    #ice-bubbles {
         background-image: url('./images/snowball.jpg');
-    }
-
-    #purification-tablets {
-        background-image: url('./images/tablets.jpg');
     }
 
     #world-polish {
@@ -2202,11 +2227,23 @@
         background-image: url('./images/polish-4.jpg');
     }
 
-    #ore-vein {
+    #omega-base {
         background-image: url('./images/ore-vein.jpg');
     }
 
-    #ui-improvements .narrow-text {
+    #outpost-zero {
+        background-image: url('./images/ore-vein.jpg');
+    }
+
+    #delta-station {
+        background-image: url('./images/ore-vein.jpg');
+    }
+
+    #iceberg-zone {
+        background-image: url('./images/ore-vein.jpg');
+    }
+
+    #ui-scaling .narrow-text {
         flex-basis: 39%;
     }
 
@@ -2218,11 +2255,11 @@
         margin-right: 50px;
     }
 
-    #ui-improvements h2 {
+    #ui-details h2 {
         text-align: center;
     }
 
-    #ui-improvements p {
+    #ui-details p {
         text-align: center;
     }
 
@@ -2230,21 +2267,9 @@
         background-image: url('./images/cold.jpg');
         height: 75vh;
     }
-    
-    #weather-details {
-        background: #d4edfe;
-        margin-top: -50px;
-        padding: 50px;
-        margin-left: 50px;
-        margin-right: 50px;
-    }
 
-    #weather-details h2 {
-        text-align: center;
-    }
-
-    #weather-details p {
-        text-align: center;
+    .narrow-container, #patch-notes {
+        box-shadow: unset;
     }
 
     #patch-notes {
@@ -2893,57 +2918,6 @@
     </script>
 
     <script>
-        /* Salad Days Update Site - Before/After Script */
-        
-        let active = false;
-
-        document.querySelector('.scroller').addEventListener('mousedown',function(){
-            active = true;
-            document.querySelector('.scroller').classList.add('scrolling');
-        });
-
-        document.body.addEventListener('mouseup',function(){
-            active = false;
-            document.querySelector('.scroller').classList.remove('scrolling');
-        });
-
-        document.body.addEventListener('mouseleave',function(){
-            active = false;
-            document.querySelector('.scroller').classList.remove('scrolling');
-        });
-
-        document.body.addEventListener('mousemove',function(e){
-            if (!active) return;
-            let x = e.pageX;
-            x -= document.querySelector('.wrapper').getBoundingClientRect().left;
-            scrollIt(x);
-        });
-
-        // For mobile
-        document.querySelector('.scroller').addEventListener('touchstart',function(){
-            active = true;
-            document.querySelector('.scroller').classList.add('scrolling');
-        });
-
-        document.body.addEventListener('touchend',function(){
-            active = false;
-            document.querySelector('.scroller').classList.remove('scrolling');
-        });
-        
-        document.body.addEventListener('touchcancel',function(){
-            active = false;
-            document.querySelector('.scroller').classList.remove('scrolling');
-        });
-
-        function scrollIt(x){
-            let transform = Math.max(0,(Math.min(x,document.querySelector('.wrapper').offsetWidth)));
-            document.querySelector('.after').style.width = transform+"px";
-            document.querySelector('.scroller').style.left = transform-25+"px";
-        }
-        scrollIt(150);
-    </script>
-
-    <script>
         /**
         * 
         * UWE Subnautica Updates - Swap Images Class
@@ -3174,7 +3148,7 @@
             }
         }
 
-        const VIDEO1 = new AnimateVideo(document.getElementById('glacial-basin-video'));
+        const VIDEO1 = new AnimateVideo(document.getElementById('deep-purple-video'));
         const VIDEO3 = new AnimateVideo(document.getElementById('hero'));
     </script>
 
@@ -3241,7 +3215,7 @@
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
-    <!-- Analytics excluded (debug / development mode) -->
+    <!-- Analytics excluded (debug / development mode) 
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-931975-7"></script>
     <script>
@@ -3351,5 +3325,5 @@
                 });
             }
         }
-    </script>
+    </script> -->
 </html>
