@@ -1101,6 +1101,7 @@
         <!-- MARG'S GREENHOUSE -->
 
         <div id="marg-greenhouse" class="narrow-container">
+            <h2>Marguerit's Greenhouse</h2>
             <figure id="greenhouse">
                 <svg id="lines" viewBox="0 0 1280 1280" 
                 preserveAspectRatio="xMinYMin meet">
@@ -1145,10 +1146,17 @@
 
         <!-- BASES -->
 
-        <span id="bases"></span>
-        <div id= "omega-base" class="wide-container shadow background-image"></div>
-        <div id= "outpost-zero" class="wide-container shadow background-image"></div>
-        <div id= "delta-station" class="wide-container shadow background-image"></div>
+        <div id="bases">
+            <div id= "omega-base" class="bases wide-container shadow background-image">
+                <h2>Omega Base</h2>
+            </div>
+            <div id= "outpost-zero" class="bases wide-container shadow background-image">
+                <h2>Outpost Zero</h2>
+            </div>
+            <div id= "delta-station" class="bases wide-container shadow background-image">
+                <h2>Delta Station</h2>
+            </div>
+        </div>
 
         <!-- STORY  -->
 
@@ -1636,6 +1644,11 @@
         text-align:center;
     }
 
+    #marg-greenhouse > h2 {
+        color: #d4ffde;
+        text-align: center;
+    }
+
     #greenhouse {
         position: relative;
         width: 100%;
@@ -1685,13 +1698,11 @@
 
     #ice-worm {
         background-image: url('./images/ice-worm.jpg');
-        height: 40vh;
         z-index: 2;
     }
 
     #snowstalkers {
         background-image: url('./images/snow-stalker.jpg');
-        height: 40vh;
         z-index: 2;
     }
 
@@ -1785,6 +1796,12 @@
         background-image: url('./images/polish-5.jpg');
     }
 
+    .bases > h2 {
+        color: #d4ffde;
+        padding: 5%;
+        margin: unset;
+    }
+
     #omega-base {
         background-image: url('./images/omega-base.jpg');
     }
@@ -1800,6 +1817,14 @@
     #iceberg-zone {
         background-image: url('./images/iceberg-zone.jpg');
         height: 80vh;
+    }
+
+    #snowstalkers {
+        height: 40vh;
+    }
+
+    #ice-worm {
+        height: 40vh;
     }
 
     #ui-scaling .narrow-text {
@@ -1909,6 +1934,10 @@
 
         #recyclotron {
             order: 1;
+        }
+
+        #bases > .bases {
+            min-height: 30vh;
         }
 
         #greenhouse-details > .narrow-text {
