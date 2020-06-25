@@ -1101,7 +1101,13 @@
         <!-- MARG'S GREENHOUSE -->
 
         <div id="marg-greenhouse" class="narrow-container">
-            <img src="./images/greenhouse.jpg" class="image-responsive border">
+            <figure id="greenhouse">
+                <svg class="shadow border">
+                    <image class="image-responsive" xlink:href="./images/greenhouse.jpg">
+                    </image>
+                    <circle cx="50" cy="50" r="40" stroke="black" stroke-width="3" fill="none" />
+                </svg>
+            </figure>
         </div>
 
         <!-- BASES -->
@@ -1150,8 +1156,9 @@
                 <p>
                     At crushing depths deep below Thermal Vents, giant vents 
                     cast an eerie pink glow onto the surrounding features. 
-                    Several precursor sites were recently uncovered here, their 
+                    Several precursor sites were recently uncovered here; Their 
                     purpose is still unknown. 
+
                 </p>
             </div>
         </div>
@@ -1160,8 +1167,8 @@
             <p>
                 At crushing depths deep below Thermal Vents, giant vents 
                 cast an eerie pink glow onto the surrounding features. 
-                Several precursor sites were recently uncovered here, their 
-                purpose is still unknown.  
+                Several precursor sites were recently uncovered here; Their 
+                purpose is still unknown. 
             </p>
         </div>
 
@@ -1173,7 +1180,7 @@
                 <div class="item-description narrow-text left-item shadow">
                     <h3>RECYCLOTRON</h3>
                     <p>
-                        Accidentally fabricated one to many fins? No use for 
+                        Accidentally fabricated one too many fins? No use for 
                         that knife? Simply place your unwanted items into a 
                         Recyclotron and retrieve the precious materials used to 
                         create them!
@@ -1203,6 +1210,17 @@
                         out.
                     </p>
                 </div>
+            </div>
+            <div class="overflow-boxes flex">
+                <div class="item-description narrow-text right-item shadow">
+                    <h3>SPICY MELON SALAD</h3>
+                    <p>
+                        Oh yea. That’s right. Get ready for organic, free-range,
+                         greenhouse-to-table salad. The spicy properties of this
+                        salad will warm your heart and body. 
+                    </p>
+                </div>
+                <div class="items background-image one-third shadow border" id="salad"></div>
             </div>
         </div>
 
@@ -1305,7 +1323,8 @@
             <div id="ui-details" class="shadow">
                 <h2>UI SCALING</h2>
                 <p>
-                    It’s now possible to scale the UI up or down from the Options in the Main Menu.
+                    It’s now possible to resize the HUD from the Options in the 
+                    Main Menu.
                 </p>
             </div>
         </div>
@@ -1574,6 +1593,284 @@
         </div>
     </div>
   </body>
+
+  <style>
+      /** 
+    * Update Specific Styles
+    */
+
+    #youtube {
+        text-align:center;
+    }
+
+    #greenhouse {
+        position: relative;
+        height: 50vh;
+        vertical-align: middle;
+        margin: 0;
+        overflow: hidden;
+    }
+
+    #greenhouse svg { 
+        display: inline-block;
+        position: absolute;
+        top: 0; left: 0;
+    }
+
+    #al-an-image {
+        background-image: url('./images/al-an-calling.jpg');
+        height: 40vh;
+        z-index: 2;
+    }
+
+    #arctic-bridge-image {
+        background-image: url('./images/bridge.jpg');
+        height: 40vh;
+        z-index: 2;
+    }
+
+    #ice-worm {
+        background-image: url('./images/ice-worm.jpg');
+        height: 40vh;
+        z-index: 2;
+    }
+
+    #snowstalkers {
+        background-image: url('./images/snow-stalker.jpg');
+        height: 40vh;
+        z-index: 2;
+    }
+
+    #deep-purple {
+        margin-bottom: -6px;
+        min-height: unset;
+    }
+
+    #new-items > div.overflow-boxes {
+        height: 30vh;
+    }
+
+    .items {
+        height: 100%;
+    }
+
+    .item-description {
+        flex-basis: 60%;
+    }
+
+    .left-item {
+        margin-left: 20px;
+    }
+
+    .right-item {
+        margin-right: 20px;
+    }
+
+    #recyclotron {
+        background-image: url('./images/recyclotron.jpg');
+    }
+
+    #coffee {
+        background-image: url('./images/coffee.jpg');
+    }
+
+    #ice-bubbles {
+        background-image: url('./images/ice-bubbles.jpg');
+    }
+
+    #world-polish {
+        position: relative;
+        height: 80vh;
+    }
+
+    #world-polish > span 
+    {
+        opacity: 0;
+        object-fit: cover;
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        width: 100%;
+        height: 100%;
+        -webkit-transition: all 0.5s ease-out;
+        -moz-transition:all 0.5s ease-out;
+        -o-transition:all 0.5s ease-out;
+        transition:all 0.5s ease-out;
+        z-index: 5;
+    }
+
+    #world-polish > span.visible {
+        opacity: 1;
+    }
+
+    #polish-1 {
+        background-image: url('./images/polish-1.jpg');  
+    }
+
+    #polish-2 {
+        background-image: url('./images/polish-2.jpg');
+    }
+
+    #polish-3 {
+        background-image: url('./images/polish-3.jpg');
+    }
+
+    #polish-4 {
+        background-image: url('./images/polish-4.jpg');
+    }
+
+    #polish-5 {
+        background-image: url('./images/polish-5.jpg');
+    }
+
+    #omega-base {
+        background-image: url('./images/omega-base.jpg');
+    }
+
+    #outpost-zero {
+        background-image: url('./images/outpost-zero.jpg');
+    }
+
+    #delta-station {
+        background-image: url('./images/delta-station.jpg');
+    }
+
+    #iceberg-zone {
+        background-image: url('./images/iceberg-zone.jpg');
+        height: 80vh;
+    }
+
+    #ui-scaling .narrow-text {
+        flex-basis: 39%;
+    }
+
+    #ui-details {
+        background: #d4ffde;
+        margin-top: -50px;
+        padding: 50px;
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+
+    #ui-details h2 {
+        text-align: center;
+    }
+
+    #ui-details p {
+        text-align: center;
+    }
+
+    .narrow-container, #patch-notes {
+        box-shadow: unset;
+    }
+
+    #patch-notes {
+        text-align: center;
+        min-height: 200px;
+    }
+
+    .tooltip-style {
+        background-color: rgba(255, 255, 255, 0.50);
+        margin: 10px;
+        padding: 20px;
+    }
+
+    .tooltip-style:before {
+        left: 0;
+        top: 50%;
+        transform: translate(calc(-100% - 8px), -50%);
+        box-sizing: border-box;
+        border-radius: 3px;
+    }
+
+    .tooltip-style:after {
+        border-width: 8px 0 8px 8px;
+        border-color: transparent transparent transparent rgba(0, 27, 45, 0.85);
+        left: -8px;
+        top: 50%;
+        transform: translate(0, -50%);
+    }
+
+    #twitter {
+        background-image: url('./images/twitter.jpg');
+    }
+
+    @media only screen and (max-width : 480px) {
+        h2 {
+            font-size: 14px;
+        }
+
+        .narrow-text{
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+
+        .wrapper {
+            height: 300px;
+        }
+
+        .item-description {
+            flex-basis: 100%;
+        }
+
+        #new-items > div.overflow-boxes {
+            height: unset;
+        }
+
+        #ui-scaling .narrow-text {
+            flex-basis: 100%;
+        }
+
+        .items {
+            height: 200px;
+        }
+
+        .left-item {
+            order: 2;
+        }
+
+        .right-item {
+            order: 2;
+        }
+
+        #coffee {
+            order: 1;
+        }
+
+        #ice-bubbles {
+            order: 1;
+        }
+
+        #salad {
+            order: 1;
+        }
+
+        #recyclotron {
+            order: 1;
+        }
+    }
+
+    @media (min-width : 481px) and (max-width: 850px) {
+
+        .overflow-boxes {
+            margin-left: 0 !important;
+            margin-right: 0 !important;
+        }
+
+    }
+
+    @media (min-width : 481px) and (max-width: 1679px) {
+        #new-items > div.overflow-boxes {
+            height: 50vh;
+        }
+    }
+
+    @media screen and (min-width: 2048px) {
+        .bottom {
+            transform: translate(35%, 250%);
+        }
+    }
+  </style>
 
   <style>
     /** 
@@ -2111,288 +2408,6 @@
 
     .center {
         text-align: center;
-    }
-
-    /** 
-    * Update Specific Styles
-    */
-
-    #youtube {
-        text-align:center;
-    }
-
-    #al-an-image {
-        background-image: url('./images/al-an-calling.jpg');
-        height: 40vh;
-        z-index: 2;
-    }
-
-    #arctic-bridge-image {
-        background-image: url('./images/bridge.jpg');
-        height: 40vh;
-        z-index: 2;
-    }
-
-    #ice-worm {
-        background-image: url('./images/ice-worm.jpg');
-        height: 40vh;
-        z-index: 2;
-    }
-
-    #snowstalkers {
-        background-image: url('./images/snow-stalker.jpg');
-        height: 40vh;
-        z-index: 2;
-    }
-
-    #deep-purple {
-        margin-bottom: -6px;
-        min-height: unset;
-    }
-
-    #new-items > div.overflow-boxes {
-        height: 30vh;
-    }
-
-    .items {
-        height: 100%;
-    }
-
-    .item-description {
-        flex-basis: 60%;
-    }
-
-    .left-item {
-        margin-left: 20px;
-    }
-
-    .right-item {
-        margin-right: 20px;
-    }
-
-    #recyclotron {
-        background-image: url('./images/recyclotron.jpg');
-    }
-
-    #coffee {
-        background-image: url('./images/coffee.jpg');
-    }
-
-    #ice-bubbles {
-        background-image: url('./images/ice-bubbles.jpg');
-    }
-
-    #world-polish {
-        position: relative;
-        height: 80vh;
-    }
-
-    #world-polish > span 
-    {
-        opacity: 0;
-        object-fit: cover;
-        position: absolute;
-        left: 0px;
-        top: 0px;
-        width: 100%;
-        height: 100%;
-        -webkit-transition: all 0.5s ease-out;
-        -moz-transition:all 0.5s ease-out;
-        -o-transition:all 0.5s ease-out;
-        transition:all 0.5s ease-out;
-        z-index: 5;
-    }
-
-    #world-polish > span.visible {
-        opacity: 1;
-    }
-
-    #polish-1 {
-        background-image: url('./images/polish-1.jpg');  
-    }
-
-    #polish-2 {
-        background-image: url('./images/polish-2.jpg');
-    }
-
-    #polish-3 {
-        background-image: url('./images/polish-3.jpg');
-    }
-
-    #polish-4 {
-        background-image: url('./images/polish-4.jpg');
-    }
-
-    #polish-5 {
-        background-image: url('./images/polish-5.jpg');
-    }
-
-    #omega-base {
-        background-image: url('./images/omega-base.jpg');
-    }
-
-    #outpost-zero {
-        background-image: url('./images/outpost-zero.jpg');
-    }
-
-    #delta-station {
-        background-image: url('./images/delta-station.jpg');
-    }
-
-    #iceberg-zone {
-        background-image: url('./images/iceberg-zone.jpg');
-        height: 80vh;
-    }
-
-    #ui-scaling .narrow-text {
-        flex-basis: 39%;
-    }
-
-    #ui-details {
-        background: #d4ffde;
-        margin-top: -50px;
-        padding: 50px;
-        margin-left: 50px;
-        margin-right: 50px;
-    }
-
-    #ui-details h2 {
-        text-align: center;
-    }
-
-    #ui-details p {
-        text-align: center;
-    }
-
-    .narrow-container, #patch-notes {
-        box-shadow: unset;
-    }
-
-    #patch-notes {
-        text-align: center;
-        min-height: 200px;
-    }
-
-    .tooltip-style {
-        background-color: rgba(255, 255, 255, 0.50);
-        margin: 10px;
-        padding: 20px;
-    }
-
-    .tooltip-style:before {
-        left: 0;
-        top: 50%;
-        transform: translate(calc(-100% - 8px), -50%);
-        box-sizing: border-box;
-        border-radius: 3px;
-    }
-
-    .tooltip-style:after {
-        border-width: 8px 0 8px 8px;
-        border-color: transparent transparent transparent rgba(0, 27, 45, 0.85);
-        left: -8px;
-        top: 50%;
-        transform: translate(0, -50%);
-    }
-
-    #twitter {
-        background-image: url('./images/twitter.jpg');
-    }
-
-    @media only screen and (max-width : 480px) {
-        h2 {
-            font-size: 14px;
-        }
-
-        .narrow-text{
-            margin-top: 0;
-            margin-bottom: 0;
-        }
-
-        .wrapper {
-            height: 300px;
-        }
-
-        .item-description {
-            flex-basis: 100%;
-        }
-
-        #new-items > div.overflow-boxes {
-            height: unset;
-        }
-
-        #status-icons {
-            flex-basis: 100%;
-        }
-
-        #crisp-text {
-            flex-basis: 100%;
-        }
-
-        #ui-improvements .narrow-text {
-            flex-basis: 100%;
-        }
-
-        .items {
-            height: 200px;
-        }
-
-        .left-item {
-            order: 2;
-        }
-
-        .right-item {
-            order: 2;
-        }
-
-        #surface-beacons {
-            order: 1;
-        }
-
-        #quantum-locker {
-            order: 1;
-        }
-
-        #snowballs {
-            order: 1;
-        }
-
-        #purification-tablets {
-            order: 1;
-        }
-
-        #cold-mechanics {
-            height: 35vh;
-        }
-    }
-
-    @media (min-width : 481px) and (max-width: 850px) {
-
-        .overflow-boxes {
-            margin-left: 0 !important;
-            margin-right: 0 !important;
-        }
-
-        #status-icons {
-            height: 50vh;
-        }
-
-        #crisp-text {
-            height: 50vh;
-        }
-
-    }
-
-    @media (min-width : 481px) and (max-width: 1679px) {
-        #new-items > div.overflow-boxes {
-            height: 50vh;
-        }
-    }
-
-    @media screen and (min-width: 2048px) {
-        .bottom {
-            transform: translate(35%, 250%);
-        }
     }
 
 
