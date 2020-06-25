@@ -236,11 +236,11 @@
             border: none;
             background: #d4ffde;
             color: #10340a;
-            box-shadow: 0 5px #34496e;
+            box-shadow: 0 5px #1f450c;
         }
 
         .btn-light:hover {
-            background: #a2c4da;
+            background: #1ad552;
             color: #10340a;
             text-decoration: none;
         }
@@ -1102,14 +1102,44 @@
 
         <div id="marg-greenhouse" class="narrow-container">
             <figure id="greenhouse">
-                <svg class="shadow border" version="1.1" viewBox="0 0 1280 720" 
+                <svg id="lines" viewBox="0 0 1280 1280" 
+                preserveAspectRatio="xMinYMin meet">
+                    <path stroke="#d4ffde" stroke-width="3" fill="none"  d="
+                        M 130,820
+                        L 130,320
+                        l 50,0
+                    "/>
+                    <path stroke="#d4ffde" stroke-width="3" fill="none" d="
+                        M 620,820
+                        L 620,520
+                        l -230,0
+                    "/>
+                    <path stroke="#d4ffde" stroke-width="3" fill="none" d="
+                        M 1100,820
+                        L 1100,380                         
+                        l -290,0
+                    "/>
+                </svg>
+                <svg class="shadow border" version="1.1" 
+                viewBox="0 0 1280 720" 
                 preserveAspectRatio="xMinYMin meet">
                     <image width="1280" height="720" xlink:href="./images/greenhouse.jpg">
                     </image>
-                    <circle cx="220" cy="320" r="40" stroke="white" stroke-width="3" fill="none" />
-                    <circle cx="320" cy="520" r="70" stroke="white" stroke-width="3" fill="none" />
-                    <circle cx="750" cy="380" r="60" stroke="white" stroke-width="3" fill="none" />
+                    <circle cx="220" cy="320" r="40" stroke="#d4ffde" stroke-width="3" fill="none" />
+                    <circle cx="320" cy="520" r="70" stroke="#d4ffde" stroke-width="3" fill="none" />
+                    <circle cx="750" cy="380" r="60" stroke="#d4ffde" stroke-width="3" fill="none" />
                 </svg>
+                <div id="greenhouse-details">
+                    <div class="narrow-text shadow">
+                        <p>Whip up a delicious salad</p>
+                    </div>
+                    <div class="narrow-text shadow">
+                        <p>Cuddle up to Marguerit’s Snow Stalker companion</p>
+                    </div>
+                    <div class="narrow-text">
+                        <p>Learn how to farm new, unusual plants</p>
+                    </div>
+                </div>
             </figure>
         </div>
 
@@ -1609,7 +1639,6 @@
     #greenhouse {
         position: relative;
         width: 100%;
-        padding-bottom: 77%;
         vertical-align: middle;
         margin: 0;
         overflow: hidden;
@@ -1622,6 +1651,22 @@
         left: 0;
     }
 
+    #lines {
+        z-index: 5;
+    }
+
+    #greenhouse-details {
+        display: flex;
+        margin-top: 60%;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    #greenhouse-details > .narrow-text {
+        margin: 3%;
+        flex-basis: 25%;
+    }
+
     #al-an-image {
         background-image: url('./images/al-an-calling.jpg');
         height: 40vh;
@@ -1632,6 +1677,10 @@
         background-image: url('./images/bridge.jpg');
         height: 40vh;
         z-index: 2;
+    }
+
+    #other-additions > .narrow-text {
+        margin: 0;
     }
 
     #ice-worm {
@@ -1653,6 +1702,10 @@
 
     #new-items > div.overflow-boxes {
         height: 30vh;
+    }
+
+    #new-items .narrow-text {
+        padding: 7% 10% 10% 10%;
     }
 
     .items {
@@ -1681,6 +1734,10 @@
 
     #ice-bubbles {
         background-image: url('./images/ice-bubbles.jpg');
+    }
+
+    #salad {
+        background-image: url('./images/salad.jpg');
     }
 
     #world-polish {
@@ -1853,13 +1910,18 @@
         #recyclotron {
             order: 1;
         }
+
+        #greenhouse-details > .narrow-text {
+            flex-basis: 100%;
+        }
     }
 
-    @media (min-width : 481px) and (max-width: 850px) {
+    @media (max-width: 850px) {
 
         .overflow-boxes {
             margin-left: 0 !important;
             margin-right: 0 !important;
+            margin-top: 10px;
         }
 
     }
@@ -2340,11 +2402,11 @@
     }
 
     .mobile-visible {
-        display: none;
+        display: none !important;
     }
 
     .mobile-hidden {
-        display: '';
+        display: '' !important;
     }
 
     .to-edges {
@@ -2393,7 +2455,10 @@
         background-color: #d4ffde;
         margin-top: 3%;
         margin-bottom: 3%;
-        padding: 25px 50px;
+        padding: 3% 5%;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
     }
 
     .image-responsive {
@@ -2787,11 +2852,11 @@
             display: inherit;
         }
         .mobile-visible {
-            display: unset;
+            display: unset !important;
         }
 
         .mobile-hidden {
-            display: none;
+            display: none !important;
         }
     }
 
