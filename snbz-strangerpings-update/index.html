@@ -53,7 +53,7 @@
             font-size: 14px;
             line-height: 1.42857143;
             color: #f2f3f7;
-            background-color: #0a1911;
+            background-color: #01060b;
         }
 
         .main {
@@ -1118,6 +1118,17 @@
                     </p>
                 </div>
             </div> 
+            <div class="flex" id="pings">
+                <div class="two-thirds narrow-text shadow">
+                    <h2>Artifact Pings</h2>
+                    <p>
+                        Ring ring, who’s there? Oh, just a friendly alien who 
+                        has taken up residency inside your brain. If you’re 
+                        busy, you can send him to voicemail.
+                    </p>
+                </div>
+                <div id="pings-image" class="one-third background-image border shadow"></div>
+            </div> 
         </div>
 
         <!-- CREATURES CAROUSEL -->
@@ -1126,7 +1137,7 @@
             <span class="background-image" id="creatures-1"></span>
             <span class="background-image" id="creatures-2"></span>
             <span class="background-image" id="creatures-3"></span>
-            <div class="textbox right textbox-animating">
+            <div class="textbox left textbox-animating">
                 <p>
                     Throughout Glacial Basin and Arctic Spires, wonderful scenes
                         are coming to life. Alterra mining caches, Precursor 
@@ -1173,6 +1184,18 @@
                 </div>
                 <div class="items background-image one-third shadow border" id="aromatherapy"></div>
             </div>
+            <div class="flex">
+                <div class="items background-image one-third shadow border" id="stairs"></div>
+                <div class="item-description narrow-text left-item shadow">
+                    <h3>Stairs</h3>
+                    <p>
+                        Accidentally fabricated one too many fins? No use for 
+                        that knife? Simply place your unwanted items into a 
+                        Recyclotron and retrieve the precious materials used to 
+                        create them!
+                    </p>
+                </div>
+            </div>
         </div>
 
         <!-- POLISH CAROUSEL -->
@@ -1191,6 +1214,15 @@
                         their debut.
                 </p>
             </div>
+        </div>
+
+        <div class="textbox-mobile">
+            <p>
+                Throughout Glacial Basin and Arctic Spires, wonderful scenes
+                are coming to life. Alterra mining caches, Precursor 
+                structures, and a brightly-colored petrified forest all make
+                their debut.
+            </p>
         </div>
 
         <!-- ACCESSIBILITY -->
@@ -1214,7 +1246,7 @@
             <video muted playsinline preload id="deep-purple-video" poster="./images/purple-vents.jpg">
                 <source src="./images/purple-vents.mp4" type="video/mp4">
             </video>
-            <div class="textbox right textbox-animating">
+            <div class="textbox left textbox-animating">
                 <p>
                     At crushing depths deep below Thermal Vents, giant vents 
                     cast an eerie pink glow onto the surrounding features. 
@@ -1546,6 +1578,12 @@
         z-index: 2;
     }
 
+    #pings-image {
+        background-image: url('./images/bridge.jpg');
+        height: 30vh;
+        z-index: 2;
+    }
+
     #terrain {
         margin-bottom: -6px;
         min-height: unset;
@@ -1572,6 +1610,10 @@
     }
 
     #aromatherapy {
+        background-image: url('./images/coffee.jpg');
+    }
+
+    #stairs {
         background-image: url('./images/coffee.jpg');
     }
 
@@ -1737,6 +1779,10 @@
         #executive-toy {
             order: 1;
         }
+
+        #stairs {
+            order: 1;
+        }
     }
 
     @media (max-width: 850px) {
@@ -1769,7 +1815,7 @@
     a:hover,
     a:focus {
         color: #ade6fd;
-        text-decoration: underline;
+        text-decoration: none;
     }
 
     a:focus {
@@ -2589,6 +2635,7 @@
 
         .two-thirds {
             flex-basis: 100%;
+            order: 2;
             /*padding: 2rem;*/
         }
 
