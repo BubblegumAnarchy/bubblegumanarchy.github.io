@@ -1070,7 +1070,7 @@
             <h1>Stranger Pings UPDATE VIDEO</h1>
             <iframe 
                 id="video-trailer" 
-                src="https://www.youtube.com/embed/FQdP23_uliQ" 
+                src="https://www.youtube.com/embed/KNyR2yAlv_8" 
                 frameborder="0" 
                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
                 allowfullscreen="">
@@ -1297,12 +1297,17 @@
         </div>
 
         <div class="narrow-container" id="soundtrack">
+            <div id="track" class="background-image shadow">
+                <span id="progress"></span>
+                <div class="flex">
+                    <h3>Twisty Bridges</h3>
+                    <span id="controls">
+                        <img id="play-pause" src="https://dkli3tbfz4zj3.cloudfront.net/all/202008_StrangerPings/images/play.png">
+                    </span>
+                    <h3 id="timestamp">00:00</h3>
+                </div>
+            </div>
             <div class="narrow-text shadow">
-                <audio controls>
-                    <source src="https://dkli3tbfz4zj3.cloudfront.net/all/202008_StrangerPings/images/TwistyBridges.mp3" type="audio/mpeg">
-                    <p>Your browser doesn't support HTML5 audio. Here is
-                        a <a href="https://dkli3tbfz4zj3.cloudfront.net/all/202008_StrangerPings/images/TwistyBridges.mp3">link to the audio</a> instead.</p>
-                </audio>
                 <h3>Below Zero Soundtrack</h3>
                 <p>
                     Loving the gorgeous musical soundscape of Subnautica: Below 
@@ -1310,7 +1315,7 @@
                     <a href="https://twitter.com/benprunty">
                         Ben Prunty on Twitter
                     </a> 
-                    or <a href="#signup">sign up to our mailing list</a> to be 
+                    or <a href="#sign_up">sign up to our mailing list</a> to be 
                     among the first to hear about how to listen to the 
                     soundtrack when it’s available.    
                 </p>
@@ -1598,6 +1603,46 @@
       /** 
     * Update Specific Styles
     */
+
+    #track {
+        background-image: url('https://dkli3tbfz4zj3.cloudfront.net/all/202008_StrangerPings/images/music-track.jpg');
+        height: 80px;
+        border-radius: 5px;
+        position: relative;
+    }
+
+    #progress {
+        position: absolute;
+        opacity: 30%;
+        width: 0%;
+        background-color: rgb(124, 220, 255);
+        z-index: 2;
+        top: 0;
+        left: 0;
+        height: 100%;
+        mix-blend-mode: color-dodge;
+    }
+
+    #track .flex {
+        align-items: center;
+        position: absolute;
+        width: 100%;
+        z-index: 3;
+        justify-content: space-between;
+    }
+
+    #track h3 {
+        color: white;
+        padding: 0 20px;
+    }
+
+    #controls {
+        padding-right: 20px;
+    }
+
+    #controls img {
+        height: 80px;
+    }
 
     #youtube {
         text-align:center;
@@ -3216,6 +3261,57 @@
         PARENT.appendChild(STORES[FIRST]);
         PARENT.appendChild(STORES[SECOND]);
         PARENT.appendChild(STORES[THIRD]);
+    </script>
+
+    <script>
+        /**
+        * 
+        * UWE Subnautica Expansion - Music Player
+        * Author - jess@unknownworlds.com
+        * 
+        */
+
+        const musicTrack = new Audio('https://dkli3tbfz4zj3.cloudfront.net/all/202008_StrangerPings/images/TwistyBridges.mp3');
+        const controls = document.getElementById("play-pause");
+        const playButton = 'https://dkli3tbfz4zj3.cloudfront.net/all/202008_StrangerPings/images/play.png';
+        const pauseButton = 'https://dkli3tbfz4zj3.cloudfront.net/all/202008_StrangerPings/images/pause.png';
+        const progress = document.getElementById("progress");
+        const timestamp = document.getElementById("timestamp");
+
+        controls.addEventListener(
+            'click',
+            () => {
+                if (musicTrack.paused) {
+                    musicTrack.play();
+                    controls.src = pauseButton;
+                } else {
+                    musicTrack.pause();
+                    controls.src = playButton;
+                }
+            }
+        );
+
+        function formatSecondsAsTime(secs) {
+            var hr  = Math.floor(secs / 3600);
+            var min = Math.floor((secs - (hr * 3600))/60);
+            var sec = Math.floor(secs - (hr * 3600) -  (min * 60));
+
+            if (min < 10){ 
+                min = "0" + min; 
+            }
+            if (sec < 10){ 
+                sec  = "0" + sec;
+            }
+
+            return min + ':' + sec;
+        }
+
+        musicTrack.ontimeupdate = function() {
+            progress.style.width = musicTrack.currentTime / musicTrack.duration * 100 + '%';
+            var timeAsString = Math.floor(musicTrack.currentTime).toString();
+            timestamp.innerHTML = formatSecondsAsTime(timeAsString);
+        }
+
     </script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
