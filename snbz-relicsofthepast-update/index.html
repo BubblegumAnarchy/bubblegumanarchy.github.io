@@ -1077,17 +1077,49 @@
         <!-- STORY UPDATES -->
 
         <div id="story-details" class="narrow-container">
-            <div id="voice-over" class="background-image"></div>
-            <div id="talking-portraits" class="background-image"></div>
-            <div id="ingame-text" class="background-image"></div>
-            <div id="robin" class="background-image"></div>
+            <div id="voice-over" class="background-image">
+                <div class="story-text">
+                    <h2>Voiced Dialogue</h2>
+                    <p>
+                        Many areas of the planet have undergone restoration and rehabilitation in the past month. 
+                        Areas such as Lilypad Island and Thermal Spires have responded gloriously to these efforts.
+                    </p>
+                </div>
+            </div>
+            <div id="talking-portraits" class="background-image">
+                <div class="story-text">
+                    <h2>Talking Portraits</h2>
+                    <p>
+                        Many areas of the planet have undergone restoration and rehabilitation in the past month. 
+                        Areas such as Lilypad Island and Thermal Spires have responded gloriously to these efforts.
+                    </p>
+                </div>
+            </div>
+            <div id="ingame-text" class="background-image">
+                <div class="story-text">
+                    <h2>PDAs, Databanks, & Encyclopedias</h2>
+                    <p>
+                        Many areas of the planet have undergone restoration and rehabilitation in the past month. 
+                        Areas such as Lilypad Island and Thermal Spires have responded gloriously to these efforts.
+                    </p>
+                </div>
+            </div>
+            <div id="robin" class="background-image">
+                <div class="story-text">
+                    <h2>Robin's New Look</h2>
+                    <p>
+                        Many areas of the planet have undergone restoration and rehabilitation in the past month. 
+                        Areas such as Lilypad Island and Thermal Spires have responded gloriously to these efforts.
+                    </p>
+                </div>
+            </div>
         </div>
 
 
         <!-- AND MORE WIDE IMAGE -->
 
         <div id="story-more" class="wide-container background-image">
-        
+            <h2>Time to Dive Back in</h2>
         </div>
 
 
@@ -1556,26 +1588,65 @@
 
     #story-details > div {
         height: 80vh;
+        position: relative;
+    }
+
+    .story-text {
+        position: absolute;
+        bottom: 8px;
+        padding: 5%;
+        text-align: center;
+    }
+
+    .story-text > * {
+        color: white;
     }
 
     #voice-over {
         background-image: url('./images/character-portraits.jpg');
     }
 
+    #voice-over > .story-text {
+        margin-left: 40%;
+    }
+
     #talking-portraits {
         background-image: url('./images/base-signs.jpg');
+    }
+
+    #talking-portraits > .story-text {
+        margin-right: 40%;
     }
 
     #ingame-text {
         background-image: url('./images/base-signs.jpg');
     }
 
+    #ingame-text > .story-text {
+        margin-left: 40%;
+    }
+
     #robin {
         background-image: url('./images/artifact.jpg');
     }
 
+    #robin > .story-text {
+        margin-right: 40%;
+    }
+
+
     #story-more {
         background-image: url('./images/story.jpg');
+    }
+
+    #story-more > h2 {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -70%);
+        color: white;
+        font-size: 60px;
+        text-align: center;
     }
 
     #story-more + .narrow-container {
