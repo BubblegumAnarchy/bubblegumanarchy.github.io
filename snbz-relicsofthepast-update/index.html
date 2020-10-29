@@ -1035,7 +1035,7 @@
         <ul>
             <a href="#youtube"><i class="tooltip tooltip-left" data-tip="Relics of the Past Video"><li></li></i></a>
             <a href="#story"><i class="tooltip tooltip-left" data-tip="Story Complete"><li></li></i></a>
-            <a href="#posters"><i class="tooltip tooltip-left" data-tip="Community Posters"><li></li></i></a>
+            <a href="#posters"><i class="tooltip tooltip-left" data-tip="Posters"><li></li></i></a>
             <a href="#beacons"><i class="tooltip tooltip-left" data-tip="Beacons & Inventory"><li></li></i></a>
             <a href="#void-chelicerate"><i class="tooltip tooltip-left" data-tip="Void Chelicerate"><li></li></i></a>
             <a href="#caches"><i class="tooltip tooltip-left" data-tip="Precursor Caches"><li></li></i></a>
@@ -1059,7 +1059,7 @@
             <h1>RELICS OF THE PAST UPDATE VIDEO</h1>
             <iframe 
                 id="video-trailer" 
-                src="https://www.youtube.com/embed/KNyR2yAlv_8" 
+                src="https://www.youtube.com/embed/YKoHTbvV188" 
                 frameborder="0" 
                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
                 allowfullscreen="">
@@ -1162,8 +1162,8 @@
         <!-- VOID CHELICERATE -->
 
         <div id="void-chelicerate" class="wide-container">
-            <video autoplay loop muted playsinline poster="https://dkli3tbfz4zj3.cloudfront.net/all/201911_DeepDive/images/leviathan.jpg">
-                <source src="https://dkli3tbfz4zj3.cloudfront.net/all/201911_DeepDive/images/leviathan.mp4" type="video/mp4">
+            <video autoplay loop muted playsinline poster="./images/void.jpg">
+                <source src="./images/void.mp4" type="video/mp4">
             </video>
             <div class="textbox left textbox-animating">
                 <p>
@@ -1581,6 +1581,7 @@
         background-image: url('./images/story.jpg');
         height: 80vh;
         text-align: center;
+        z-index: 2;
     }
 
     #story > h2 {
@@ -1650,7 +1651,7 @@
     }
 
     #robin {
-        background-image: url('./images/artifact.jpg');
+        background-image: url('./images/robin.jpg');
     }
 
     #robin > .story-text {
@@ -1680,7 +1681,7 @@
     }
 
     #beacons {
-        background-image: url('./images/artifact.jpg');
+        background-image: url('./images/beacons.jpg');
         height: 80vh;
         min-height: 800px;
         width: 50%;
@@ -1700,7 +1701,7 @@
     }
 
     #posters {
-        background-image: url('./images/artifact.jpg');
+        background-image: url('./images/posters.jpg');
         height: 80vh;
         min-height: 800px;
         width: 50%;
@@ -2045,10 +2046,10 @@
         font-style: italic;
     }
 
-    hr {
+/*     hr {
         border: 0.5px solid #00302a;
         margin: 3rem 0;
-    }
+    } */
 
 
     /**
@@ -2068,12 +2069,12 @@
         content: attr(data-tip);
         font-size: 14px;
         position: absolute;
-        background: rgba(29, 210, 168, 0.85);
+        background: rgba(26, 195, 82, 0.85);
         color: #f2f3f7;
         line-height: 1.2em;
         padding: 0.5em;
         font-style: normal;
-        box-shadow: 0 1px 3px rgba(144, 252, 227, 0.55);
+        box-shadow: 0 1px 3px rgba(26, 195, 82, 0.85);
         min-width: 120px;
         text-align: center;
         opacity: 0;
@@ -2111,7 +2112,7 @@
 
     .tooltip-left:after {
         border-width: 8px 0 8px 8px;
-        border-color: transparent transparent transparent rgba(29, 210, 168, 0.85);
+        border-color: transparent transparent transparent  rgba(26, 195, 82, 0.85);
         left: -8px;
         top: 50%;
         transform: translate(0, -50%);
