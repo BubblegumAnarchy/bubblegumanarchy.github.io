@@ -1077,7 +1077,7 @@
         <!-- STORY UPDATES -->
 
         <div id="story-details" class="narrow-container">
-            <div id="voice-over" class="background-image">
+            <div id="voice-over" class="background-image gradient">
                 <div class="story-text">
                     <h2>Voiced Dialogue</h2>
                     <p>
@@ -1090,7 +1090,7 @@
                     </p>
                 </div>
             </div>
-            <div id="talking-portraits" class="background-image">
+            <div id="talking-portraits" class="background-image gradient">
                 <div class="story-text">
                     <h2>Talking Portraits</h2>
                     <p>
@@ -1101,7 +1101,7 @@
                     </p>
                 </div>
             </div>
-            <div id="ingame-text" class="background-image">
+            <div id="ingame-text" class="background-image gradient">
                 <div class="story-text">
                     <h2>PDAs, Databanks, & Encyclopedias</h2>
                     <p>
@@ -1112,7 +1112,7 @@
                     </p>
                 </div>
             </div>
-            <div id="robin" class="background-image">
+            <div id="robin" class="background-image gradient">
                 <div class="story-text">
                     <h2>Robin's New Look</h2>
                     <p>
@@ -1638,6 +1638,16 @@
         background-image: url('./images/portraits.jpg');
     }
 
+    .gradient:after {
+        content:"";
+        background: linear-gradient(90deg, rgba(5,111,63,1) 0%, rgba(65,244,123,1) 48%, rgba(5,111,63,1) 100%);
+        display: block;
+        height:2px;
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+    }
+
     #talking-portraits > .story-text {
         margin-right: 40%;
     }
@@ -1732,14 +1742,14 @@
 
     #cache-1 {
         background-image: url('./images/cache-1.jpg');
-        height: 30vh;
+        height: 40vh;
         z-index: 2;
         width: 100%;
     }
 
     #cache-2 {
-        background-image: url('./images/cache-2.jpg');
-        height: 30vh;
+        background-image: url('./images/cache-4.jpg');
+        height: 40vh;
         z-index: 2;
         width: 100%;
     }
@@ -1879,7 +1889,8 @@
 
     #patch-notes {
         text-align: center;
-        min-height: 200px;
+        min-height: 100px;
+        padding-top: 0;
     }
 
     .tooltip-style {
